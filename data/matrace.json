@@ -1,0 +1,1507 @@
+{
+ "matrace": [
+  {
+   "name": "Matrace Melira",
+   "price": 9300,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Unikátní matrace s vrstvou gelového efektu GelEffekt, která přináší komfort podobně jako líná pěna, ale s přirozenou reakcí okamžitého návrtatu pěny tak, aby tělo nenechala propadnout. Matrace Melira nabízí vyvážený poměr pohodlí a opory - tělo se uvolní, ale zároveň má jistotu stabilního uložení. Pod gelovou vrstvou je pevný základ z kvalitní HR pěny o vysoké hustotě, který se postará nejen o plnohodnotnou oporu, ale i o dlouhou životnost."
+   ],
+   "specs": [
+    "Tuhost červená střední H3, žlutá tvrdá H4, růžová měkká H2",
+    "Výška 20cm na poptávku 22cm se zatížením 140kg a 24cm se zatížením 150kg",
+    "Zatížení do 130kg",
+    "Potah Parotia s Tencelem - odvádí vlhkost, protialergický",
+    "Materiál: vrchní vrstva GelEffect, studená HR pěna o vysoké hustotě",
+    "Prodyšnost matrace vysoká",
+    "Umístění matrace: lamelový rošt, pevný rošt, pevná deska",
+    "Hmotnost 18kg",
+    "Zhotovíme libovolné rozměry"
+   ],
+   "img": "200008076-3176231764",
+   "id": "melira",
+   "sub": "gelová, vrstva GelEffect",
+   "product": null,
+   "height": 20,
+   "load": 130,
+   "firm": "H2 / H3 / H4 na výběr",
+   "cover": "Potah Parotia s Tencelem - odvádí vlhkost, protialergický",
+   "layers": [
+    "gelová vrstva",
+    "líná pěna",
+    "HR pěna",
+    "snímatelný potah"
+   ],
+   "alt": "Matrace Melira, ukázka složení a řezu matrace",
+   "tags": [
+    "alergici",
+    "gelove"
+   ]
+  },
+  {
+   "name": "Matrace Synora",
+   "price": 8500,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Pětizónová matrace s unikátním gelovým efektem u vrchní vrstvy, která se při ulehnutí příjemně přizpůsobí tělu, zatímco uvnitř zůstává pevná opora, která vás nenechá propadnout. Technologie GelEffect je komfortně vytvořená pěna, která se přizpůsobí tlaku těla, reaguje okamžitě na změnu polohy, nepřehřívá se ani při delším ležení."
+   ],
+   "specs": [
+    "Tuhost modrá H3 střední, fialová H4 tvrdá, zelená H2 měkká",
+    "Výška 20cm na poptávku 22cm se zatížením 140kg a 24cm se zatížením 150kg",
+    "Zatížení do 130kg",
+    "Potah BreakPoint - vortex s úpravou proti žmolkování",
+    "Materiál: vrchní vrstva GelEffect, hybridní pěna, studená HR pěna",
+    "Prodyšnost matrace vysoká",
+    "Umístění matrace: lamelový rošt, pevný rošt, pevná deska",
+    "Hmotnost 15kg",
+    "Zhotovíme libovolné rozměry"
+   ],
+   "img": "200008062-3c2ef3c2f1",
+   "id": "synora",
+   "sub": "gelová pětizónová",
+   "product": null,
+   "height": 20,
+   "load": 130,
+   "firm": "H2 / H3 / H4 na výběr",
+   "cover": "Potah BreakPoint - vortex s úpravou proti žmolkování",
+   "layers": [
+    "tvarované zóny",
+    "gelová vrstva",
+    "snímatelný potah",
+    "HR pěna"
+   ],
+   "alt": "Matrace Synora, ukázka složení a řezu matrace",
+   "tags": [
+    "gelove"
+   ]
+  },
+  {
+   "name": "Matrace Arella Hard",
+   "price": 7500,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Pětizónová matrace s antidekubitní úpravou, vysokou odolností a vyšším odporem proti stlačení a nosností na 130kg. Kvalitní studená pěny s vysokou objemovou hmotností. Matrace zaručuje vynikající podporu těla, je vhodná pro vyznavače tvrdších matrací. Potah Tencel obohacen o rouno, což činí matraci nadýchanější."
+   ],
+   "specs": [
+    "Tuhost: H4 tuhá",
+    "Výška komfortní 20cm",
+    "Zatížení do 130kg",
+    "Prodyšný pratelný potah Tencel na zip",
+    "Materiál jádra: studená HR pěna",
+    "Prodyšnost matrace vysoká",
+    "Umístění matrace : lamelový rošt, pevný rošt, pevná deska",
+    "Hmotnost matrace: 18kg",
+    "Zhotovíme libovolné rozměry"
+   ],
+   "img": "200008020-13e9713e99",
+   "id": "arella-hard",
+   "sub": "studená pěna s vysokou tuhostí",
+   "product": null,
+   "height": 20,
+   "load": 130,
+   "firm": "H4",
+   "cover": "Prodyšný pratelný potah Tencel na zip",
+   "layers": [
+    "tvarované zóny",
+    "studená pěna",
+    "snímatelný potah",
+    "HR pěna"
+   ],
+   "alt": "Matrace Arella Hard, ukázka složení a řezu matrace",
+   "tags": [
+    "antidekubitni"
+   ]
+  },
+  {
+   "name": "Matrace Arela",
+   "price": 7500,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Pětizónová matrace s antidekubitní úpravou s měkčí ramenní oblastí, vysokou odolností a nosností 130kg. Kvalitní studená pěny s vysokou objemovou hmotností. Matrace poskytuje optimální oporu s požadavky na vyšší tuhost. Potah Tencel obohacen o rouno, což činí matraci nadýchanější."
+   ],
+   "specs": [
+    "Tuhost: H3 střední",
+    "Výška komfortní 20cm",
+    "Zatížení do 130kg",
+    "Prodyšný pratelný potah Tencel na zip",
+    "Materiál jádra: studená HR pěna",
+    "Prodyšnost matrace vysoká",
+    "Umístění matrace : lamelový rošt, pevný rošt, pevná deska",
+    "Hmotnost matrace: 15kg",
+    "Zhotovíme libovolné rozměry"
+   ],
+   "img": "200007478-a745fa7462",
+   "id": "arela",
+   "sub": "studená pěna, výška 20 cm",
+   "product": null,
+   "height": 20,
+   "load": 130,
+   "firm": "H3",
+   "cover": "Prodyšný pratelný potah Tencel na zip",
+   "layers": [
+    "tvarované zóny",
+    "studená pěna",
+    "snímatelný potah",
+    "HR pěna"
+   ],
+   "alt": "Matrace Arela, ukázka složení a řezu matrace",
+   "tags": [
+    "antidekubitni"
+   ]
+  },
+  {
+   "name": "Matrace Fortis",
+   "price": 8540,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Unikátní pětizónová matrace s antialergení úpravou, vysokou odolností a nosností až 180kg. Kombinace hybridní pěny s vysokým odporem proti stlačení a studené pěny s vysokou objemovou hmotností. Matrace poskytuje optimální oporu s požadavky na vyšší tuhost. Potah Bamboo je obohacen o 300gramové rouno, což činí matraci nadýchanější."
+   ],
+   "specs": [
+    "Rozdílná tvrdost stran: H3 střední, H4 tuhá",
+    "Výška komfortní 24cm",
+    "Zatížení do 180kg",
+    "Prodyšný pratelný potah Bamboo na zip",
+    "Materiál jádra: hybridní pěna a studená HR pěna",
+    "Prodyšnost matrace vysoká",
+    "Umístění matrace : lamelový rošt, pevný rošt, pevná deska",
+    "Hmotnost matrace: 18kg",
+    "Zhotovíme libovolné rozměry"
+   ],
+   "img": "200007058-0156b0156c",
+   "id": "fortis",
+   "sub": "vysoké zatížení do 180 kg",
+   "product": null,
+   "height": 24,
+   "load": 180,
+   "firm": "H3 / H4",
+   "cover": "Prodyšný pratelný potah Bamboo na zip",
+   "layers": [
+    "tvarované zóny",
+    "studená pěna",
+    "snímatelný potah",
+    "HR pěna"
+   ],
+   "alt": "Matrace Fortis, ukázka složení a řezu matrace",
+   "tags": [
+    "alergici",
+    "vysokozatezove"
+   ]
+  },
+  {
+   "name": "Matrace Dia 20 Hi",
+   "price": 6620,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Kvalitní pětizónová vysoká matrace s antidekubitním průřezem dodává na komfortu. Kombinace hybridní pěny a studené pěny s rozdílnou tvrdostí stran. Potah Bamboo s kvalitním rounem."
+   ],
+   "specs": [
+    "Rozdílná tvrdost stran H3 střední a H2 měkčí",
+    "Výška 20cm",
+    "Zatížení do 130kg",
+    "Prodyšný pratelný potah na zip",
+    "Materiál jádra hybridní pěna a studená pěna",
+    "Prodyšnost matrace vysoká",
+    "Umístění: laťový, lamelový rošt, pevná deska",
+    "Hmotnost matrace 14kg",
+    "Zhotovíme různé rozměry"
+   ],
+   "img": "200007141-2088f20890",
+   "id": "dia-20-hi",
+   "sub": "hybridní a studená pěna",
+   "product": null,
+   "height": 20,
+   "load": 130,
+   "firm": "H3 / H2",
+   "cover": "Prodyšný pratelný potah na zip",
+   "layers": [
+    "tvarované zóny",
+    "studená pěna",
+    "snímatelný potah"
+   ],
+   "alt": "Matrace Dia 20 Hi, ukázka složení a řezu matrace",
+   "tags": [
+    "antidekubitni"
+   ]
+  },
+  {
+   "name": "Matrace Gita Plus",
+   "price": 6740,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Vysoká oboustranná matrace z kvalitní studené pěny, vysoce prodyšná."
+   ],
+   "specs": [
+    "Tvrdost T3 střední",
+    "Výška 20 cm",
+    "Zatížení do 130 kg",
+    "Možnost praní potahu na 40 °C",
+    "Materiál potahu STANDARD - jersey prošitý polyesterovým rounem z dutého vlákna",
+    "Materiál jádra - kvalitní vysoce elastická studená pěna HR 4037",
+    "Prodyšnost matrace - vysoká",
+    "Umístění matrace - lamelový rošt, laťový rošt, pevná deska",
+    "Hmotnost matrace 200x90 - 17 kg",
+    "Zhotovíme libovolné rozměry matrace"
+   ],
+   "img": "200003756-87a33889dc",
+   "id": "gita-plus",
+   "sub": "studená pěna, výška 20 cm",
+   "product": null,
+   "height": 20,
+   "load": 130,
+   "firm": "T3",
+   "cover": "Materiál potahu STANDARD - jersey prošitý polyesterovým rounem z dutého vlákna",
+   "layers": [
+    "studená pěna",
+    "snímatelný potah",
+    "HR pěna"
+   ],
+   "alt": "Matrace Gita Plus, ukázka složení a řezu matrace",
+   "tags": [
+    "detske"
+   ]
+  },
+  {
+   "name": "Matrace Nikol",
+   "price": 7750,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Unikátní oboustranná matrace v kombinaci latex - studená pěna, opatřená 3D mřížkou s vysokou prodyšností. Vrchní vrstvy jsou zhotoveny z kvalitního latexu s masážním profilem. Střední vrstva je vyrobena z tvrdé kvalitní studené pěny typu HR4542 a unikátní 3D mřížky, která zaručuje perfektní odvětrání matrace.",
+    "Velmi kvalitní matrace s latexem, který matraci obměkčí a tvrdá studená pěna ležení podrží a páteři je oporou. Matrace je vhodná pro dospělé a starší uživatele a hlavně také nově si mohou latexovou matraci dovolit i lidé, kteří mají potíže s nadměrným pocením. 3D mřížka odvádí přebytečnou vlhkost a tímto zajištuje kvalitní odvětrávání matrace."
+   ],
+   "specs": [
+    "Tvrdost T4- tvrdá",
+    "Výška 18cm",
+    "Zatížení do 130kg",
+    "Prodyšnost: velmi vysoká",
+    "Materiál potahu: ALOE VERA prošitý polyesterovým rounem z dutého vlákna",
+    "Praní potahu do 40°C",
+    "Umístění matrace lamelový rošt, laťový roš , pevná deska, polohovací rošt",
+    "Hmotnost 90x200cm 16kg"
+   ],
+   "img": "200003690-d3d2fd4ccc",
+   "id": "nikol",
+   "sub": "studená pěna s latexem a 3D mřížkou",
+   "product": null,
+   "height": 18,
+   "load": 130,
+   "firm": "T4",
+   "cover": "Materiál potahu: ALOE VERA prošitý polyesterovým rounem z dutého vlákna",
+   "layers": [
+    "latex",
+    "studená pěna",
+    "3D mřížka",
+    "potah Aloe Vera"
+   ],
+   "alt": "Matrace Nikol, ukázka složení a řezu matrace",
+   "tags": []
+  },
+  {
+   "name": "Matrace Natálie",
+   "price": 6850,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Oboustranná matrace v kombinaci latex - studená pěna. Vrchní vrstvy jsou zhotoveny z kvalitního latexu s masážním profilem. Střední vrstva je vyrobena z tvrdé kvalitní studené pěny typu HR4542.",
+    "Velmi kvalitní matrace s latexem, který matraci obměkčí a tvrdá studená pěna ležení podrží a páteři je oporou. Matrace je vhodná pro dospělé a starší uživatele."
+   ],
+   "specs": [
+    "Tvrdost T4- tvrdá",
+    "Výška 17cm",
+    "Zatížení do 130kg",
+    "Prodyšnost střední",
+    "Materiál potahu: ALOE VERA prošitý polyesterovým rounem z dutého vlákna",
+    "Praní potahu do 40°C",
+    "Umístění matrace lamelový rošt, laťový roš , pevná deska, polohovací rošt",
+    "Hmotnost 90x200cm 16kg"
+   ],
+   "img": "200003689-d11f5d218c",
+   "id": "natalie",
+   "sub": "studená pěna s latexem",
+   "product": null,
+   "height": 17,
+   "load": 130,
+   "firm": "T4",
+   "cover": "Materiál potahu: ALOE VERA prošitý polyesterovým rounem z dutého vlákna",
+   "layers": [
+    "latex",
+    "studená pěna",
+    "potah Aloe Vera"
+   ],
+   "alt": "Matrace Natálie, ukázka složení a řezu matrace",
+   "tags": []
+  },
+  {
+   "name": "Matrace Ela",
+   "price": 3730,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Jednozónová oboustranná sendvičová polyuretanová matrace. Vhodná pro děti. Vrchní vrstvy jsou z kvalitní polyuretanové pěny typu T2337. Střední vrstva je z pojené plyuretanové pěny typu R80. S potahem ALOE VERA prošitý polyesterovým rounem z dutého vlákna."
+   ],
+   "specs": [
+    "Tvrdost T4",
+    "Výška 14cm",
+    "Zatížení do 125kg",
+    "Praní potahu do 40°C",
+    "Materiál potahu: ALOE VERA prošitý polyesterovým rounem z dutého vlákna",
+    "Materiál jádra: Vrchní vrstvy jsou z kvalitní polyuretanové pěny typu T2337. Střední vrstva je z pojené plyuretanové pěny typu R80.",
+    "Prodyšnost matrace - střední",
+    "Umístění matrace - lamelový rošt, laťový rošt, pevná deska, nevhodná na polohovací rošt",
+    "Hmotnost matrace - 200x90cm - 17kg",
+    "Možnost praní potahu na 40 °C"
+   ],
+   "img": "200003682-79c297abc8",
+   "id": "ela",
+   "sub": "PUR pěna",
+   "product": null,
+   "height": 14,
+   "load": 125,
+   "firm": "T4",
+   "cover": "Materiál potahu: ALOE VERA prošitý polyesterovým rounem z dutého vlákna",
+   "layers": [
+    "tvarované zóny",
+    "PUR pěna",
+    "potah Aloe Vera"
+   ],
+   "alt": "Matrace Ela, ukázka složení a řezu matrace",
+   "tags": [
+    "detske"
+   ]
+  },
+  {
+   "name": "Matrace Giana",
+   "price": 4350,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Jednostranná matrace z kvalitní studené pěny s antidekubitním profilem vhodná pro osoby dlouhodobě upoutané na lůžku, vysoce vzdušná."
+   ],
+   "specs": [
+    "Tvrdost T3 střední",
+    "Výška 13 cm",
+    "Zatížení do 130 kg",
+    "Možnost praní potahu na 40 °C",
+    "Materiál potahu: zimní strana - bavlna s polyesterem, prošitý vlněným rounem; letní strana - bavlna s polyesterem, prošitý bavlněným rounem",
+    "Materiál jádra - kvalitní vysoce elastická studená pěny HR4037 s antidekubitním prořezem",
+    "Doporučujeme přiobjednat antibakteriální potah ALOE VERA nebo SILVER za příplatek 550,-Kč",
+    "Prodyšnost matrace - vysoká",
+    "Umístění matrace - lamelový rošt, laťový rošt, pevná deska",
+    "Hmotnost matrace 200x90 - 10,5 kg",
+    "Zhotovíme libovolné rozměry a tvary matrace"
+   ],
+   "img": "200003444-78d2879cc8",
+   "id": "giana",
+   "sub": "antidekubitní",
+   "product": null,
+   "height": 13,
+   "load": 130,
+   "firm": "T3",
+   "cover": "Materiál potahu: zimní strana - bavlna s polyesterem, prošitý vlněným rounem; letní strana - bavlna s polyesterem, prošitý bavlněným rounem",
+   "layers": [
+    "studená pěna",
+    "potah Aloe Vera / Silver"
+   ],
+   "alt": "Matrace Giana, ukázka složení a řezu matrace",
+   "tags": [
+    "antidekubitni",
+    "alergici"
+   ]
+  },
+  {
+   "name": "Matrace Simona",
+   "price": 5540,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Sedmizónová oboustranná matrace ze studené pěny s rozdílnou tvrdostí stran , výškou 17 cm a potahem ALOE VERA."
+   ],
+   "specs": [
+    "Rozdílná tvrdost stran: oranžová strana - T4 vyšší tvrdost; modrá strana - T3 střední tvrdost",
+    "Výška 17 cm",
+    "Zatížení do 130 kg",
+    "Možnost praní potahu na 40 °C",
+    "Materiál potahu - potah obsahuje výtažek z ALOE VERA a je prošitý polyesterovým rounem z dutého vlákna",
+    "Materiál jádra - modrá strana je vyrobena z vysoce elestické studené pěny HR4037 se sedmi anatomickými zónami a oranžová strana je vyrobena ze studené pěny HR4542 se sedmi anatomickými zónami",
+    "Prodyšnost matrace - vysoká",
+    "Umístění matrace - lamelový rošt, laťový rošt, pevná deska",
+    "Hmotnost matrace 200x90 - 14 kg",
+    "Zhotovíme libovolné rozměry a tvary matrace"
+   ],
+   "img": "200003446-4ee6d4fe0a",
+   "id": "simona",
+   "sub": "vyšší tvrdost, studená pěna",
+   "product": null,
+   "height": 17,
+   "load": 130,
+   "firm": "T4 / T3",
+   "cover": "Materiál potahu - potah obsahuje výtažek z ALOE VERA a je prošitý polyesterovým rounem z dutého vlákna",
+   "layers": [
+    "tvarované zóny",
+    "studená pěna",
+    "potah Aloe Vera"
+   ],
+   "alt": "Matrace Simona, ukázka složení a řezu matrace",
+   "tags": [
+    "senior"
+   ]
+  },
+  {
+   "name": "Matrace Lenka",
+   "price": 5720,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Třízónová matrace z tvrdé a kvalitní studené pěny vhodná pro vyšší zatížení."
+   ],
+   "specs": [
+    "Tvrdost T4 - T5 vyšší až vysoká",
+    "Výška 16 cm",
+    "Zatížení do 130 kg",
+    "Možnost praní potahu na 40 °C",
+    "Materiál potahu: zimní strana - bavlna s polyesterem, prošitý vlněným rounem; letní strana - bavlna s polyesterem, prošitý bavlněným rounem",
+    "Materiál jádra - vysoce kvalitní studené pěny HR4542. Matrace má tři anatomické zóny.",
+    "Prodyšnost matrace - vysoká",
+    "Umístění matrace - lamelový rošt, laťový rošt, pevná deska",
+    "Hmotnost matrace 200x90 - 14 kg",
+    "Zhotovíme libovolné rozměry a tvary matrace"
+   ],
+   "img": "200003448-5e29a5f246",
+   "id": "lenka",
+   "sub": "vysokozátěžová",
+   "product": null,
+   "height": 16,
+   "load": 130,
+   "firm": "T4 / T5",
+   "cover": "Materiál potahu: zimní strana - bavlna s polyesterem, prošitý vlněným rounem; letní strana - bavlna s polyesterem, prošitý bavlněným rounem",
+   "layers": [
+    "tvarované zóny",
+    "studená pěna",
+    "snímatelný potah"
+   ],
+   "alt": "Matrace Lenka, ukázka složení a řezu matrace",
+   "tags": [
+    "vysokozatezove"
+   ]
+  },
+  {
+   "name": "Matrace Lea",
+   "price": 5690,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Pětizónová oboustranná antibakteriální matrace vysoká 15 cm střední tvrdosti složená ze studené pěny a antibakteriální pěny."
+   ],
+   "specs": [
+    "Tvrdost T3 střední",
+    "Výška 15 cm",
+    "Zatížení do 130 kg",
+    "Možnost praní potahu na 40 °C",
+    "Materiál potahu - antibakteriální potah SILVER s obsahem stříbrných částic, prošitý polyesterovým rounem z dutého vlákna",
+    "Materiál jádra - střední vrstva je vyrobena z kvalitní vysoce elestické studené pěny HR 4037 a vrchní vrstvy jsou z antibakteriální pěny na bázi iontů stříbra s masážním profilem rozděleným do pěti anatomických zón",
+    "Prodyšnost matrace - vysoká",
+    "Umístění matrace - lamelový rošt, laťový rošt, pevná deska",
+    "Hmotnost matrace 200x90 - 12 kg",
+    "Libovolné rozměry matrace na objednávku"
+   ],
+   "img": "200003452-2e5292f4c9",
+   "id": "lea",
+   "sub": "antibakteriální s ionty stříbra",
+   "product": null,
+   "height": 15,
+   "load": 130,
+   "firm": "T3",
+   "cover": "Materiál potahu - antibakteriální potah SILVER s obsahem stříbrných částic, prošitý polyesterovým rounem z dutého vlákna",
+   "layers": [
+    "tvarované zóny",
+    "studená pěna",
+    "potah Silver",
+    "HR pěna"
+   ],
+   "alt": "Matrace Lea, ukázka složení a řezu matrace",
+   "tags": [
+    "alergici"
+   ]
+  },
+  {
+   "name": "Matrace Berta",
+   "price": 9890,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Pětizónová oboustranná taštičková matrace pro vysoké zatížení s výškou 28 cm a potahem ALOE VERA."
+   ],
+   "specs": [
+    "Tvrdost T3 střední",
+    "Výška 28 cm",
+    "Zatížení do 150 kg",
+    "Možnost praní potahu na 40 °C",
+    "Materiál potahu - potah obsahuje výtažek z ALOE VERA a je prošitý polyesterovým rounem z dutého vlákna",
+    "Materiál jádra - vrchní vrstvy jsou vyrobeny z vysoce kvalitního 100% přírodního latexu s dlouhou životností, spodní vrstvy jsou kombinací RE peně a desek z kokosového vlákna, taštičková pružinová kostra je rozdělena do pěti anatomických zón, počet taštičet v rozměru 200x90 cm je 390 ks",
+    "Prodyšnost matrace - vysoká",
+    "Umístění matrace - lamelový rošt, laťový rošt, pevná deska",
+    "Hmotnost matrace 200x90 - 32 kg",
+    "Libovolné rozměry matrace na objednávku"
+   ],
+   "img": "200003454-372de3827e",
+   "id": "berta",
+   "sub": "vysokozátěžová taštičková, do 150 kg",
+   "product": null,
+   "height": 28,
+   "load": 150,
+   "firm": "T3",
+   "cover": "Materiál potahu - potah obsahuje výtažek z ALOE VERA a je prošitý polyesterovým rounem z dutého vlákna",
+   "layers": [
+    "tvarované zóny",
+    "taštičkové pružiny",
+    "potah Aloe Vera",
+    "latex",
+    "kokosová vrstva"
+   ],
+   "alt": "Matrace Berta, ukázka složení a řezu matrace",
+   "tags": [
+    "vysokozatezove",
+    "tastickove"
+   ]
+  },
+  {
+   "name": "Matrace Andrea",
+   "price": 4620,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Oboustranná pětizónová matrace sendvičového typu v kombinaci studené pěny a pojené pěny. Velmi vhodná pro vyšší zatížení. Matraci doporučujeme pro milovníky tvrdého spaní, má velmi příznivé recenze zákazníků od pomoci s bolestmi zad nejen z fyzického vypětí, ale i ze strnulého sezení."
+   ],
+   "specs": [
+    "Tvrdost T3 - T4 střední až vyšší",
+    "Výška 17 cm",
+    "Zatížení do 130 kg",
+    "Možnost praní potahu na 40 °C",
+    "Materiál potahu: zimní strana - bavlna s polyesterem, prošitý vlněným rounem; letní strana - bavlna s polyesterem, prošitý bavlněným rounem",
+    "Materiál jádra - vrchní vrstvy jsou z kvalitní studené pěny typu HR 3530 s masážním profilem rozděleným do pěti anatomických zón a střední vrstva je z pojené tvrzené polyuretanové pěny typu R80",
+    "Prodyšnost matrace - střední",
+    "Umístění - lamelový rošt, laťový rošt, pevná deska",
+    "Hmotnost matrace 200x90 - 17 kg",
+    "Zhotovíme libovolné rozměry a tvary matrace"
+   ],
+   "img": "200003456-836a984652",
+   "id": "andrea",
+   "sub": "vysokozátěžová",
+   "product": null,
+   "height": 17,
+   "load": 130,
+   "firm": "T3 / T4",
+   "cover": "Materiál potahu: zimní strana - bavlna s polyesterem, prošitý vlněným rounem; letní strana - bavlna s polyesterem, prošitý bavlněným rounem",
+   "layers": [
+    "tvarované zóny",
+    "studená pěna",
+    "snímatelný potah",
+    "HR pěna",
+    "PUR pěna"
+   ],
+   "alt": "Matrace Andrea, ukázka složení a řezu matrace",
+   "tags": [
+    "vysokozatezove"
+   ]
+  },
+  {
+   "name": "Matrace Gita",
+   "price": 4100,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Oboustranná matrace z kvalitní studené pěny, vysoce prodyšná. Matrace je velmi vhodná pro děti a dospívající. Bezzónové provedení podporuje správný růst a vývoj páteře u dětí. Je také vhodná pro dospělé při bolestech zad nejen v bederní části, ale i s krční páteří."
+   ],
+   "specs": [
+    "Tvrdost T3 střední",
+    "Výška 13 cm",
+    "Zatížení do 130 kg",
+    "Možnost praní potahu na 40 °C",
+    "Materiál potahu: zimní strana - bavlna s polyesterem, prošitý vlněným rounem; letní strana - bavlna s polyesterem, prošitý bavlněným rounem",
+    "Materiál jádra - kvalitní vysoce elastická studená pěna HR 4037",
+    "Prodyšnost matrace - vysoká",
+    "Umístění matrace - lamelový rošt, laťový rošt, pevná deska",
+    "Hmotnost matrace 200x90 - 11 kg",
+    "Zhotovíme libovolné rozměry matrace na poptávku (úprava zmenšení matrace bezplatná)"
+   ],
+   "img": "200003460-1e8231f7ba",
+   "id": "gita",
+   "sub": "studená pěna",
+   "product": null,
+   "height": 13,
+   "load": 130,
+   "firm": "T3",
+   "cover": "Materiál potahu: zimní strana - bavlna s polyesterem, prošitý vlněným rounem; letní strana - bavlna s polyesterem, prošitý bavlněným rounem",
+   "layers": [
+    "studená pěna",
+    "tvarované zóny",
+    "snímatelný potah",
+    "HR pěna"
+   ],
+   "alt": "Matrace Gita, ukázka složení a řezu matrace",
+   "tags": [
+    "detske"
+   ]
+  },
+  {
+   "name": "Matrace Diana",
+   "price": 5690,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Sedmizónová oboustranná matrace ve složení líná pěna – studená pěna se střední tvrdostí, výškou 18 cm a potahem ALOE VERA."
+   ],
+   "specs": [
+    "Dvojí tvrdost stran: oranžová strana - T2 až T3 nížší až střední tvrdost; zelená strana - T3 střední tvrdost",
+    "Výška 18 cm",
+    "Zatížení do 130 kg",
+    "Možnost praní potahu na 40 °C",
+    "Materiál potahu - potah obsahuje výtažek z ALOE VERA a je prošitý polyesterovým rounem z dutého vlákna",
+    "Materiál jádra - vrchní vrstvy jsou vyrobeny z kvalitní viscoelastické pěny (líná pěna) o hustotě 41 kg/m3 s masážním profilem rozděleným do sedmi anatomických zón, střední vrstva modrá je vyrobena z kvalitní vysoce elastické studené pěny HR 4037 a střední vrstva zelená je vyrobena z kvalitní vysoce elastické studené pěny HR 3835",
+    "Prodyšnost matrace - vysoká",
+    "Umístění matrace - lamelový rošt, laťový rošt, pevná deska",
+    "Hmotnost matrace 200x90 - 14 kg",
+    "Libovolné rozměry matrace na objednání"
+   ],
+   "img": "200003469-bab70bbb1e",
+   "id": "diana",
+   "sub": "líná pěna",
+   "product": null,
+   "height": 18,
+   "load": 130,
+   "firm": "T2 / T3",
+   "cover": "Materiál potahu - potah obsahuje výtažek z ALOE VERA a je prošitý polyesterovým rounem z dutého vlákna",
+   "layers": [
+    "tvarované zóny",
+    "líná pěna",
+    "studená pěna",
+    "potah Aloe Vera",
+    "HR pěna"
+   ],
+   "alt": "Matrace Diana, ukázka složení a řezu matrace",
+   "tags": [
+    "senior"
+   ]
+  },
+  {
+   "name": "Matrace Petra",
+   "price": 3950,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Jádro matrace je vyrobeno ze dvou typů PUR pěny různé tvrdosti - měkká a tvrdá strana. Matrace má pět anatomických zón . Hlavní výhodou této matrace je její výška 20cm a výhodná cena.",
+    "Pětizónová oboustranná polyuretanová matrace s větracími komůrkami, rozdílnou tvrdostí stran a výškou 19 cm."
+   ],
+   "specs": [
+    "Rozdílná tvrdost stran: modrozelená strana - T3-T4 střední až vyšší tvrdost; bílá strana - T4 vyšší tvrdost",
+    "Výška 19 cm",
+    "Zatížení do 120 kg",
+    "Vynikající poměr kvalita - cena",
+    "Možnost praní potahu na 40 °C",
+    "Materiál potahu - bavlna s polyesterem, prošitý s polyesterovým rounem z dutého vlákna",
+    "Materiál jádro - zelená strana je vyrobena z kvalitní PUR pěny střední tvrdosti a bílá strana je vyrobena z kvalitní PUR pěny vyšší tvrdosti. Matrace má pět anatomických zón.",
+    "Prodyšnost matrace vysoká",
+    "Umístění matrace - lamelový rošt, laťový rošt, pevná deska",
+    "Hmotnost matrace 200x90 - 10,5 kg"
+   ],
+   "img": "200000895-a738aa832b",
+   "id": "petra",
+   "sub": "PUR pěna",
+   "product": null,
+   "height": 19,
+   "load": 120,
+   "firm": "T3 / T4",
+   "cover": "Materiál potahu - bavlna s polyesterem, prošitý s polyesterovým rounem z dutého vlákna",
+   "layers": [
+    "PUR pěna",
+    "tvarované zóny",
+    "snímatelný potah"
+   ],
+   "alt": "Matrace Petra, ukázka složení a řezu matrace",
+   "tags": []
+  },
+  {
+   "name": "Matrace Jana",
+   "price": 3340,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Pětizónová oboustranná polyuretanová matrace pro střední zatížení a výškou 15 cm."
+   ],
+   "specs": [
+    "Tvrdost T3 střední",
+    "Výška 15 cm",
+    "Zatížení do 95 kg",
+    "Možnost praní potahu na 40 °C",
+    "Materiál potahu - bavlna s polyesterem, prošitý s polyesterovým rounem z dutého vlákna",
+    "Materiál jádra - kvalitní polyuretanová pěna typu T2337 z jedné strany s masážním profilem rozděleným do pěti anatomických zón",
+    "Prodyšnost matrace - vysoká",
+    "Vynikající poměr kvalita - cena",
+    "Umístění matrace - lamelový rošt, laťový rošt, pevná deska",
+    "Hmotnost matrace 200x90 - 8 kg"
+   ],
+   "img": "200000894-e60a0e663f",
+   "id": "jana",
+   "sub": "PUR pěna",
+   "product": null,
+   "height": 15,
+   "load": 95,
+   "firm": "T3",
+   "cover": "Materiál potahu - bavlna s polyesterem, prošitý s polyesterovým rounem z dutého vlákna",
+   "layers": [
+    "tvarované zóny",
+    "PUR pěna",
+    "snímatelný potah"
+   ],
+   "alt": "Matrace Jana, ukázka složení a řezu matrace",
+   "tags": []
+  },
+  {
+   "name": "Matrace Klára",
+   "price": 4520,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Unikátní oboustranná matrace sendvičového typu s rozdílnou tvrdostí stran a výškou 16 cm. Velmi vhodná pro děti a dospívající. Díky svému bezónovému provedení působí velmi příznivě na růst a vývoj páteře. Vyšší tvrdost a rovné pevné jádro ocení i dospělý pro vyrovnání zad."
+   ],
+   "specs": [
+    "Rozdílná tvrdost stran: modrá strana - T3-T4 střední až vyšší tvrdost; zelená strana - T3 střední tvrdost",
+    "Výška 16 cm",
+    "Zatížení do 130 kg",
+    "Možnost praní potahu na 40 °C",
+    "Materiál potahu: zimní strana - bavlna s polyesterem, prošitý vlněným rounem; letní strana - bavlna s polyesterem, prošitý bavlněným rounem",
+    "Materiál jádra - modrá strana je vyrobena z kvalitní vysoce elastické studené pěny HR4037, zelená strana je vyrobena z kvalitní studená pěna HR3835 a střední vrstva je vyrobena z pojené polyuretanové pěny R80",
+    "Prodyšnost matrace - střední",
+    "Umístění matrace - lamelový rošt, laťový rošt, pevná deska",
+    "Hmotnost matrace 200x90 - 17 kg",
+    "Zhotovíme libovolné rozměry a tvary matrace"
+   ],
+   "img": "200003473-a2e72a3e05",
+   "id": "klara",
+   "sub": "vyšší tvrdost",
+   "product": null,
+   "height": 16,
+   "load": 130,
+   "firm": "T3 / T4",
+   "cover": "Materiál potahu: zimní strana - bavlna s polyesterem, prošitý vlněným rounem; letní strana - bavlna s polyesterem, prošitý bavlněným rounem",
+   "layers": [
+    "tvarované zóny",
+    "snímatelný potah",
+    "studená pěna",
+    "PUR pěna"
+   ],
+   "alt": "Matrace Klára, ukázka složení a řezu matrace",
+   "tags": [
+    "detske"
+   ]
+  },
+  {
+   "name": "Matrace Ola",
+   "price": 5360,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Jádro matrace je vyrobeno ze dvou typů HR pěny tzv. studené pěny o různé tvrdosti a líné pěny. Z obou stran má matrace masážní profil, který má sedm anatomických zón. Mechanické vlastnosti a odolnost matrace jsou srovnatelné s latexovými matracemi. Snímatelný potah je zhotoven z kvalitní pletené látky. Potah má letní stranu, která je prošitá bavlněným rounem a zimní stranu prošitou vlněným rounem."
+   ],
+   "specs": [
+    "Vysoká vzdušnost matrace",
+    "Výška 16 cm",
+    "Tvrdost střední",
+    "Zatížení do 130 kg",
+    "Alergicky neutrální",
+    "Možnost praní potahu na 30°C",
+    "Rozdílná tvrdost stran",
+    "Umístění: lamelový rošt, laťový rošt, pevná deska"
+   ],
+   "img": "200003489-c88b4c9852",
+   "id": "ola",
+   "sub": "studená a líná pěna",
+   "product": null,
+   "height": 16,
+   "load": 130,
+   "firm": "střední",
+   "cover": "",
+   "layers": [
+    "HR pěna",
+    "studená pěna",
+    "líná pěna",
+    "tvarované zóny",
+    "latex",
+    "snímatelný potah"
+   ],
+   "alt": "Matrace Ola, ukázka složení a řezu matrace",
+   "tags": [
+    "senior"
+   ]
+  },
+  {
+   "name": "Matrace Karolína",
+   "price": 6340,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Oboustranná pětizónová taštičková matrace s masážním profilem ze studené pěny, vysoce prodyšná, s výškou 24 cm."
+   ],
+   "specs": [
+    "Tvrdost T3 až T4 střední až vyšší",
+    "Výška 24 cm",
+    "Zatížení do 130 kg",
+    "Možnost praní potahu na 40 °C",
+    "Materiál potahu: zimní strana - bavlna s polyesterem, prošitý vlněným rounem; letní strana - bavlna s polyesterem, prošitý bavlněným rounem",
+    "Materiál jádra - vysoce kvalitní taštičková pružinová kostra rozdělena do pěti anatomických zón, počet taštiček v rozměru 200x90 je 348 ks, vrchní vrstvy jsou vyrobeny z kvalitní pojené polyuretanové pěny R80 a kvalitní studené pěny HR3530 s masážním profilem rozděleným do pěti anatomických zón",
+    "Prodyšnost matrace - vysoká",
+    "Umístění matrace - lamelový rošt, laťový rošt, pevná deska",
+    "Hmotnost matrace 200x90 - 28 kg"
+   ],
+   "img": "200003493-6608067026",
+   "id": "karolina",
+   "sub": "taštičková a studená pěna",
+   "product": null,
+   "height": 24,
+   "load": 130,
+   "firm": "T3 / T4",
+   "cover": "Materiál potahu: zimní strana - bavlna s polyesterem, prošitý vlněným rounem; letní strana - bavlna s polyesterem, prošitý bavlněným rounem",
+   "layers": [
+    "tvarované zóny",
+    "taštičkové pružiny",
+    "studená pěna",
+    "snímatelný potah",
+    "PUR pěna"
+   ],
+   "alt": "Matrace Karolína, ukázka složení a řezu matrace",
+   "tags": [
+    "tastickove"
+   ]
+  },
+  {
+   "id": "arela-plus-senior",
+   "name": "Senior matrace Arela Plus",
+   "sub": "studená pěna, tuhý okraj",
+   "price": 9250,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Senior matrace Arela Plus má optimální kombinaci měkkosti a podpory. Antidekubitní prořezy a potah z revoluční látky Tencel zajišťují, že matrace je nejen pohodlná, ale také zlepšuje cirkulaci vzduchu a snižuje tlak na kritická místa, což významně přispívá k prevenci vzniku proleženin. Pevný okraj poskytuje stabilitu, která usnadňuje vstávání a usedání. Matrace s pevným okrajem nejsou vhodné pro polohovací rošty. Rozměry matrace a jiné požadavky navolte v poptávkovém formuláři viz níže."
+   ],
+   "specs": [
+    "Tuhost H3 střední",
+    "Materiál jádra studená HR pěna",
+    "Výška matrace 24cm - vyrobíme i jiné",
+    "Unikátní nosnost 150kg",
+    "Prodyšný potah Tencel pratelný na zip odolný vůči bakteriím",
+    "Antidekubitní průřezy - podpora prokrvení těla",
+    "Antialergení protiroztočová úprava"
+   ],
+   "img": "200007998-979cb979cd",
+   "product": "senior-matrace-arela-plus-v-24cm-na-150kg-9250-kc-poptat-objednat",
+   "alt": "Senior matrace Arela Plus, ukázka složení a řezu matrace",
+   "height": 24,
+   "load": 150,
+   "firm": "H3",
+   "cover": "",
+   "layers": [
+    "snímatelný potah",
+    "tuhý okraj",
+    "HR pěna"
+   ],
+   "tags": [
+    "senior",
+    "antidekubitni",
+    "alergici"
+   ]
+  },
+  {
+   "id": "arela-soft-senior",
+   "name": "Senior matrace Arela Soft",
+   "sub": "měkčí, tuhý okraj",
+   "price": 9250,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Pětizónová matrace Arella Soft+ Senior je ideální volbou pro seniory, kteří upřednostňují měkčí lůžko s výbornou oporou. Díky antidekubitním prořezům matrace zajišťuje prevenci vzniku proleženin, což je klíčové pro starší osoby, které tráví více času na lůžku. Studená pěna s vysokou hustotou poskytuje potřebnou oporu, zatímco potah z látky Tencel je mimořádně jemný na dotek, což přispívá k pohodlí a snadné údržbě. Změkčená ramenní oblast, pro ještě kvalitnější spánek. Dokonalým zlepšením matrace pro seniory je pevný okraj matrace, který zajišťuje bezpečnost, stabilitu a jistotu při vstávání a usedání. Rozměry matrace a jiné požadavky navolte v poptávkovém formuláři níže."
+   ],
+   "specs": [
+    "Tuhost H2 měkká",
+    "Materiál jádra studená HR pěna",
+    "Výška matrace 24cm - vyrobíme i jiné rozměry",
+    "Unikátní nosnost 150kg",
+    "Prodyšný potah Tencel pratelný na zip odolný vůči bakteriím",
+    "Antidekubitní průřezy - podpora prokrvení těla",
+    "Antialergení protiroztočová úprava"
+   ],
+   "img": "200007930-cc535cc537",
+   "product": "senior-matrace-arela-soft-24cm-na-150kg-9250-kc-poptat-objednat",
+   "alt": "Senior matrace Arela Soft, ukázka složení a řezu matrace",
+   "height": 24,
+   "load": 150,
+   "firm": "H2",
+   "cover": "",
+   "layers": [
+    "tvarované zóny",
+    "studená pěna",
+    "snímatelný potah",
+    "tuhý okraj",
+    "HR pěna"
+   ],
+   "tags": [
+    "senior",
+    "antidekubitni",
+    "alergici"
+   ]
+  },
+  {
+   "id": "caeli-senior",
+   "name": "Senior matrace Caeli",
+   "sub": "gelový efekt, tuhý okraj",
+   "price": 13300,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Matrace je navržena s ohledem na potřeby seniorů, kteří hledají kombinaci luxusního pohodlí a vynikající opory. Dvě vrstvy speciálních pěn s gelovým efektem a vysokou hustotou poskytují ergonomickou podporu, zatímco zónování v pěti oblastech zaručuje, že každá část těla dostává optimální péči. Tuhý pěnový okraj matrace zajišťuje stabilitu při vstávání a usedání, což snižuje riziko pádu. Matrace s pevným okrajem nejsou vhodné pro polohovací rošty."
+   ],
+   "specs": [
+    "Tuhost H2 měkká a H3 střední",
+    "Materiál jádra na povrchu GT pěna s gelovým efektem, spodní LS studená pěna o vysoké hustotě",
+    "Výška matrace 24cm - vyrobíme i jiné rozměry",
+    "Nosnost 150kg",
+    "Potah Modena - antibakteriální směs Modalu hebký a s regulací vlhkosti",
+    "Měkčí ramenní oblast",
+    "Antidekubitní průřezy"
+   ],
+   "img": "200007948-1b0f61b0f8",
+   "product": "senior-matrace-caeli-24cm-na-150kg",
+   "alt": "Senior matrace Caeli, ukázka složení a řezu matrace",
+   "height": 24,
+   "load": 150,
+   "firm": "H2 / H3",
+   "cover": "Potah Modena - antibakteriální směs Modalu hebký a s regulací vlhkosti",
+   "layers": [
+    "gelová vrstva",
+    "tvarované zóny",
+    "tuhý okraj",
+    "studená pěna",
+    "snímatelný potah"
+   ],
+   "tags": [
+    "senior",
+    "antidekubitni",
+    "alergici",
+    "gelove"
+   ]
+  },
+  {
+   "id": "dia-relax-senior",
+   "name": "Senior matrace Dia Relax",
+   "sub": "hybridní pěna, tuhý okraj",
+   "price": 8750,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Matrace nabízí pevný podklad, který je ideální pro seniory, kteří preferují stabilnější lůžko. Měkká vrstva hybridní pěny dokonale odpruží tlak vašeho těla tak, že může dojít k okamžitému uvolnění svalů a relaxaci. Díky kombinaci hybridní pěny a potahu z bambusové látky poskytuje matrace nejen vysokou míru pohodlí, ale také podporu, která je nezbytná pro udržení správné polohy těla během spánku. Pevný okraj matrace navíc zajišťuje, že vstávání a usedání jsou bezpečnější a pohodlnější. Pevný okraj matrace zajišťuje stabilitu a jistotu při vstávání a usedání. Matrace s pevným okrajem nejsou vhodné pro polohovací rošty."
+   ],
+   "specs": [
+    "Tuhost H2 měkká a H3 střední",
+    "Materiál jádra vrchní díly hybridní pěna, vnitřní díl studená HR pěna",
+    "Výška matrace 24cm - vyrobíme i jiné rozměry",
+    "Nosnost 130kg",
+    "Potah Bamboo antialergenní s absorpcí vlhkosti",
+    "Měkčí ramenní oblast",
+    "Dvě tvrdosti stran"
+   ],
+   "img": "200007947-7d8547d856",
+   "product": "senior-matrace-dia-relax-na-130kg",
+   "alt": "Senior matrace Dia Relax, ukázka složení a řezu matrace",
+   "height": 24,
+   "load": 130,
+   "firm": "H2 / H3",
+   "cover": "Potah Bamboo antialergenní s absorpcí vlhkosti",
+   "layers": [
+    "potah bambus",
+    "tuhý okraj",
+    "HR pěna"
+   ],
+   "tags": [
+    "senior",
+    "alergici"
+   ]
+  },
+  {
+   "id": "juna-senior",
+   "name": "Senior matrace Juna",
+   "sub": "hybridní pěna, tuhý okraj",
+   "price": 6440,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Pětizónová matrace Juna Senior je navržena tak, aby poskytovala výjimečnou podporu a komfort seniorům, kteří potřebují stabilní, ale příjemně přizpůsobivý podklad. Hybridní pěny kombinují pevnost a lehkost, je velmi tvárná, dobře se přizpůsobuje kloubům, ale díky elasticitě pěny usnadňuje převalování a otáčení se na posteli. Stabilní podklad napomáhá optimální podpoře páteře a kloubů. Změkčení ramenní oblasti, pro ještě kvalitnější spánek. Speciální zpevněný okraj poskytuje jistotu při usedání a vstávání, což je ideální pro seniory s omezenou mobilitou. Rozměry matrace a jiné požadavky navolte v poptávkovém formuláři níže."
+   ],
+   "specs": [
+    "Tuhost H2 a H3 měkká a střední",
+    "Materiál jádra hybridní pěna",
+    "Výška 18cm - vyrobíme i jiné rozměry",
+    "Nosnost 120kg",
+    "Potah Medicott pratelný na 60°C - speciálně ošetřená bavlna protiroztočová"
+   ],
+   "img": "200007936-cfdf8cfdfa",
+   "product": "senior-matrace-juna-18cm-na-120kg",
+   "alt": "Senior matrace Juna, ukázka složení a řezu matrace",
+   "height": 18,
+   "load": 120,
+   "firm": "H2 / H3",
+   "cover": "Potah Medicott pratelný na 60°C - speciálně ošetřená bavlna protiroztočová",
+   "layers": [
+    "tvarované zóny",
+    "snímatelný potah"
+   ],
+   "tags": [
+    "senior",
+    "alergici"
+   ]
+  }
+ ],
+ "potahy": [
+  {
+   "name": "Potah Aloe Vera",
+   "price": 590
+  },
+  {
+   "name": "Potah Silver",
+   "price": 590
+  },
+  {
+   "name": "Potah Bambus",
+   "price": 700
+  }
+ ],
+ "doporuceni": [
+  {
+   "need": "při bolestech kloubů",
+   "text": "studená a líná pěna Diana"
+  },
+  {
+   "need": "při nadměrném pocení",
+   "text": "matrace s 3D mřížkou Nikol (3D mřížku nabízíme také jako podložku na matraci v rubrice Toppery)"
+  },
+  {
+   "need": "pro vysoké zatížení",
+   "text": "taštičková matrace Berta do 150kg, matrace Fortis do 180kg"
+  },
+  {
+   "need": "po operaci kyčlí",
+   "text": "tvrdší matrace: studená pěna Lenka, Klára, Andrea; střední tvrdost matrace Simona"
+  },
+  {
+   "need": "pro starší osoby",
+   "text": "líná pěna v kombinaci se studenou pěnou Ergonomic"
+  },
+  {
+   "need": "pro alergiky a atopiky",
+   "text": "s antibakteriální pěnou matrace Lea"
+  },
+  {
+   "need": "pro děti",
+   "text": "bezzónové matrace studená pěna Gita, Gita plus v.20cm, Klára, PUR pěna: Ela"
+  },
+  {
+   "need": "na chalupy a chaty",
+   "text": "vysoce prodyšné taštičkové a pružinové matrace Karolína, Karin"
+  },
+  {
+   "need": "pro osoby upoutané na lůžko",
+   "text": "antidekubitní matrace Giana"
+  },
+  {
+   "need": "při bolestech zad a při fyzickém vypětí",
+   "text": "ortopedická tvrdá matrace Fortis, matrace Andrea"
+  }
+ ],
+ "rosty": [
+  {
+   "name": "Lamelový rošt Cordo",
+   "price": 2300,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Kvalitní lamelový rošt má 28 lamel o šíři 38 mm, které jsou uloženy ve výkyvných gumových pouzdrech. Tento lamelový rošt má 5 dvojitých lamel v oblasti zad a pánve, u kterých lze nastavit tuhost. Vhodným nastavením tuhosti roštu a správným výběrem matrace se předchází bolestem zad. Zatížení roštu doporučujeme do 130 kg."
+   ],
+   "specs": [
+    "Výška roštu 5 cm",
+    "Šíře 79 a 89 cm",
+    "Délka 196 cm"
+   ],
+   "img": "200003435-39f7d3af1c",
+   "id": "r0",
+   "alt": "Lamelový rošt Cordo, foto výrobku",
+   "height": null,
+   "load": null,
+   "firm": "",
+   "cover": "",
+   "layers": []
+  },
+  {
+   "name": "Polohovatelný lamelový rošt Cordo P",
+   "price": 2850,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Kvalitní lamelový rošt má 28 lamel o šíři 38 mm, které jsou uloženy ve výkyvných gumových pouzdrech. Tento lamelový rošt má 5 dvojitých lamel v oblasti zad a pánve, u kterých lze nastavit tuhost. Vhodným nastavením tuhosti roštu a správným výběrem matrace se předchází bolestem zad. Rošt má 6 poloh v oblasti nohou a 13 poloh v oblasti hlavy. Zatížení roštu doporučujeme do 130 kg."
+   ],
+   "specs": [
+    "Výška 5 cm",
+    "Šíře 79 a 89 cm",
+    "Délka 196 cm"
+   ],
+   "img": "200002829-33631345d8",
+   "id": "r1",
+   "alt": "Polohovatelný lamelový rošt Cordo P, foto výrobku",
+   "height": null,
+   "load": null,
+   "firm": "",
+   "cover": "",
+   "layers": []
+  },
+  {
+   "name": "Lamelový rošt Cordo motorový",
+   "price": 7230,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Kvalitní lamelový rošt polohovatelný tichým elektromotorem s dálkovým ovládáním. Rošt má 28 lamel o šíři 38 mm, které jsou uloženy ve výkyvných gumových pouzdrech. Tento lamelový rošt má 5 dvojitých lamel v oblasti zad a pánve, u kterých lze nastavit tuhost. Vhodným nastavením tuhosti roštu a správným výběrem matrace se předchází bolestem zad. Zatížení roštu doporučujeme do 130 kg."
+   ],
+   "specs": [
+    "Výška 6 cm",
+    "Šíře 79 a 89 cm",
+    "Délka 196 cm"
+   ],
+   "img": "200002827-79aee7ba1f",
+   "id": "r2",
+   "alt": "Lamelový rošt Cordo motorový, foto výrobku",
+   "height": null,
+   "load": null,
+   "firm": "",
+   "cover": "",
+   "layers": []
+  },
+  {
+   "name": "Lamelový rošt Valérie výklopný z boku",
+   "price": 3960,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Kvalitní lamelový rošt má 28 lamel o šíři 38 mm, které jsou uloženy ve výkyvných gumových pouzdrech. Tento lamelový rošt má 5 dvojitých lamel v oblasti zad a pánve u které lze nastavit tuhost. Vhodným nastavením tuhosti roštu a správným výběrem matrace se předchází bolestem zad. Rošt má mechanizmus umožňující snadné zdvižení roštu , je vhodný do postele s úložným prostorem. Zatížení roštu doporučujeme do 130 kg."
+   ],
+   "specs": [
+    "Výška 6 cm",
+    "Šíře 79 a 89 cm",
+    "Délka 196 cm"
+   ],
+   "img": "200003436-0ec3c0fbda",
+   "id": "r3",
+   "alt": "Lamelový rošt Valérie výklopný z boku, foto výrobku",
+   "height": null,
+   "load": null,
+   "firm": "",
+   "cover": "",
+   "layers": []
+  },
+  {
+   "name": "Lamelový rošt výklopný z čela",
+   "price": 4780,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Kvalitní lamelový rošt má 28 lamel o šíři 38 mm, které jsou uloženy ve výkyvných gumových pouzdrech. Tento lamelový rošt má 5 dvojitých lamel v oblasti zad a pánve, u které lze nastavit tuhost. Vhodným nastavením tuhosti roštu a spávným výběrem matrace se předchází bolestem zad. Rošt má 5 poloh v oblasti nohou a 13 poloh v oblasti hlavy. Rošt má mechanizmus umožňující snadné zdvižení roštu, je vhodný do postele s uložným prostorem. Zatížení roštu doporučujeme do 130 kg."
+   ],
+   "specs": [
+    "Výška 6 cm",
+    "Šíře 79 a 89 cm",
+    "Délka 196 cm"
+   ],
+   "img": "200002540-c0342c12eb",
+   "id": "r4",
+   "alt": "Lamelový rošt výklopný z čela, foto výrobku",
+   "height": null,
+   "load": null,
+   "firm": "",
+   "cover": "",
+   "layers": []
+  }
+ ],
+ "toppery": [
+  {
+   "name": "Vodonepropustný chránič Sanapur",
+   "price": 1100,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Chránič Sanapur je speciální certifikovaná koženka určená pro náročné sanitární aplikace.",
+    "Sanapur je textilní laminát s polyuretanovým nánosem na technickém PES úpletu. Je vodonepropustný, hydrolyticky odolný a paropropustný. Má antibakteriální a protiplísňovou úpravu, zabezpečuje vysoký stupeň hygienické bezpečnosti (odolnost proti působení moči, výkalů, krve). Vyznačuje se rovněž vysokým stupněm mechanické odolnosti a dobrými zpracovatelskými vlastnostmi.",
+    "Čištění provádějte mýdlovou vodou nebo běžnými saponátovými prostředky pomocí houby nebo hadříku. Následně omyjte čistou vodou. Nepoužívejte jiné než doporučené čistící prostředky – mohlo by dojít k poškození materiálu.",
+    "Koženku je také možno prát při 95 °C, žehlit při max. teplotě 150 °C.",
+    "Barva se mění dle aktuálních dodávek látky: modrá, sv. modrá, zelená, sv. zelená, bílá.",
+    "Cena uvedena za rozměry 90x200cm nebo 80x200cm. Jiné rozměry na poptávku."
+   ],
+   "specs": [],
+   "img": "200005111-d24a9d24ac",
+   "id": "t0",
+   "alt": "Vodonepropustný chránič Sanapur, foto výrobku",
+   "height": null,
+   "load": null,
+   "firm": "",
+   "cover": "",
+   "layers": [
+    "PUR pěna"
+   ]
+  },
+  {
+   "name": "Vodonepropustný potah Sanapur",
+   "price": 1830,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Potah Sanapur je speciální certifikovaná koženka určená pro náročné sanitární aplikace.",
+    "Sanapur je textilní laminát s polyuretanovým nánosem na technickém PES úpletu. Je vodonepropustný, hydrolyticky odolný a paropropustný. Má antibakteriální a protiplísňovou úpravu, zabezpečuje vysoký stupeň hygienické bezpečnosti (odolnost proti působení moči, výkalů, krve). Vyznačuje se rovněž vysokým stupněm mechanické odolnosti a dobrými zpracovatelskými vlastnostmi.",
+    "Čištění provádějte mýdlovou vodou nebo běžnými saponátovými prostředky pomocí houby nebo hadříku. Následně omyjte čistou vodou. Nepoužívejte jiné než doporučené čistící prostředky – mohlo by dojít k poškození materiálu.",
+    "Koženku je také možno prát při 95 °C, žehlit při max. teplotě 150 °C.",
+    "Barva se mění dle aktuálních dodávek látky: modrá, sv. modrá, zelená, sv. zelená, bílá.",
+    "Cena uvedena za rozměry 90x200cm nebo 80x200cm. Jiné rozměry na poptávku."
+   ],
+   "specs": [],
+   "img": "200005110-c4e5cc4e5e",
+   "id": "t1",
+   "alt": "Vodonepropustný potah Sanapur, foto výrobku",
+   "height": null,
+   "load": null,
+   "firm": "",
+   "cover": "",
+   "layers": [
+    "snímatelný potah",
+    "PUR pěna"
+   ]
+  },
+  {
+   "name": "Topper 3D podložka proti pocení",
+   "price": 2650,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "3 D podložka je vyrobena z unikátní mřížky, která zaručuje vysokou prodyšnost a větrání matrace, tímto odvádí nejen vlhkost, ale i přebytečné teplo a člověk se méně potí. Je převážně vhodná na letní období nebo pro osoby, které mají potíže s větším pocením. Podložka je tvrdší, výška 4 cm. Potah je snímatelný na zip s antibakteriálním výtažkem z ALOE VERA s možností praní na 40°C. Lze použít na jakoukoliv matraci nebo jinou lehací plochu. Snadná manipulace a skladování. Cena uvedena za rozměr 80x200cm a 90x200cm, jiné rozměry na poptávku."
+   ],
+   "specs": [],
+   "img": "200003683-de5cfdf571",
+   "id": "t2",
+   "alt": "Topper 3D podložka proti pocení, foto výrobku",
+   "height": null,
+   "load": null,
+   "firm": "",
+   "cover": "",
+   "layers": [
+    "potah Aloe Vera"
+   ]
+  },
+  {
+   "name": "Topper LATEX podložka",
+   "price": 2745,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Latexová podložka je vyrobena z vysoce kvalitního a elestického latexu s masážním profilem. Výška je 4 cm. Jedná se o měkkou podložku. Je vhodná pro osoby trpící bolestí zad a kloubů, příjemně odlehčí zátěži na klouby. Tato podložka změkčí vaši stávající matrací. Snadná manipulace a skladování. Snímatelný potah na zip s antibakteriálním výtažkem z ALOE VERA s možností praní na 40°C. Cena je uvedena za rozměry 80x200cm a 90x200cm, jiné rozměry na poptávku."
+   ],
+   "specs": [],
+   "img": "200003684-d9a95daa2f",
+   "id": "t3",
+   "alt": "Topper LATEX podložka, foto výrobku",
+   "height": null,
+   "load": null,
+   "firm": "",
+   "cover": "",
+   "layers": [
+    "latex",
+    "potah Aloe Vera"
+   ]
+  },
+  {
+   "name": "Topper líná pěna podložka",
+   "price": 2090,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Podložka z líné pěny je vyrobena z kvalitní viscoelestické pěny (líné pěny) o hustotě 41 kg/m3 s masážním profilem. Výška podložky je 4,5 cm. Jedná se o měkkou podložku. Je vhodná pro osoby trpící bolestí zad a kloubů, příjemně odlehčí zátěži na klouby. Tato podložka změkčí vaši stávající matrací. Snadná manipulace a skladování. Snímatelný potah na zip s antibakteriálním výtažkem z ALOE VERA s možností praní na 40°C. Cena je uvedena za rozměry 80x200cm a 90x200cm, jiné rozměry na poptávku."
+   ],
+   "specs": [],
+   "img": "200003685-08fa309f47",
+   "id": "t4",
+   "alt": "Topper líná pěna podložka, foto výrobku",
+   "height": null,
+   "load": null,
+   "firm": "",
+   "cover": "",
+   "layers": [
+    "líná pěna",
+    "potah Aloe Vera"
+   ]
+  },
+  {
+   "name": "Topper studená pěna podložka",
+   "price": 1880,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Podložka ze studené pěny je vyrobena z kvalitní studené pěny typu HR 3532 s unikátním masážním profilem. Výška podložky je 4,5 cm, tvrdost střední. Jedná se o masážní podložku, která uleví stuhlým svalům. Je vhodná pro osoby s sedavým zaměstnáním také těžce pracující a sportovce. Snadná manipulace a skladování. Snímatelný potah na zip s antibakteriálním výtažkem z ALOE VERA s možností praní na 40°C. Cena je uvedena za rozměry 80x200cm a 90x200cm, jiné rozměry na poptávku."
+   ],
+   "specs": [],
+   "img": "200003686-a5408a639e",
+   "id": "t5",
+   "alt": "Topper studená pěna podložka, foto výrobku",
+   "height": null,
+   "load": null,
+   "firm": "",
+   "cover": "",
+   "layers": [
+    "studená pěna",
+    "HR pěna",
+    "potah Aloe Vera"
+   ]
+  },
+  {
+   "name": "Topper PUR podložka",
+   "price": 1775,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Polyuretanová podložka je vyrobena z kvalitní polyuretanové pěny typu T 2536 s masážním profilem. Výška podložky je 4,5 cm. Tvrdost střední. Používá se převážně jako krycí hygienická podložka, aby šetřila hlavní matraci nebo aby sladila nerovnosti např. na příležitostné spaní na sedačce. Snadná manipulace a skladování. Snímatelný potah na zip s antibakteriálním výtažkem z ALOE VERA s možností praní na 40°C. Cena je uvedena za rozměry 80x200cm a 90x200cm, jiné rozměry na poptávku."
+   ],
+   "specs": [],
+   "img": "200003687-a67a7a773c",
+   "id": "t6",
+   "alt": "Topper PUR podložka, foto výrobku",
+   "height": null,
+   "load": null,
+   "firm": "",
+   "cover": "",
+   "layers": [
+    "PUR pěna",
+    "potah Aloe Vera"
+   ]
+  },
+  {
+   "name": "Polštářový klín Tibor",
+   "price": 750,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Podhlavník je vyroben z polyuretanové pěny střední tvrdosti . Snímatelný potah je vyroben z polyesterové látky prošitý polyesterovým rounem z dutého vlákna . Potah lze prát na 40 st. C. Rozměr: 66x90x14cm nebo 66x80x14cm."
+   ],
+   "specs": [],
+   "img": "200003697-23b8524b24",
+   "id": "t7",
+   "alt": "Polštářový klín Tibor, foto výrobku",
+   "height": null,
+   "load": null,
+   "firm": "",
+   "cover": "",
+   "layers": [
+    "PUR pěna",
+    "snímatelný potah"
+   ]
+  },
+  {
+   "name": "Polštářový klín Teodor",
+   "price": 1090,
+   "price_from": false,
+   "price_note": "",
+   "text": [
+    "Podhlavník je vyroben ze studené pěny střední tvrdosti . Snímatelný potah je vyroben z polyesterové látky prošitý polyesterovým rounem z dutého vlákna . Potah lze prát na 40 st. C. Rozměr: 66x90x14cm nebo 66x80x14cm"
+   ],
+   "specs": [],
+   "img": "200003698-68f8969f32",
+   "id": "t8",
+   "alt": "Polštářový klín Teodor, foto výrobku",
+   "height": null,
+   "load": null,
+   "firm": "",
+   "cover": "",
+   "layers": [
+    "studená pěna",
+    "snímatelný potah"
+   ]
+  },
+  {
+   "name": "Matracový chránič PES",
+   "price": 680,
+   "price_from": true,
+   "price_note": "90 × 200 cm: 680 Kč; 180 × 200 cm: 1 280 Kč",
+   "text": [
+    "Matracový jednostranný chránič je určený k ochraně matrace před znečištěním. Chránič pokládáme přímo na matraci. Upevňujeme ho pomocí gumových pásků - spolehlivá fixace k matraci. Chránič lze použít pro všechny výšky a typy matrací. Výhodou je výrazné prodloužení životnosti stávajícího potahu matrace. Materiál polyester prošitý bavlněným rounem, možnost praní na 40°C. Rozměr: 90x200cm nebo 80x200cm - 610,- Kč; 180x200cm nebo 160x200cm - 1230,- Kč. Jiné rozměry na poptávku."
+   ],
+   "specs": [],
+   "img": "200003701-230a324043",
+   "id": "t9",
+   "alt": "Matracový chránič PES, foto výrobku",
+   "height": null,
+   "load": null,
+   "firm": "",
+   "cover": "",
+   "layers": [
+    "snímatelný potah"
+   ]
+  },
+  {
+   "name": "Matracový chránič Aloe Vera",
+   "price": 860,
+   "price_from": true,
+   "price_note": "90 × 200 cm: 860 Kč; 180 × 200 cm: 1 870 Kč",
+   "text": [
+    "Matracový jednostranný chránič je určený k ochraně matrace před znečištěním. Chránič pokládáme přímo na matraci. Upevňujeme ho pomocí gumových pásků - spolehlivá fixace k matraci. Chránič lze použít pro všechny výšky a typy matrací. Výhodou je výrazné prodloužení životnosti stávajícího potahu matrace. Materiál polyester prošitý antibakteriálním rounem z Aloe Vera, možnost praní na 40°C. Rozměr: 90x200cm nebo 80x200cm - 760,- Kč; 180x200cm nebo 160x200cm - 1670,- Kč. Jiné rozměry na poptávku."
+   ],
+   "specs": [],
+   "img": "200003699-25d8126d1a",
+   "id": "t10",
+   "alt": "Matracový chránič Aloe Vera, foto výrobku",
+   "height": null,
+   "load": null,
+   "firm": "",
+   "cover": "",
+   "layers": [
+    "potah Aloe Vera"
+   ]
+  }
+ ],
+ "filters": [
+  {
+   "id": "senior",
+   "label": "Pro seniory"
+  },
+  {
+   "id": "antidekubitni",
+   "label": "Antidekubitní"
+  },
+  {
+   "id": "alergici",
+   "label": "Pro alergiky"
+  },
+  {
+   "id": "vysokozatezove",
+   "label": "Vysokozátěžové"
+  },
+  {
+   "id": "detske",
+   "label": "Dětské"
+  },
+  {
+   "id": "gelove",
+   "label": "Gelové"
+  },
+  {
+   "id": "tastickove",
+   "label": "Taštičkové"
+  }
+ ]
+}

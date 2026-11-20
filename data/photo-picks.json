@@ -1,0 +1,763 @@
+{
+ "hero": [
+  {
+   "path": "web/media/200005193-ed062ed065.jpg",
+   "w": 1800,
+   "h": 1350,
+   "alt": "Světlý masivní buk bílý nízká postel s ložným prostorem před cihlovou zdí a ovčí kožešinou v prodejně Stolařství Kubiš",
+   "crop": "16:9 (1800x1012), výřez od y≈250 px shora; pro mobil 4:5 se středem na posteli",
+   "note": "Čisté, světlé, bez lidí a rušivých předmětů, nejostřejší (1800 px). Úvodní hero č. 1. Postel zabírá spodní 2/3 záběru, nahoře cihlová zeď nechá prostor pro nadpis vlevo.",
+   "rank": 1
+  },
+  {
+   "path": "web/media/200007975-34f1b34f1e.jpg",
+   "w": 1800,
+   "h": 1350,
+   "alt": "Dvoulůžko Benetta z masivu v tmavém ořechovém mořidle se zásuvkou na kolečkách před cihlovou zdí",
+   "crop": "16:9 (1800x1012), výřez od y≈120 px; zásuvka vpravo dole zůstane částečně vidět",
+   "note": "Teplý, kontrastní, velmi ostrý (1800 px), dobře čitelný přes tmavý gradient. Hero č. 2.",
+   "rank": 2
+  },
+  {
+   "path": "web/img/lanett-2.jpg",
+   "w": 1400,
+   "h": 1072,
+   "alt": "Dvoulůžko Lanett s latěmi v čele, béžové ložní prádlo a pléd, cihlová zeď a rostlina v interiéru",
+   "crop": "16:9 (1400x788), výřez od y≈90 px; nechat prostor vlevo pro text",
+   "note": "Nejatmosférický záběr (styling, ložní prádlo, rostlina), ale jen 1400 px, na 4K hero roztáhnout jen s převrstvením. Hero č. 3 / varianta pro měkký, domácí tón.",
+   "rank": 3
+  }
+ ],
+ "hero_alternativy": [
+  {
+   "path": "web/media/200007423-e00eae00ed.jpg",
+   "w": 1280,
+   "h": 960,
+   "alt": "Dvoulůžko Lanett v petrolejově zelené s latěmi z jasanu v čele",
+   "crop": "16:9 (1280x720), výřez od y≈180 px",
+   "note": "Nejodvážnější, výrazná barva, ale jen 1280 px."
+  },
+  {
+   "path": "web/media/200005241-5a8e65a8ea.jpg",
+   "w": 1800,
+   "h": 1350,
+   "alt": "Bílý rohový gauč-postel (studentská Lada 120) s polštáři, cihlová zeď, kožešina",
+   "crop": "16:9 od y≈220 px",
+   "note": "Čisté, 1800 px, vhodné jako světlejší hero."
+  }
+ ],
+ "kategorie/postele-pro-seniory": [
+  {
+   "path": "web/media/200007894-df33cdf33f.jpg",
+   "w": 1800,
+   "h": 1350,
+   "alt": "Bílá zvýšená senior postel Luneta s polštáři a matrací s potahem Aloe Vera",
+   "crop": "4:3 (1800x1350) bez ořezu nebo 1:1 se středem",
+   "note": "Čistý frontální záběr, 1800 px. Alt: 200005220 / 200005221. Stejná fotka je výřez senior-luneta.jpg (na výšku).",
+   "alternativy": [
+    "web/media/200005221-3795a3795d.jpg"
+   ]
+  }
+ ],
+ "kategorie/vysokozatezove-postele": [
+  {
+   "path": "web/media/200007689-152ca152cb.jpg",
+   "w": 1280,
+   "h": 960,
+   "alt": "Rustikální dvoulůžko z jádrového buku s masivními nohami a viditelnou kresbou dřeva",
+   "crop": "4:3 (1280x960) bez ořezu",
+   "note": "Frontální pohled na robustní nohy a čelo, čisté pozadí. Alt: img:martina-2 (1400 px) nebo 200007469 (Bela).",
+   "alternativy": [
+    "web/img/martina-2.jpg",
+    "web/media/200007469-e891ae891b.jpg"
+   ]
+  }
+ ],
+ "kategorie/postele-pro-handicapovane": [
+  {
+   "path": "web/media/200007201-9391793919.jpg",
+   "w": 1280,
+   "h": 853,
+   "alt": "Postel s vysokou dřevěnou ohrádkou a posuvnými dvířky, v ložnici s plyšovými hračkami",
+   "crop": "3:2 (1280x853) bez ořezu nebo 4:3 (1137x853)",
+   "note": "Bez lidí, příjemná. Alt čistě produktová: 200007198; barevná: img:ohradka-2. POZOR: u fotek s dětmi/dospělými (viz vyřazené) není souhlas.",
+   "alternativy": [
+    "web/media/200007198-a32e6a32e9.jpg",
+    "web/img/ohradka-2.jpg"
+   ]
+  }
+ ],
+ "kategorie/postele-na-miru": [
+  {
+   "path": "web/media/200003844-0746108402.jpg",
+   "w": 1280,
+   "h": 853,
+   "alt": "Dvoulůžko z masivu v bílé s čalouněným šedým čelem, atypická zakázka",
+   "crop": "3:2 (1280x853) nebo ořez 4:3",
+   "note": "Čalouněné čelo, světlé. Alt: 200007423 (petrolejová barva).",
+   "alternativy": [
+    "web/media/200007423-e00eae00ed.jpg"
+   ]
+  }
+ ],
+ "kategorie/patrove-a-vysoke-postele": [
+  {
+   "path": "web/media/200008373-53f9853f9a.jpg",
+   "w": 1280,
+   "h": 853,
+   "alt": "Patrová postel z masivu se žebříkem, úložnou zásuvkou a komodou před cihlovou zdí",
+   "crop": "3:2 (1280x853)",
+   "note": "Bez osob (pozor: 200008377 a 200007101 mají ženu). Alt: 200007097 (Irena).",
+   "alternativy": [
+    "web/media/200007097-0880308805.jpg"
+   ]
+  }
+ ],
+ "kategorie/jednoluzka": [
+  {
+   "path": "web/media/200005144-dd269dd26c.jpg",
+   "w": 1800,
+   "h": 1200,
+   "alt": "Jednolůžko Lucie se zaoblenými rohy ze smrku s ovčí kožešinou",
+   "crop": "3:2 (1800x1200) nebo 4:3 (1600x1200)",
+   "note": "1800x1200, ostré. Alt: img:jednoluzko, 200007950.",
+   "alternativy": [
+    "web/img/jednoluzko.jpg",
+    "web/media/200007950-48bd548bd8.jpg"
+   ]
+  }
+ ],
+ "kategorie/dvouluzka": [
+  {
+   "path": "web/media/200006413-181a7181aa.jpg",
+   "w": 1280,
+   "h": 960,
+   "alt": "Dvoulůžko z masivního buku s latěmi v čele, pohled z rohu v ložnici",
+   "crop": "4:3 (1280x960)",
+   "note": "Nejostřejší z buk. dvoulůžek (sharp 822), neutrální. Alt: 200005177, 200006411.",
+   "alternativy": [
+    "web/media/200005177-7ea8f7ea92.jpg",
+    "web/media/200006411-c80c8c80cb.jpg"
+   ]
+  }
+ ],
+ "kategorie/studentske-postele": [
+  {
+   "path": "web/media/200005241-5a8e65a8ea.jpg",
+   "w": 1800,
+   "h": 1350,
+   "alt": "Bílá studentská postel Lada 120 cm s rohovým opěradlem a polštáři",
+   "crop": "4:3 (1800x1350)",
+   "note": "Čisté 1800 px. Alt: 200005191 (Pavla, šíře 140).",
+   "alternativy": [
+    "web/media/200005191-65b1c65b1f.jpg"
+   ]
+  }
+ ],
+ "kategorie/dubove-postele": [
+  {
+   "path": "web/img/dub-dvouluzko.jpg",
+   "w": 1200,
+   "h": 800,
+   "alt": "Dubové dvoulůžko z masivu s lištovým čelem v interiéru s cihlovou zdí",
+   "crop": "3:2 (1200x800)",
+   "note": "Ručně vybraná fotka (1200x800). Nové fotky dubové postele s dostatečným rozlišením nejsou; Alt: 200004753 (Manita dub jednolůžko, 1280 px).",
+   "alternativy": [
+    "web/media/200004753-5c2565c258.jpg",
+    "web/media/200004744-2b2452b246.jpg"
+   ]
+  }
+ ],
+ "kategorie/doplnky-k-postelim": [
+  {
+   "path": "web/img/pristylka.jpg",
+   "w": 1200,
+   "h": 800,
+   "alt": "Postel s výsuvnou přistýlkou z masivu, druhé lůžko vysunuté pod postelí",
+   "crop": "3:2 (1200x800)",
+   "note": "Jasně ukazuje funkci. Alt: 200003323 (úložný prostor velký).",
+   "alternativy": [
+    "web/media/200003323-8c7ae8d756.jpg"
+   ]
+  }
+ ],
+ "kategorie/komody-a-psaci-stoly": [
+  {
+   "path": "web/media/200000314-9172f91bc1.jpg",
+   "w": 1800,
+   "h": 1350,
+   "alt": "Smrková zásuvková komoda s osmi zásuvkami a dřevěnými knoflíky",
+   "crop": "4:3 (1800x1350) nebo 3:2",
+   "note": "1800 px, čistě produktová, ale koberec starý. Alt: 200008259 (psací stůl s výsuvem na klávesnici, cihlová zeď), 200008141.",
+   "alternativy": [
+    "web/media/200008259-9134391346.jpg",
+    "web/media/200001019-b227ab27d3.jpg"
+   ]
+  }
+ ],
+ "kategorie/jidelni-stoly": [
+  {
+   "path": "web/media/200005136-3b0be3b0c2.jpg",
+   "w": 1280,
+   "h": 960,
+   "alt": "Dubový jídelní stůl Denisa s deskou z lepených prken a černými ocelovými nohami",
+   "crop": "4:3 (1280x960)",
+   "note": "Čisté světlé pozadí, kresba dubu. Stejná série 200005134/200005135 (viz produkty a detail).",
+   "alternativy": [
+    "web/media/200005134-0a9840a987.jpg"
+   ]
+  }
+ ],
+ "kategorie/bytove-doplnky": [
+  {
+   "path": "web/media/200001277-e19cfe296c.jpg",
+   "w": 1280,
+   "h": 960,
+   "alt": "Rohový stolek z masivu s police v obývacím koutě",
+   "crop": "4:3 (1280x960) se středem na stolku",
+   "note": "SLABÉ OBSAZENÍ: jediná fotka ≥1200 px, nevýrazná. Ostatní (200001425-27, 200002087) jsou 640 px na zelené zdi.",
+   "alternativy": []
+  }
+ ],
+ "kategorie/matrace": [
+  {
+   "path": "web/media/200007058-0156b0156c.png",
+   "w": 644,
+   "h": 303,
+   "alt": "Matrace Fortis s řezem pěnových vrstev na bílém pozadí",
+   "crop": "16:9/2:1 na bílém panelu, nezvětšovat",
+   "note": "PNG výřez (jen 644x303, na dlaždici malé). Pro větší plochu použít na bílém/neutrálním panelu nebo img:prodejna-1 (showroom).",
+   "alternativy": [
+    "web/media/200008020-13e9713e99.png",
+    "web/img/prodejna-1.jpg"
+   ]
+  }
+ ],
+ "kategorie/rosty-a-toppery": [
+  {
+   "path": "web/media/200004724-17c3c18bd7.jpg",
+   "w": 1280,
+   "h": 853,
+   "alt": "Výklopný pevný rošt z masivu s plynovými písty a vysvícenou úložnou částí",
+   "crop": "3:2 (1280x853)",
+   "note": "Ukazuje funkci výklopu, 1280 px. Alt: img:smrk-rost (1400 px, rošt na posteli), PNG 200005076 (motorový Terus M).",
+   "alternativy": [
+    "web/img/smrk-rost.jpg",
+    "web/media/200005076-6c1766c178.png"
+   ]
+  }
+ ],
+ "kategorie/dreviny-a-povrchy": [
+  {
+   "path": "web/img/detail-buk.jpg",
+   "w": 1400,
+   "h": 1050,
+   "alt": "Detail masivní bukové nohy s výraznou kresbou a suky",
+   "crop": "4:3 (1400x1050)",
+   "note": "Ručně vybraný výřez (1400x1050). Vzorník 7 dřevin (200000285-291, 640 px) je nízké rozlišení, jen jako malé ikonky.",
+   "alternativy": [
+    "web/media/200007492-bc28abc28c.jpg"
+   ]
+  }
+ ],
+ "detaily_dreva_spoju": [
+  {
+   "path": "web/media/200007492-bc28abc28c.jpg",
+   "w": 1800,
+   "h": 1350,
+   "alt": "Roh bukového čela a nohy s tmavými suky a trhlinami v kresbě dřeva",
+   "crop": "3:2 výřez u pravé nohy (900x600 @1:1) nebo celé 4:3",
+   "note": "Nejsilnější detail (1800 px). Použít jako texturu/„o řemesle“."
+  },
+  {
+   "path": "web/media/200007114-3748037484.jpg",
+   "w": 1280,
+   "h": 853,
+   "alt": "Dubová postel, detail kazetového čela a profilované římsy",
+   "crop": "3:2 (1280x853)",
+   "note": "Ostrá práce s hranou a spojem, teplé zbarvení."
+  },
+  {
+   "path": "web/media/200006440-9359a9359e.jpg",
+   "w": 1280,
+   "h": 853,
+   "alt": "Detail smrkového čela s čtvercovými průřezy a čepovými spoji",
+   "crop": "3:2 (1280x853)",
+   "note": "Spoje čepované bez kování, světlé pozadí."
+  },
+  {
+   "path": "web/media/200006451-a7a08a7a0c.jpg",
+   "w": 1280,
+   "h": 853,
+   "alt": "Detail tmavě mořeného smrkového čela s vodorovnými prkny",
+   "crop": "3:2 (1280x853)",
+   "note": "Kontrast, hladký povrch, cihla v pozadí."
+  },
+  {
+   "path": "web/media/200007428-21bf521bf8.jpg",
+   "w": 1280,
+   "h": 960,
+   "alt": "Detail čela z jasanových lamel na tmavém pozadí s polštářky",
+   "crop": "4:3 nebo čtverec",
+   "note": "Rytmus lamel, teplá barva (1280x960)."
+  },
+  {
+   "path": "web/media/200005135-eadc5eadc8.jpg",
+   "w": 1280,
+   "h": 960,
+   "alt": "Deska dubového stolu z lepených prken, šikmý pohled",
+   "crop": "4:3 (1280x960)",
+   "note": "Kresba dubu a lepené spoje desky."
+  },
+  {
+   "path": "web/media/200000302-4ada24b235.jpg",
+   "w": 1800,
+   "h": 1350,
+   "alt": "Smrkové posuvné dvířka skříňky s výraznou kresbou a suky",
+   "crop": "1:1 (výřez 900x900 z dvířek)",
+   "note": "1800 px, výřez jen dvířek (kolem y 300-900) - pozadí staré."
+  },
+  {
+   "path": "web/media/200000047-51a5651ee8.jpg",
+   "w": 1800,
+   "h": 1350,
+   "alt": "Roh smrkové postele s masivním panelem a nohou",
+   "crop": "1:1 nebo 3:2 výřez",
+   "note": "1800 px, světlé, bez pozadí v ostrosti; hodí se jako textura."
+  }
+ ],
+ "produkty_top10": [
+  {
+   "path": "web/media/200005225-20cab20cad.jpg",
+   "w": 1800,
+   "h": 1350,
+   "alt": "Dvoulůžko Benetta z masivu v tmavém mořidle se zásuvkou",
+   "crop": "4:3 (1800x1350)",
+   "note": "Produkt: Dvoulůžko BENETTA, 19 850 Kč (z old-site.json, může být neaktuální).",
+   "name": "Dvoulůžko BENETTA",
+   "price": 19850
+  },
+  {
+   "path": "web/media/200007894-df33cdf33f.jpg",
+   "w": 1800,
+   "h": 1350,
+   "alt": "Bílá senior postel Luneta s matrací Aloe Vera",
+   "crop": "4:3 (1800x1350)",
+   "note": "Produkt: Senior postel LUNETA, 8 850 Kč (z old-site.json, může být neaktuální).",
+   "name": "Senior postel LUNETA",
+   "price": 8850
+  },
+  {
+   "path": "web/media/200005191-65b1c65b1f.jpg",
+   "w": 1800,
+   "h": 1350,
+   "alt": "Bílá postel typ Pavla s masivními nohami před cihlovou zdí",
+   "crop": "4:3 (1800x1350)",
+   "note": "Produkt: Postel typ Pavla (1,5 lůžko, 140 cm), 13 450 Kč (z old-site.json, může být neaktuální).",
+   "name": "Postel typ Pavla (1,5 lůžko, 140 cm)",
+   "price": 13450
+  },
+  {
+   "path": "web/media/200007118-cf621cf623.jpg",
+   "w": 1280,
+   "h": 960,
+   "alt": "Dvoulůžko Michaela z buku s latěmi v čele",
+   "crop": "4:3 (1280x960)",
+   "note": "Produkt: Dvoulůžko Michaela, 18 800 Kč (z old-site.json, může být neaktuální).",
+   "name": "Dvoulůžko Michaela",
+   "price": 18800
+  },
+  {
+   "path": "web/media/200005134-0a9840a987.jpg",
+   "w": 1280,
+   "h": 960,
+   "alt": "Dubový jídelní stůl Denisa s ocelovými nohami",
+   "crop": "4:3 (1280x960). Pozor: na stránce Dubový nábytek je cena 10 500 Kč, ověřit u majitelů",
+   "note": "Produkt: Dubový jídelní stůl Denisa (cena na stránce stolů), 7 200 Kč (z old-site.json, může být neaktuální).",
+   "name": "Dubový jídelní stůl Denisa (cena na stránce stolů)",
+   "price": 7200
+  },
+  {
+   "path": "web/media/200007464-56dd256dd5.jpg",
+   "w": 1280,
+   "h": 960,
+   "alt": "Dvoulůžko Lanett v petrolejové barvě s latěmi",
+   "crop": "4:3 (1280x960)",
+   "note": "Produkt: Lanett ve vlastních barvách, 25 700 Kč (z old-site.json, může být neaktuální).",
+   "name": "Lanett ve vlastních barvách",
+   "price": 25700
+  },
+  {
+   "path": "web/media/200007097-0880308805.jpg",
+   "w": 1280,
+   "h": 853,
+   "alt": "Patrová palanda Irena z masivu se žebříkem a komodou",
+   "crop": "3:2 (1280x853)",
+   "note": "Produkt: Patrová palanda IRENA, 22 220 Kč (z old-site.json, může být neaktuální).",
+   "name": "Patrová palanda IRENA",
+   "price": 22220
+  },
+  {
+   "path": "web/media/200004734-10bf510bf6.jpg",
+   "w": 1280,
+   "h": 853,
+   "alt": "Dvoulůžko Benedikta z tmavě mořeného smrku se zásuvkou",
+   "crop": "3:2 (1280x853)",
+   "note": "Produkt: Dvoulůžko Benedikta (smrk, úložný prostor), 19 550 Kč (z old-site.json, může být neaktuální).",
+   "name": "Dvoulůžko Benedikta (smrk, úložný prostor)",
+   "price": 19550
+  },
+  {
+   "path": "web/img/martina-2.jpg",
+   "w": 1400,
+   "h": 1050,
+   "alt": "Rustikální dvoulůžko Martina z jádrového buku, pohled zepředu",
+   "crop": "4:3 (1400x1050)",
+   "note": "Produkt: Rustikální dvoulůžko typ Martina (jádrový buk), 16 980 Kč (z old-site.json, může být neaktuální).",
+   "name": "Rustikální dvoulůžko typ Martina (jádrový buk)",
+   "price": 16980
+  },
+  {
+   "path": "web/img/vysoka-postel-gizell.jpg",
+   "w": 1200,
+   "h": 800,
+   "alt": "Vysoká postel Gizell se zásuvkami z masivního smrku",
+   "crop": "3:2 (1200x800)",
+   "note": "Produkt: Vysoká postel GIZELL (6 zásuvek), 22 800 Kč (z old-site.json, může být neaktuální).",
+   "name": "Vysoká postel GIZELL (6 zásuvek)",
+   "price": 22800
+  }
+ ],
+ "matrace_png_top6": [
+  {
+   "path": "web/media/200007058-0156b0156c.png",
+   "w": 644,
+   "h": 303,
+   "alt": "Řez matrace Fortis s fialovými a červenými pěnovými vrstvami",
+   "crop": "bez ořezu, poměr ≈2:1 (644x303)",
+   "note": "Matrace: Matrace Fortis, vysoké zatížení do 180 kg, 8 540 Kč. PNG s průhledným pozadím, jen ~640x300 (max dostupné), nezvětšovat nad 100 %.",
+   "name": "Matrace Fortis, vysoké zatížení do 180 kg",
+   "price": 8540
+  },
+  {
+   "path": "web/media/200008020-13e9713e99.png",
+   "w": 644,
+   "h": 304,
+   "alt": "Matrace Arella Hard s řezem krémovou pěnou",
+   "crop": "bez ořezu, poměr ≈2:1 (644x303)",
+   "note": "Matrace: Matrace Arella Hard, studená pěna s vysokou tuhostí, 7 500 Kč. PNG s průhledným pozadím, jen ~640x300 (max dostupné), nezvětšovat nad 100 %.",
+   "name": "Matrace Arella Hard, studená pěna s vysokou tuhostí",
+   "price": 7500
+  },
+  {
+   "path": "web/media/200007141-2088f20890.png",
+   "w": 643,
+   "h": 304,
+   "alt": "Matrace DIA 20 Hi s modrými a červenými vrstvami pěny",
+   "crop": "bez ořezu, poměr ≈2:1 (644x303)",
+   "note": "Matrace: Matrace DIA 20 Hi, 6 620 Kč. PNG s průhledným pozadím, jen ~640x300 (max dostupné), nezvětšovat nad 100 %.",
+   "name": "Matrace DIA 20 Hi",
+   "price": 6620
+  },
+  {
+   "path": "web/media/200007478-a745fa7462.png",
+   "w": 643,
+   "h": 308,
+   "alt": "Matrace Arela s červeným pěnovým jádrem",
+   "crop": "bez ořezu, poměr ≈2:1 (644x303)",
+   "note": "Matrace: Matrace Arela, studená pěna 20 cm, 7 500 Kč. PNG s průhledným pozadím, jen ~640x300 (max dostupné), nezvětšovat nad 100 %.",
+   "name": "Matrace Arela, studená pěna 20 cm",
+   "price": 7500
+  },
+  {
+   "path": "web/media/200007948-1b0f61b0f8.png",
+   "w": 607,
+   "h": 281,
+   "alt": "Senior matrace Caeli s gelovou vrstvou a tuhým okrajem",
+   "crop": "bez ořezu, poměr ≈2:1 (644x303)",
+   "note": "Matrace: Senior matrace Caeli s gelovým efektem 24 cm, do 150 kg, 13 300 Kč. PNG s průhledným pozadím, jen ~640x300 (max dostupné), nezvětšovat nad 100 %.",
+   "name": "Senior matrace Caeli s gelovým efektem 24 cm, do 150 kg",
+   "price": 13300
+  },
+  {
+   "path": "web/media/200007998-979cb979cd.png",
+   "w": 618,
+   "h": 287,
+   "alt": "Senior matrace Arela Plus s tuhým okrajem",
+   "crop": "bez ořezu, poměr ≈2:1 (644x303)",
+   "note": "Matrace: Senior matrace ARELA PLUS 24 cm, do 150 kg, 9 250 Kč. PNG s průhledným pozadím, jen ~640x300 (max dostupné), nezvětšovat nad 100 %.",
+   "name": "Senior matrace ARELA PLUS 24 cm, do 150 kg",
+   "price": 9250
+  }
+ ],
+ "vyradit": [
+  {
+   "path": "web/media/200003834-7251c734c7.jpg",
+   "w": 1280,
+   "h": 853,
+   "alt": "",
+   "note": "na fotce žena s dítětem"
+  },
+  {
+   "path": "web/media/200003941-41b0042a9f.jpg",
+   "w": 1280,
+   "h": 853,
+   "alt": "",
+   "note": "žena u ohrádky"
+  },
+  {
+   "path": "web/media/200003942-10dcb11d66.jpg",
+   "w": 1280,
+   "h": 853,
+   "alt": "",
+   "note": "žena sedící v ohrádce"
+  },
+  {
+   "path": "web/media/200003943-5a1aa5b141.jpg",
+   "w": 1280,
+   "h": 853,
+   "alt": "",
+   "note": "žena"
+  },
+  {
+   "path": "web/media/200003944-67c6e68c02.jpg",
+   "w": 1280,
+   "h": 853,
+   "alt": "",
+   "note": "žena s dítětem"
+  },
+  {
+   "path": "web/media/200007101-7008570087.jpg",
+   "w": 1280,
+   "h": 853,
+   "alt": "",
+   "note": "žena u palandy"
+  },
+  {
+   "path": "web/media/200008377-6073360735.jpg",
+   "w": 1280,
+   "h": 853,
+   "alt": "",
+   "note": "žena u palandy"
+  },
+  {
+   "path": "web/media/200007184-5e0db5e0dc.jpg",
+   "w": 1280,
+   "h": 853,
+   "alt": "",
+   "note": "pracovník v záběru"
+  },
+  {
+   "path": "web/media/200007202-823c2823c3.jpg",
+   "w": 1280,
+   "h": 853,
+   "alt": "",
+   "note": "žena"
+  },
+  {
+   "path": "web/media/200007203-306ad306af.jpg",
+   "w": 1280,
+   "h": 853,
+   "alt": "",
+   "note": "dítě"
+  },
+  {
+   "path": "web/media/200007205-bdea8bdeaa.jpg",
+   "w": 1280,
+   "h": 853,
+   "alt": "",
+   "note": "dítě"
+  },
+  {
+   "path": "web/media/200007210-9b49c9b4a0.jpg",
+   "w": 1280,
+   "h": 853,
+   "alt": "",
+   "note": "dítě"
+  },
+  {
+   "path": "web/media/200007211-0a0de0a0e0.jpg",
+   "w": 1280,
+   "h": 853,
+   "alt": "",
+   "note": "žena"
+  },
+  {
+   "path": "web/media/200007212-9f66e9f670.jpg",
+   "w": 1280,
+   "h": 853,
+   "alt": "",
+   "note": "dítě na okraji záběru"
+  },
+  {
+   "path": "web/media/200007213-1654116543.jpg",
+   "w": 1280,
+   "h": 853,
+   "alt": "",
+   "note": "ověřit: možná dítě na okraji"
+  },
+  {
+   "path": "web/media/200005143-024980249b.jpg",
+   "w": 1280,
+   "h": 960,
+   "alt": "",
+   "note": "otočená o 90 stupňů (psací stůl)"
+  },
+  {
+   "path": "web/media/200005138-7482774829.jpg",
+   "w": 1280,
+   "h": 960,
+   "alt": "",
+   "note": "otočená (kancelářská židle)"
+  },
+  {
+   "path": "web/media/200006423-b785cb785f.jpg",
+   "w": 1280,
+   "h": 960,
+   "alt": "",
+   "note": "otočená vzhůru nohama"
+  },
+  {
+   "path": "web/media/200006424-463f6463f9.jpg",
+   "w": 1280,
+   "h": 960,
+   "alt": "",
+   "note": "otočená vzhůru nohama"
+  },
+  {
+   "path": "web/media/200006418-a5473a5477.jpg",
+   "w": 1280,
+   "h": 960,
+   "alt": "",
+   "note": "otočená o 90 stupňů"
+  },
+  {
+   "path": "web/media/200007463-a8689a868c.jpg",
+   "w": 1280,
+   "h": 960,
+   "alt": "",
+   "note": "otočená o 90 stupňů"
+  },
+  {
+   "path": "web/media/200007465-a95ada95af.jpg",
+   "w": 1280,
+   "h": 960,
+   "alt": "",
+   "note": "otočená o 90 stupňů"
+  },
+  {
+   "path": "web/media/200007123-9f3b99f3ba.jpg",
+   "w": 1280,
+   "h": 960,
+   "alt": "",
+   "note": "otočená o 90 stupňů"
+  },
+  {
+   "path": "web/media/200008025-1c8621c864.jpg",
+   "w": 1280,
+   "h": 766,
+   "alt": "",
+   "note": "infografika GelEffect, ne fotka"
+  },
+  {
+   "path": "web/media/200000340-29136295ca.png",
+   "w": null,
+   "h": null,
+   "alt": "",
+   "note": "zdeformovaný PNG výřez skříně"
+  },
+  {
+   "path": "web/media/200000341-bf9e8bfe7c.png",
+   "w": null,
+   "h": null,
+   "alt": "",
+   "note": "zdeformovaný PNG výřez skříně"
+  },
+  {
+   "path": "web/media/200000356-0dc420ebe5.jpg",
+   "w": 1800,
+   "h": 1724,
+   "alt": "",
+   "note": "zkreslený výřez, nečitelný"
+  },
+  {
+   "path": "web/media/200000357-714e87197b.jpg",
+   "w": 1800,
+   "h": 1404,
+   "alt": "",
+   "note": "zkreslený výřez, nečitelný"
+  },
+  {
+   "path": "web/media/200000344-6d0966df36.jpg",
+   "w": 1350,
+   "h": 1800,
+   "alt": "",
+   "note": "špatný ořez, tmavé a staré pozadí"
+  },
+  {
+   "path": "web/media/200000300-63b1f640bf.jpg",
+   "w": 1800,
+   "h": 1350,
+   "alt": "",
+   "note": "měkké, nezřetelné dvířka na šedé stěně"
+  },
+  {
+   "path": "web/media/200005174-7035570357.jpg",
+   "w": 1280,
+   "h": 853,
+   "alt": "",
+   "note": "měkké ostření (hodí se jen jako náhled)"
+  },
+  {
+   "path": "web/media/200003525-12d4f13cf4.jpg",
+   "w": 1280,
+   "h": 960,
+   "alt": "",
+   "note": "měkké ostření"
+  }
+ ],
+ "vyradit_rozsahy": [
+  {
+   "path": "web/media/200005151–200005153",
+   "w": null,
+   "h": null,
+   "alt": "",
+   "note": "podexponované, tmavé"
+  },
+  {
+   "path": "web/media/200005286–200005313",
+   "w": null,
+   "h": null,
+   "alt": "",
+   "note": "postel z jasanu fotografovaná v noci s bleskem, tmavá a zrnitá"
+  },
+  {
+   "path": "web/media/200005314–200005343",
+   "w": null,
+   "h": null,
+   "alt": "",
+   "note": "velmi tmavé mořidlo, zrnité; maximálně 1–2 kusy do galerie"
+  },
+  {
+   "path": "web/media/200000037, 038, 042, 045, 046, 048, 049, 051",
+   "w": null,
+   "h": null,
+   "alt": "",
+   "note": "dílna, rošty zabalené ve fólii, špatné světlo"
+  },
+  {
+   "path": "web/media/200000673–200000681",
+   "w": null,
+   "h": null,
+   "alt": "",
+   "note": "šedá bloková stěna, růžový koberec, starý styl"
+  },
+  {
+   "path": "web/media/200002915–200002917, 200004629–200004632, 200001425–200001427, 200002922",
+   "w": null,
+   "h": null,
+   "alt": "",
+   "note": "sytě zelená stěna, ruší barvou"
+  }
+ ]
+}

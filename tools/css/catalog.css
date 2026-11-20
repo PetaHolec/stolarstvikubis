@@ -1,0 +1,953 @@
+/* Katalog: hlavička kategorie, lepivá lišta, mřížky, matrace, produkt. Doplňuje base.css (tokeny a komponenty se nepřepisují). */
+
+/* ---------- hlavička kategorie = místnost (stěnu a lištu dává .room + .wall-*) ---------- */
+.chead {
+  padding-bottom: calc(var(--s6) + 26px);
+}
+.chead h1 {
+  font-size: clamp(34px, 4.2vw, 54px);
+  line-height: 1.1;
+}
+.chead .lead {
+  font-size: clamp(19px, 1.6vw, 22px);
+  color: var(--ink);
+}
+.chead-txt .plate {
+  margin-bottom: var(--s1);
+}
+.sec.cat {
+  padding-block: 72px;
+}
+@media (max-width: 767px) {
+  .sec.cat {
+    padding-block: var(--s6);
+  }
+}
+.chead-grid {
+  display: block;
+  margin-top: var(--s4);
+}
+.chead-txt {
+  display: grid;
+  justify-items: center;
+  gap: var(--s3);
+  text-align: center;
+  max-width: 1000px;
+  margin-inline: auto;
+}
+.cfact {
+  font-size: clamp(19px, 1.6vw, 22px);
+  line-height: 1.55;
+  margin: var(--s1) 0 var(--s2);
+  max-width: 56ch;
+}
+.cfact b {
+  font-weight: 700;
+}
+.chead .ctas {
+  justify-content: center;
+  margin-top: var(--s2);
+}
+@media (max-width: 520px) {
+  .chead .ctas {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .chead .ctas .btn {
+    width: 100%;
+  }
+}
+
+/* ---------- lepivá lišta podkategorií ---------- */
+.subnav {
+  position: sticky;
+  top: var(--hh);
+  z-index: 30;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+.subnav .wrap {
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scroll-padding-inline: var(--edge);
+  scrollbar-width: none;
+}
+.subnav .wrap::-webkit-scrollbar {
+  display: none;
+}
+.subnav ul {
+  display: flex;
+  gap: 0 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: max-content;
+  min-width: 100%;
+}
+.subnav a {
+  display: flex;
+  align-items: center;
+  min-height: 56px;
+  white-space: nowrap;
+  text-decoration: none;
+  font: 600 17px/1 var(--f-body);
+  color: var(--ink-2);
+  border-bottom: 3px solid transparent;
+  scroll-snap-align: start;
+}
+.subnav a:hover {
+  color: var(--ink);
+  border-bottom-color: var(--line);
+}
+.subnav a[aria-current] {
+  color: var(--ink);
+  border-bottom-color: var(--forest);
+}
+@media (max-width: 767px) {
+  .subnav ul {
+    gap: 0 22px;
+  }
+}
+
+/* ---------- mřížka modelů (doplňky k base.css) ---------- */
+.model p {
+  display: block;
+  overflow: visible;
+  -webkit-line-clamp: unset;
+}
+.model .meta {
+  margin-top: auto;
+}
+.model .tag {
+  font: 600 16px/1.2 var(--f-body);
+  color: var(--forest);
+}
+.model[data-fx~="lift"]:hover,
+.model[data-fx~="lift"]:focus-within {
+  box-shadow: none;
+}
+.noph {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  padding: var(--s2);
+  text-align: center;
+  color: var(--ink-2);
+  font-size: 17px;
+}
+.block-title {
+  margin: var(--s6) 0 var(--s3);
+}
+.block-title:first-child {
+  margin-top: 0;
+}
+.more {
+  margin-top: var(--s5);
+}
+.more > summary {
+  list-style: none;
+  cursor: pointer;
+  display: inline-flex;
+  margin-bottom: var(--s4);
+}
+.more > summary::-webkit-details-marker {
+  display: none;
+}
+.more .w-open {
+  display: none;
+}
+.more[open] > summary .w-closed {
+  display: none;
+}
+.more[open] > summary .w-open {
+  display: inline;
+}
+
+/* ---------- vystřižené karty: matrace, rošty, toppery ---------- */
+.kgrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--s5) var(--s3);
+  align-items: start;
+}
+@media (min-width: 1101px) {
+  .kgrid.c5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+  .kgrid.c3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .kgrid.c2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .kgrid.c1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+@media (max-width: 1100px) {
+  .kgrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1200px) {
+  .kgrid.dense {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+@media (max-width: 720px) {
+  .kgrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--s4) var(--s2);
+  }
+}
+.kcard {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.kcard .ph {
+  margin-bottom: 6px;
+}
+.ph.cut {
+  display: grid;
+  place-items: center;
+}
+.ph.cut img,
+.kcard .ph img {
+  width: auto;
+  height: auto;
+  max-width: 90%;
+  max-height: 90%;
+  padding: 0;
+  margin: auto;
+  object-fit: contain;
+}
+.kcard h3 {
+  font-size: 22px;
+  line-height: 1.2;
+}
+.kcard h3 a {
+  text-decoration: none;
+  color: inherit;
+}
+.kcard h3 a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+}
+.kcard .ksub {
+  color: var(--ink-2);
+  font-size: 17px;
+  line-height: 1.4;
+}
+.kcard .mm {
+  font-size: 17px;
+  line-height: 1.4;
+}
+.kcard .price {
+  margin-top: 4px;
+}
+.kcard details {
+  border-top: 1px solid var(--line);
+  margin-top: 8px;
+}
+.kcard summary {
+  list-style: none;
+  cursor: pointer;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font: 600 17px/1.2 var(--f-body);
+  color: var(--clay);
+}
+.kcard summary::-webkit-details-marker {
+  display: none;
+}
+.kcard summary::after {
+  content: "+";
+  font: 400 28px/1 var(--f-body);
+}
+.kcard details[open] summary::after {
+  content: "–";
+}
+.mdet {
+  font-size: 17px;
+  line-height: 1.5;
+  padding-bottom: var(--s2);
+}
+.mdet p {
+  margin: 0 0 0.8em;
+}
+.mdet ul {
+  padding-left: 1.1em;
+  margin: 0 0 0.8em;
+}
+.mdet li {
+  margin-bottom: 0.3em;
+}
+@media (max-width: 720px) {
+  .kcard h3 {
+    font-size: 20px;
+  }
+  .kcard .price {
+    font-size: 22px;
+  }
+}
+
+/* filtry matrací: čisté CSS přes :target, bez JS */
+.mk {
+  display: block;
+  height: 0;
+  scroll-margin-top: calc(var(--hh) + 84px);
+}
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 12px;
+  margin: var(--s3) 0 var(--s5);
+}
+.filters a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 18px;
+  border: 2px solid var(--ink);
+  border-radius: 2px;
+  text-decoration: none;
+  font: 600 17px/1 var(--f-body);
+  color: var(--ink);
+}
+.filters a:hover {
+  background: var(--stone);
+}
+.filters a[href="#f-all"] {
+  background: var(--forest);
+  border-color: var(--forest);
+  color: #fff;
+}
+.mk:target ~ .filters a[href="#f-all"] {
+  background: transparent;
+  border-color: var(--ink);
+  color: var(--ink);
+}
+#f-all:target ~ .filters a[href="#f-all"],
+#f-senior:target ~ .filters a[href="#f-senior"],
+#f-antidekubitni:target ~ .filters a[href="#f-antidekubitni"],
+#f-alergici:target ~ .filters a[href="#f-alergici"],
+#f-vysokozatezove:target ~ .filters a[href="#f-vysokozatezove"],
+#f-detske:target ~ .filters a[href="#f-detske"],
+#f-gelove:target ~ .filters a[href="#f-gelove"],
+#f-tastickove:target ~ .filters a[href="#f-tastickove"] {
+  background: var(--forest);
+  border-color: var(--forest);
+  color: #fff;
+}
+#f-senior:target ~ .kgrid .kcard:not([data-t~="senior"]),
+#f-antidekubitni:target ~ .kgrid .kcard:not([data-t~="antidekubitni"]),
+#f-alergici:target ~ .kgrid .kcard:not([data-t~="alergici"]),
+#f-vysokozatezove:target ~ .kgrid .kcard:not([data-t~="vysokozatezove"]),
+#f-detske:target ~ .kgrid .kcard:not([data-t~="detske"]),
+#f-gelove:target ~ .kgrid .kcard:not([data-t~="gelove"]),
+#f-tastickove:target ~ .kgrid .kcard:not([data-t~="tastickove"]) {
+  display: none;
+}
+.split2 {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--s7);
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .split2 {
+    grid-template-columns: 1fr;
+    gap: var(--s5);
+  }
+}
+
+/* ---------- jak vybrat, podrobnosti, galerie ---------- */
+.guide2 {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: var(--s7);
+  align-items: start;
+}
+.guide2.nofig {
+  grid-template-columns: 1fr;
+}
+.guide2 h2 {
+  margin-bottom: var(--s4);
+}
+.guide2 .cols {
+  columns: 2 300px;
+  column-gap: var(--s5);
+}
+.guide2 .cols > div {
+  break-inside: avoid;
+  margin-bottom: var(--s4);
+}
+.guide2 h3 {
+  margin-bottom: 8px;
+}
+.guide2 p {
+  max-width: 64ch;
+}
+@media (max-width: 900px) {
+  .guide2 {
+    grid-template-columns: 1fr;
+    gap: var(--s5);
+  }
+}
+.details .detail-block + .block-title {
+  margin-top: var(--s7);
+}
+.details .detail-block .entries {
+  gap: var(--s4);
+}
+.details .entry h3,
+.details .prose h3 {
+  font-size: 24px;
+}
+.gal-s {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+  gap: 8px;
+}
+.gal-s + .more,
+.gal-s + .prose {
+  margin-top: var(--s4);
+}
+.gal-s a {
+  display: block;
+  aspect-ratio: 4/3;
+  background: var(--stone);
+  overflow: hidden;
+}
+.gal-s img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.gal-s img.cut {
+  object-fit: contain;
+  padding: 8%;
+}
+.more .gal-s {
+  margin-top: 0;
+}
+.vlist {
+  list-style: none;
+  margin: 0 0 var(--s4);
+  padding: 0;
+  border-top: 1px solid var(--ink);
+}
+.vlist li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--s3);
+  align-items: center;
+  padding: var(--s2) 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 19px;
+}
+.vlist .price {
+  white-space: nowrap;
+}
+@media (max-width: 640px) {
+  .vlist li {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- produkt ---------- */
+.sec.prodsec {
+  padding-top: 0;
+}
+.prodwrap {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  grid-template-areas: "gal panel" "desc panel";
+  gap: var(--s5) var(--s6);
+  margin-top: var(--s4);
+  align-items: start;
+}
+.p-gal {
+  grid-area: gal;
+  min-width: 0;
+}
+.p-desc {
+  grid-area: desc;
+  min-width: 0;
+}
+.p-panel {
+  grid-area: panel;
+  align-self: stretch;
+  min-width: 0;
+}
+.panel {
+  position: sticky;
+  top: calc(var(--hh) + 24px);
+}
+.panel h1 {
+  font-size: clamp(30px, 3.4vw, 40px);
+}
+.price-big {
+  font: 700 clamp(34px, 4vw, 40px)/1.1 var(--f-body);
+  color: var(--clay);
+  margin-top: var(--s3);
+  font-variant-numeric: tabular-nums;
+}
+.price-big.req {
+  font-size: 28px;
+  color: var(--ink-2);
+  font-weight: 600;
+}
+.panel .note {
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--ink-2);
+  margin-top: 8px;
+}
+.spec.sm {
+  margin: var(--s4) 0;
+  grid-template-columns: minmax(110px, 0.42fr) 1fr;
+  font-size: 18px;
+}
+.spec.sm dt,
+.spec.sm dd {
+  padding: 10px 0;
+}
+.panel .ctas {
+  display: grid;
+  gap: 12px;
+}
+.desc {
+  max-width: 64ch;
+}
+.desc h3 {
+  margin: 1.5em 0 0.4em;
+}
+.desc > h3:first-child {
+  margin-top: 0;
+}
+.desc p {
+  margin: 0 0 1em;
+}
+.bul {
+  padding-left: 1.2em;
+  margin: 0 0 1em;
+}
+.bul li {
+  margin-bottom: 0.4em;
+}
+@media (max-width: 900px) {
+  .prodwrap {
+    grid-template-columns: 1fr;
+    grid-template-areas: "gal" "panel" "desc";
+    gap: var(--s4);
+  }
+  .panel {
+    position: static;
+  }
+}
+.gal .fx-thumbs-main,
+.gal figure {
+  margin: 0;
+  aspect-ratio: 4/3;
+  background: var(--stone);
+  overflow: hidden;
+  position: relative;
+}
+.gal .fx-thumbs-main a {
+  display: block;
+  height: 100%;
+  cursor: zoom-in;
+}
+.gal .fx-thumbs-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.gal .fx-thumbs-main.is-cut img {
+  object-fit: contain;
+  padding: 8%;
+}
+.gal .fx-thumbs-main figcaption {
+  display: none;
+}
+.gal .fx-thumbs-strip {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.gal .fx-thumbs-strip li {
+  margin: 0;
+}
+.gal .fx-thumbs-strip a {
+  display: block;
+  width: auto;
+  aspect-ratio: 4/3;
+  border: 0;
+  border-radius: 0;
+  opacity: 1;
+  background: var(--stone);
+  overflow: hidden;
+}
+.gal .fx-thumbs-strip img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.gal .fx-thumbs-strip a[data-cut] img {
+  object-fit: contain;
+  padding: 8%;
+}
+.gal .fx-thumbs-strip a[aria-current="true"] {
+  outline: 3px solid var(--forest);
+  outline-offset: -3px;
+}
+.gal-lb {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+.ph.noimg {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: var(--s4);
+  color: var(--ink-2);
+  font-size: 19px;
+  aspect-ratio: 4/3;
+}
+.sec-head h2 {
+  margin: 0;
+}
+
+/* hustší mřížka u dlouhých seznamů (nad 16 kusů): 4 sloupce na širokém displeji */
+@media (min-width: 1200px) {
+  .models.dense {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+.models.dense .model h3 {
+  font-size: 22px;
+}
+.reco {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  columns: 2 340px;
+  column-gap: var(--s6);
+}
+.reco li {
+  break-inside: avoid;
+  margin: 0 0 var(--s4);
+}
+.reco h3 {
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+/* mobil: karty modelů jako kompaktní řádky (fotka vlevo), aby seznam nebyl nekonečný */
+@media (max-width: 640px) {
+  .models,
+  .models.dense {
+    gap: var(--s4) 0;
+  }
+  .model {
+    display: grid;
+    grid-template-columns: 120px minmax(0, 1fr);
+    grid-template-areas: "ph h" "ph p" "ph m";
+    column-gap: var(--s2);
+    row-gap: 6px;
+    align-content: start;
+  }
+  .model .ph {
+    grid-area: ph;
+    align-self: start;
+  }
+  .model h3,
+  .models.dense .model h3 {
+    grid-area: h;
+    font-size: 20px;
+  }
+  .model p {
+    grid-area: p;
+  }
+  .model .meta {
+    grid-area: m;
+    margin-top: 0;
+    align-self: end;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+  }
+}
+
+/* okno s detailem matrace: velká fotka vlevo, popis vpravo */
+.mdlg-open {
+  display: none;
+  margin-top: var(--s2);
+  width: 100%;
+}
+
+.fx-js .mdlg-open {
+  display: inline-flex;
+}
+
+.fx-js .mfallback {
+  display: none;
+}
+
+.mdlg {
+  width: min(1200px, calc(100vw - 2 * var(--s3)));
+  max-height: calc(100dvh - 2 * var(--s3));
+  margin: auto;
+  padding: 0;
+  border: 0;
+  background: var(--paper);
+  color: var(--ink);
+  overflow: auto;
+}
+
+.mdlg::backdrop {
+  background: rgba(20, 28, 24, 0.65);
+}
+
+.mdlg-close {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: block;
+  margin: 0 0 0 auto;
+  min-height: 56px;
+  padding: 0 var(--s3);
+  border: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 600 18px var(--f-body);
+  cursor: pointer;
+}
+
+.mdlg-close:hover {
+  text-decoration: underline;
+}
+
+.mdlg-in {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  gap: var(--s5);
+  padding: 0 var(--s5) var(--s5);
+  align-items: start;
+}
+
+.mdlg-ph {
+  position: sticky;
+  top: 56px;
+  display: grid;
+  place-items: center;
+  min-height: min(620px, calc(100dvh - 160px));
+  background: var(--stone);
+  padding: var(--s3);
+}
+
+.mdlg-ph img {
+  width: 100%;
+  max-width: none;
+  height: auto;
+}
+
+.mdlg-txt {
+  display: grid;
+  gap: var(--s2);
+  align-content: start;
+}
+
+.mdlg-txt h2 {
+  font-size: clamp(28px, 3vw, 36px);
+}
+
+.mdlg-txt h3 {
+  font-size: 22px;
+  margin-top: var(--s2);
+}
+
+.mdlg-txt .mprice {
+  font-size: 32px;
+}
+
+.mdlg-txt p {
+  max-width: 60ch;
+}
+
+.mchips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mchips li {
+  background: var(--stone);
+  padding: 6px 14px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.mspec {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+.mspec li {
+  margin-bottom: 6px;
+}
+
+@media (max-width: 800px) {
+  .mdlg {
+    width: 100vw;
+    max-height: 100dvh;
+  }
+
+  .mdlg-in {
+    grid-template-columns: 1fr;
+    gap: var(--s3);
+    padding: 0 var(--s3) var(--s4);
+  }
+
+  .mdlg-ph {
+    position: static;
+    min-height: 0;
+  }
+}
+
+.mph {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  cursor: zoom-in;
+}
+
+/* ---------- věci v místnosti: fotky v rámu, cenovka ---------- */
+.model .ph,
+.kcard .ph {
+  padding: 6px;
+  background: #fffdf8;
+  border: 8px solid var(--wood);
+  outline: 1px solid rgba(0, 0, 0, 0.28);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.18);
+}
+.kcard .ph img,
+.model .ph.cut img {
+  max-width: 94%;
+  max-height: 94%;
+}
+.model .price,
+.kcard .price {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 4px 12px;
+  background: #fffdf8;
+  border: 2px solid var(--brass-d);
+  border-radius: 2px 14px 14px 2px;
+}
+.model .price.req,
+.kcard .price.req {
+  font-size: 17px;
+}
+.model .meta {
+  align-items: center;
+  flex-wrap: wrap;
+}
+.model:hover .ph,
+.model:focus-visible .ph {
+  border-color: var(--brass-d);
+}
+@media (max-width: 640px) {
+  .model .ph,
+  .kcard .ph {
+    border-width: 5px;
+    padding: 4px;
+  }
+}
+
+/* okno matrace: cedulková tlačítka a rám kolem fotky */
+.mdlg-close.btn {
+  position: sticky;
+  top: 8px;
+  z-index: 2;
+  display: flex;
+  margin: 8px 12px 0 auto;
+  min-height: 52px;
+  padding-inline: 34px;
+  width: max-content;
+  font: 600 18px var(--f-body);
+}
+.mdlg-ph.frame {
+  padding: 14px;
+  background: #fffdf8;
+  min-height: 0;
+  aspect-ratio: 4/3;
+}
+.mdlg-ph.frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+@media (max-width: 800px) {
+  .mdlg-ph.frame {
+    border-width: 8px;
+    padding: 8px;
+  }
+}
+
+/* produkt: galerie v rámu, panel jako štítek na kusu nábytku */
+.gal .fx-thumbs-main {
+  padding: 12px;
+  background: #fffdf8;
+  border: 10px solid var(--wood);
+  outline: 1px solid rgba(0, 0, 0, 0.28);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.18);
+}
+.gal .fx-thumbs-main.is-cut {
+  background: #fffdf8;
+}
+.gal .fx-thumbs-strip {
+  margin-top: var(--s2);
+}
+.panel {
+  padding: var(--s6) var(--s4) var(--s4);
+  background: #fffdf8;
+  border: 3px solid var(--ink);
+  border-radius: 6px;
+}
+.panel::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  margin-left: -9px;
+  border-radius: 50%;
+  background: var(--sage);
+  box-shadow: inset 0 0 0 3px var(--ink);
+}
+.prodsec.room {
+  padding-bottom: calc(var(--s6) + 26px);
+}
+.prodsec .p-panel .ctas {
+  display: grid;
+}

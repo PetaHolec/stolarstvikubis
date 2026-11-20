@@ -1,0 +1,9 @@
+originals/
+web-*/
+__pycache__/
+.DS_Store
+.claude/
+research/
+handoff-*.md
+* [0-9].*
+node_modules/

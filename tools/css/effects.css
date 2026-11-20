@@ -1,0 +1,552 @@
+/* Kubiš – effects.css
+ * Vlastní implementace efektů (inspirace 21st.dev). Bez závislostí.
+ * Barvy a písma se berou z proměnných webu (--ink, --oak, --paper...) s pevnou zálohou.
+ * Pravidlo: stavy "skryto / před animací" jsou VŽDY pod .fx-js (třídu přidá až JS),
+ * takže bez JS je veškerý obsah viditelný. Na konci je blok prefers-reduced-motion.
+ */
+:root {
+  --fx-ink: var(--ink, #2a1c11);
+  --fx-pale: #b4a48b; /* "nevyplněné" slovo u efektu fill */
+  --fx-paper: var(--paper, #efe6d6);
+  --fx-cream: var(--cream, #f8f3ea);
+  --fx-oak: var(--oak, #c99a5f);
+  --fx-oak-d: var(--oak-d, #9a6a31);
+  --fx-line: var(--line, #d9ccb6);
+  --fx-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --fx-radius: 6px;
+}
+[data-fx] :focus-visible,
+[data-fx]:focus-visible {
+  outline: 3px solid var(--focus, #1a5fd0);
+  outline-offset: 3px;
+}
+
+/* ---- společné velké tlačítko (min. 48 px cíl pro klepnutí) ---- */
+.fx-btn {
+  inline-size: 48px;
+  block-size: 48px;
+  border-radius: 2px;
+  border: 2px solid var(--fx-ink);
+  background: var(--fx-cream);
+  color: var(--fx-ink);
+  font: 700 28px/1 var(--f-body, system-ui);
+  display: inline-grid;
+  place-items: center;
+  cursor: pointer;
+  padding: 0 0 4px;
+}
+.fx-btn:hover:not(:disabled) {
+  background: var(--fx-ink);
+  color: var(--fx-cream);
+}
+.fx-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+/* 1) reveal ------------------------------------------------------ */
+.fx-js [data-fx~="reveal"] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s var(--fx-ease);
+  transition-delay: var(--fx-d, 0s);
+}
+.fx-js [data-fx~="reveal"].is-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* 2) headline: slovo po slově zespodu ---------------------------- */
+.fx-w {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding-bottom: 0.14em;
+  margin-bottom: -0.14em;
+}
+.fx-w > span {
+  display: inline-block;
+}
+.fx-js .fx-split .fx-w > span {
+  transform: translateY(110%);
+  transition: transform 0.75s var(--fx-ease);
+}
+.fx-js .fx-split.is-in .fx-w > span {
+  transform: none;
+}
+
+/* 3) fill: text se vyplňuje inkoustem podle scrollu -------------- */
+.fx-fill-on .fx-f {
+  color: var(--fx-pale);
+  transition: color 0.35s ease;
+}
+.fx-fill-on .fx-f.is-lit {
+  color: var(--fx-ink);
+}
+
+/* 4) mark: zvýrazňovač pod slovem -------------------------------- */
+[data-fx~="mark"] {
+  background: linear-gradient(transparent 64%, rgba(201, 154, 95, 0.5) 64%) no-repeat 0 0 / 100%
+    100%;
+  color: inherit;
+  padding: 0 0.08em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.fx-js [data-fx~="mark"] {
+  background-size: 0% 100%;
+  transition: background-size 0.9s 0.25s var(--fx-ease);
+}
+.fx-js [data-fx~="mark"].is-in {
+  background-size: 100% 100%;
+}
+
+/* 5) count: tabulární číslice, aby číslo neposkakovalo ----------- */
+[data-fx~="count"] {
+  font-variant-numeric: tabular-nums;
+}
+
+/* 6) parallax ---------------------------------------------------- */
+[data-fx~="parallax"] {
+  overflow: hidden;
+  position: relative;
+}
+[data-fx~="parallax"] > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.fx-parallax-on > img {
+  will-change: transform;
+}
+
+/* 7) lift: karta se jemně zvedne, fotka se pomalu přiblíží (jen CSS) */
+[data-fx~="lift"] {
+  transition:
+    transform 0.35s var(--fx-ease),
+    box-shadow 0.35s ease;
+  overflow: hidden;
+}
+[data-fx~="lift"] img {
+  transition: transform 0.8s var(--fx-ease);
+}
+@media (hover: hover) {
+  [data-fx~="lift"]:hover,
+  [data-fx~="lift"]:focus-within {
+    transform: none;
+  }
+  [data-fx~="lift"]:hover img,
+  [data-fx~="lift"]:focus-within img {
+    transform: scale(1.04);
+  }
+}
+
+/* 8) scroller: vodorovná galerie (nativní scroll i bez JS) ------- */
+[data-fx~="scroller"] {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  padding-bottom: 12px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--fx-oak-d) var(--fx-paper);
+}
+[data-fx~="scroller"] > * {
+  flex: 0 0 min(78%, 360px);
+  scroll-snap-align: start;
+}
+[data-fx~="scroller"] img {
+  display: block;
+  width: 100%;
+  height: auto;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+.fx-scroller-on {
+  cursor: grab;
+}
+.fx-scroller-on.is-drag {
+  cursor: grabbing;
+  scroll-snap-type: none;
+  user-select: none;
+}
+.fx-nav {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+.fx-nav[hidden] {
+  display: none;
+}
+
+/* 9) compare: před / po ------------------------------------------ */
+[data-fx~="compare"] {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+} /* fallback bez JS: fotky vedle sebe */
+[data-fx~="compare"] img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.fx-compare-on {
+  position: relative;
+  display: block;
+  aspect-ratio: var(--fx-ratio, 4 / 3);
+  overflow: hidden;
+  --fx-pos: 50%;
+  border-radius: var(--fx-radius);
+}
+.fx-compare-on img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.fx-compare-on img:nth-of-type(2) {
+  clip-path: inset(0 0 0 var(--fx-pos));
+}
+.fx-range {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: ew-resize;
+  touch-action: pan-y;
+}
+.fx-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--fx-pos);
+  width: 3px;
+  margin-left: -1.5px;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(42, 28, 17, 0.35);
+  pointer-events: none;
+}
+.fx-knob {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 52px;
+  height: 52px;
+  margin: -26px 0 0 -26px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--fx-ink);
+  display: grid;
+  place-items: center;
+  font: 700 22px/1 var(--f-body, system-ui);
+  border: 2px solid var(--fx-ink);
+}
+.fx-range:focus-visible ~ .fx-line .fx-knob {
+  outline: 3px solid var(--focus, #1a5fd0);
+  outline-offset: 3px;
+}
+.fx-tag {
+  position: absolute;
+  top: 12px;
+  padding: 4px 12px;
+  background: rgba(42, 28, 17, 0.85);
+  color: #fff;
+  font: 700 15px/1.4 var(--f-body, system-ui);
+  border-radius: 3px;
+  pointer-events: none;
+}
+.fx-tag-l {
+  left: 12px;
+}
+.fx-tag-r {
+  right: 12px;
+}
+
+/* 10) zoom: lupa na detail dřeva --------------------------------- */
+[data-fx~="zoom"] {
+  overflow: hidden;
+  position: relative;
+}
+[data-fx~="zoom"] img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.fx-zoom-on {
+  cursor: zoom-in;
+}
+.fx-zoom-on img {
+  transition: transform 0.25s ease-out;
+  will-change: transform;
+}
+.fx-zoom-on.is-zoomed {
+  cursor: zoom-out;
+  touch-action: none;
+}
+.fx-zoom-on::after {
+  content: "Přiblížit";
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  padding: 4px 12px;
+  background: rgba(42, 28, 17, 0.85);
+  color: #fff;
+  font: 700 14px/1.4 var(--f-body, system-ui);
+  border-radius: 3px;
+  pointer-events: none;
+}
+.fx-zoom-on.is-zoomed::after {
+  content: "Zavřít";
+}
+
+/* 11) thumbs: velká fotka + náhledy ------------------------------ */
+.fx-thumbs-strip {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.fx-thumbs-strip a {
+  display: block;
+  width: 84px;
+  border: 3px solid transparent;
+  border-radius: 4px;
+  opacity: 0.8;
+}
+.fx-thumbs-strip img {
+  display: block;
+  width: 100%;
+  height: 64px;
+  object-fit: cover;
+}
+.fx-thumbs-strip a[aria-current="true"] {
+  border-color: var(--fx-oak-d);
+  opacity: 1;
+}
+.fx-thumbs-main {
+  margin: 0;
+}
+.fx-thumbs-main img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: opacity 0.18s ease;
+}
+.fx-thumbs-main img.is-out {
+  opacity: 0;
+}
+.fx-thumbs-main figcaption {
+  margin-top: 8px;
+  font-size: 1rem;
+  color: var(--muted, #6a5846);
+  min-height: 1.5em;
+}
+
+/* 12) panels: obrázkový akordeon pro kategorie ------------------- */
+[data-fx~="panels"] {
+  display: flex;
+  gap: 8px;
+  height: clamp(320px, 52vw, 460px);
+}
+[data-fx~="panels"] > * {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: var(--fx-radius);
+  color: #fff;
+  text-decoration: none;
+  transition: flex-grow 0.55s var(--fx-ease);
+}
+[data-fx~="panels"] > * > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+[data-fx~="panels"] > * > span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 36px 16px 14px;
+  font: 700 1.2rem/1.25 var(--f-head, Georgia, serif);
+  background: linear-gradient(transparent, rgba(30, 18, 8, 0.88));
+}
+[data-fx~="panels"] > *:hover {
+  flex-grow: 3.4;
+} /* bez JS: hover */
+.fx-js [data-fx~="panels"] > .is-active {
+  flex-grow: 3.4;
+}
+.fx-js [data-fx~="panels"]:hover > *:not(:hover):not(.is-active) {
+  flex-grow: 1;
+}
+@media (hover: none), (max-width: 700px) {
+  /* dotyk / telefon: pod sebou, bez rozbalování */
+  [data-fx~="panels"] {
+    flex-direction: column;
+    height: auto;
+  }
+  [data-fx~="panels"] > * {
+    flex: none;
+    height: 180px;
+  }
+  [data-fx~="panels"] > *:hover,
+  .fx-js [data-fx~="panels"] > .is-active {
+    flex-grow: 0;
+  }
+}
+
+/* 13) accordion: nativní <details>, plynulé rozbalení ------------ */
+[data-fx~="accordion"] summary::-webkit-details-marker {
+  display: none;
+}
+[data-fx~="accordion"] details[open]:not(.is-closing) > summary::after {
+  content: "\2212";
+}
+.fx-acc-body {
+  overflow: hidden;
+}
+
+/* 14) quotes: reference po jedné --------------------------------- */
+.fx-qlist {
+  display: grid;
+}
+.fx-qlist > figure {
+  grid-area: 1 / 1;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.4s ease,
+    visibility 0s 0.4s;
+}
+.fx-qlist > figure.is-on {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.4s ease;
+}
+.fx-qctrl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 14px;
+}
+.fx-qcount {
+  font: 700 1rem var(--f-body, system-ui);
+  min-width: 3.5em;
+  text-align: center;
+}
+
+/* 15) header: lepkavá hlavička ----------------------------------- */
+[data-fx~="header"] {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--fx-cream);
+  transition:
+    transform 0.3s var(--fx-ease),
+    box-shadow 0.3s ease;
+}
+[data-fx~="header"].is-stuck {
+  box-shadow: 0 2px 14px rgba(42, 28, 17, 0.14);
+}
+[data-fx~="header"].is-hidden {
+  transform: translateY(-100%);
+}
+
+/* 16) progress: ukazatel čtení ----------------------------------- */
+[data-fx~="progress"] {
+  display: none;
+}
+.fx-js [data-fx~="progress"] {
+  display: block;
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 4px;
+  z-index: 60;
+  background: var(--fx-oak-d);
+  transform-origin: 0 50%;
+  transform: scaleX(var(--fx-p, 0));
+  pointer-events: none;
+}
+
+/* ---- tisk: vždy vše viditelné ---- */
+@media print {
+  .fx-js [data-fx~="reveal"],
+  .fx-js .fx-split .fx-w > span {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  [data-fx~="progress"],
+  .fx-nav {
+    display: none !important;
+  }
+}
+
+/* ---- prefers-reduced-motion: žádný pohyb, vše v cílovém stavu ---- */
+@media (prefers-reduced-motion: reduce) {
+  .fx-js [data-fx~="reveal"],
+  .fx-js [data-fx~="reveal"].is-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .fx-js .fx-split .fx-w > span {
+    transform: none;
+    transition: none;
+  }
+  .fx-fill-on .fx-f {
+    color: var(--fx-ink);
+    transition: none;
+  }
+  .fx-js [data-fx~="mark"] {
+    background-size: 100% 100%;
+    transition: none;
+  }
+  .fx-parallax-on > img {
+    transform: none !important;
+  }
+  [data-fx~="lift"],
+  [data-fx~="lift"] img {
+    transition: none;
+  }
+  [data-fx~="lift"]:hover,
+  [data-fx~="lift"]:focus-within,
+  [data-fx~="lift"]:hover img,
+  [data-fx~="lift"]:focus-within img {
+    transform: none;
+  }
+  .fx-zoom-on img,
+  .fx-thumbs-main img,
+  [data-fx~="panels"] > *,
+  [data-fx~="accordion"] summary::after,
+  .fx-qlist > figure,
+  .fx-qlist > figure.is-on,
+  [data-fx~="header"] {
+    transition: none;
+  }
+  [data-fx~="scroller"] {
+    scroll-behavior: auto;
+  }
+  [data-fx~="header"].is-hidden {
+    transform: none;
+  }
+  .fx-js [data-fx~="progress"] {
+    transition: none;
+  }
+}

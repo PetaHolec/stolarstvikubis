@@ -1,0 +1,244 @@
+/* Web jako domácnost: místnosti se stěnou a lištou, cedulky na dveře, rámy na obrazy, tlačítka jako cedulky.
+   Pomocné třídy pro stránky:
+   .room            sekce = místnost (stěna + podlahová lišta dole); barva: .wall-sage .wall-butter .wall-clay .wall-sky .wall-stone .wall-paper
+   .plate           mosazná cedulka na dveře s názvem místnosti (<span class="plate">Ložnice</span>)
+   .frame           fotka v dřevěném rámu s paspartou (<figure class="frame"><img></figure>)
+   .btn             tlačítko = cedulka se čtyřmi šroubky; .btn-2 = papírová cedulka s dírkou na provázek
+   .doormat         rohožka (velké tlačítko "Pojďte dál") */
+
+:root {
+  --sage: #dce5da;
+  --butter: #f2e8c6;
+  --clay-wall: #ebd8c7;
+  --sky: #dce4e8;
+  --brass: #c9a24a;
+  --brass-d: #8a6a22;
+  --wood: #7b5230;
+  --wood-l: #d8c3a0;
+  --wood-d: #b79e76;
+}
+
+/* ---------- místnost: stěna a podlahová lišta ---------- */
+.room {
+  position: relative;
+  padding-bottom: calc(var(--s7) + 26px);
+}
+
+.room::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 26px;
+  background: linear-gradient(var(--wood-l) 0 72%, var(--wood-d) 72% 100%);
+  border-top: 1px solid rgba(0, 0, 0, 0.14);
+}
+
+.wall-sage {
+  background: var(--sage);
+}
+.wall-butter {
+  background: var(--butter);
+}
+.wall-clay {
+  background: var(--clay-wall);
+}
+.wall-sky {
+  background: var(--sky);
+}
+.wall-stone {
+  background: var(--stone);
+}
+.wall-paper {
+  background: var(--paper);
+}
+
+/* ---------- cedulka na dveře ---------- */
+.plate {
+  position: relative;
+  display: inline-block;
+  padding: 10px 34px;
+  background: linear-gradient(#e2c273, var(--brass));
+  color: #2a2008;
+  border: 2px solid var(--brass-d);
+  border-radius: 4px;
+  font: 700 17px/1 var(--f-body);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.plate::before,
+.plate::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  margin-top: -4px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #f6e6b8, var(--brass-d) 75%);
+}
+.plate::before {
+  left: 12px;
+}
+.plate::after {
+  right: 12px;
+}
+
+/* ---------- rám na obraz ---------- */
+.frame {
+  margin: 0;
+  padding: 14px;
+  background: #fffdf8;
+  border: 12px solid var(--wood);
+  outline: 1px solid rgba(0, 0, 0, 0.28);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.18);
+}
+
+.frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.frame figcaption {
+  margin-top: 12px;
+  font-size: 17px;
+  color: var(--ink-2);
+}
+
+/* ---------- tlačítka jako cedulky ---------- */
+.btn {
+  position: relative;
+  padding: 0 calc(var(--s4) + 14px);
+  border: 0;
+  border-radius: 6px;
+  background: var(--forest);
+  color: #fff;
+  box-shadow:
+    inset 0 0 0 2px rgba(255, 255, 255, 0.2),
+    inset 0 -4px 0 rgba(0, 0, 0, 0.28);
+}
+
+.btn::before,
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  margin-top: -4px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #f6e6b8, var(--brass-d) 75%);
+}
+.btn::before {
+  left: 14px;
+}
+.btn::after {
+  right: 14px;
+}
+
+.btn:hover {
+  background: var(--forest-2);
+  box-shadow:
+    inset 0 0 0 2px rgba(255, 255, 255, 0.28),
+    inset 0 -4px 0 rgba(0, 0, 0, 0.35);
+}
+
+.btn:active {
+  transform: translateY(2px);
+  box-shadow:
+    inset 0 0 0 2px rgba(255, 255, 255, 0.2),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.28);
+}
+
+/* papírová cedulka s dírkou na provázek */
+.btn-2,
+.btn-ghost {
+  background: #fffdf8;
+  color: var(--ink);
+  border: 0;
+  box-shadow:
+    inset 0 0 0 2px var(--ink),
+    inset 0 -4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.btn-2::before,
+.btn-ghost::before {
+  width: 10px;
+  height: 10px;
+  margin-top: -5px;
+  background: var(--paper);
+  box-shadow: inset 0 0 0 2px var(--ink);
+}
+.btn-2::after,
+.btn-ghost::after {
+  display: none;
+}
+
+.btn-2:hover,
+.btn-ghost:hover {
+  background: var(--stone);
+}
+
+/* na tmavé ploše: cedulka z mosazi */
+.forest .btn,
+.band .btn,
+.sec.forest .btn {
+  background: linear-gradient(#e8cb84, var(--brass));
+  color: #2a2008;
+  box-shadow:
+    inset 0 0 0 2px var(--brass-d),
+    inset 0 -4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.forest .btn:hover,
+.band .btn:hover,
+.sec.forest .btn:hover {
+  background: #f1dc9f;
+}
+
+.forest .btn-2,
+.band .btn-2,
+.forest .btn-ghost,
+.band .btn-ghost {
+  background: transparent;
+  color: #fff;
+  box-shadow: inset 0 0 0 2px #fff;
+}
+
+.forest .btn-2::before,
+.band .btn-2::before,
+.forest .btn-ghost::before,
+.band .btn-ghost::before {
+  background: var(--forest);
+  box-shadow: inset 0 0 0 2px #fff;
+}
+
+.forest .btn-2:hover,
+.band .btn-2:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+/* ---------- rohožka ---------- */
+.doormat {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 72px;
+  padding: 0 var(--s6);
+  background: repeating-linear-gradient(90deg, #8c6a43 0 6px, #7a5a38 6px 12px);
+  color: #fff;
+  border: 4px solid #5e4529;
+  border-radius: 4px;
+  font: 600 22px/1 var(--f-head);
+  text-decoration: none;
+}
+
+.doormat:hover {
+  background: repeating-linear-gradient(90deg, #7a5a38 0 6px, #6a4d30 6px 12px);
+}
+
+/* dolní lišta na mobilu: díra na provázek nesmí zasahovat do textu */
+.mbar .btn-2 {
+  padding-left: 32px;
+}

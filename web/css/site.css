@@ -1,0 +1,5060 @@
+/* Stolařství Kubiš: základ designu „Dílna ve dne“ (kostní papír, zelenočerná, lesní zelená, hlína).
+   Pravidla: tělo 19 px, nic pod 16 px, jedna akční barva, žádné stíny, přechody ani blur, fotky jen v rámech z tabulky. */
+:root {
+  --paper: #f7f4ee;
+  --stone: #ece6da;
+  --ink: #1d2420;
+  --ink-2: #4b544e;
+  --line: #d3cbbb;
+  --forest: #244236;
+  --forest-2: #1a3128;
+  --clay: #9a4a1e;
+  --sun: #e3b764;
+  --err: #a3321f;
+  --focus: #1a5fd0;
+  --white: #fff;
+  --f-head: "Literata", Georgia, "Times New Roman", serif;
+  --f-body: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --gut: 32px;
+  --edge: 40px;
+  --max: 1240px;
+  --hh: 84px;
+  --s1: 8px;
+  --s2: 16px;
+  --s3: 24px;
+  --s4: 32px;
+  --s5: 48px;
+  --s6: 64px;
+  --s7: 96px;
+  --s8: 128px;
+  /* aliasy pro efekty (research/21st) */
+  --cream: var(--paper);
+  --oak: var(--clay);
+  --oak-d: var(--clay);
+  --fx-pale: #8a948d;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--hh) + 16px);
+  -webkit-text-size-adjust: 100%;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 19px/1.6 var(--f-body);
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+}
+body.no-scroll {
+  overflow: hidden;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+a {
+  color: inherit;
+}
+p {
+  margin: 0;
+}
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+.forest :focus-visible,
+.band :focus-visible,
+footer :focus-visible {
+  outline-color: #fff;
+  box-shadow: 0 0 0 6px var(--focus);
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--f-head);
+  font-optical-sizing: auto;
+  text-wrap: balance;
+  letter-spacing: -0.005em;
+  margin: 0;
+}
+h1 {
+  font-size: clamp(36px, 4.4vw, 56px);
+  line-height: 1.08;
+  font-weight: 600;
+}
+h2 {
+  font-size: clamp(30px, 3vw, 38px);
+  line-height: 1.15;
+  font-weight: 600;
+}
+h3 {
+  font-size: clamp(23px, 2vw, 26px);
+  line-height: 1.2;
+  font-weight: 500;
+}
+.wrap {
+  max-width: calc(var(--max) + 2 * var(--edge));
+  margin: 0 auto;
+  padding-inline: var(--edge);
+}
+.narrow {
+  max-width: 760px;
+}
+.lead {
+  font-size: clamp(20px, 1.8vw, 22px);
+  line-height: 1.5;
+  color: var(--ink-2);
+  max-width: 60ch;
+}
+.small {
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.skip {
+  position: absolute;
+  left: -999px;
+  top: 8px;
+  background: var(--ink);
+  color: #fff;
+  padding: 12px 18px;
+  z-index: 100;
+}
+.skip:focus {
+  left: 8px;
+}
+
+/* sekce: střídání pozadí a výšek */
+.sec {
+  padding-block: var(--s7);
+}
+.sec.chapter {
+  padding-block: var(--s8);
+}
+.sec.tight {
+  padding-block: var(--s6);
+}
+.sec.paper {
+  background: var(--paper);
+}
+.sec.stone {
+  background: var(--stone);
+}
+.sec.forest {
+  background: var(--forest);
+  color: var(--white);
+}
+.sec.forest h1,
+.sec.forest h2,
+.sec.forest h3 {
+  color: var(--white);
+}
+.sec.forest .lead,
+.sec.forest p {
+  color: #e4ece7;
+}
+.sec.forest .link {
+  color: var(--sun);
+}
+.sec-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: end;
+  gap: var(--s2) var(--s5);
+  margin-bottom: var(--s5);
+}
+@media (max-width: 1023px) {
+  :root {
+    --gut: 24px;
+    --edge: 28px;
+  }
+}
+@media (max-width: 767px) {
+  :root {
+    --gut: 16px;
+    --edge: 20px;
+    --hh: 72px;
+  }
+  body {
+    font-size: 18px;
+  }
+  .sec {
+    padding-block: var(--s6);
+  }
+  .sec.chapter {
+    padding-block: var(--s7);
+  }
+  .sec.tight {
+    padding-block: var(--s5);
+  }
+}
+
+/* tlačítka a odkazy */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  min-height: 56px;
+  padding: 0 var(--s4);
+  border-radius: 2px;
+  border: 2px solid var(--forest);
+  background: var(--forest);
+  color: var(--white);
+  font: 600 18px/1 var(--f-body);
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    border-color 0.15s,
+    color 0.15s;
+}
+.btn:hover {
+  background: var(--forest-2);
+  border-color: var(--forest-2);
+}
+.btn:active {
+  transform: translateY(1px);
+}
+.btn-2 {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--ink);
+}
+.btn-2:hover {
+  background: var(--stone);
+  border-color: var(--ink);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--ink);
+}
+.btn-ghost:hover {
+  background: var(--stone);
+}
+.btn-primary {
+}
+.forest .btn,
+.band .btn,
+.sec.forest .btn {
+  background: var(--sun);
+  border-color: var(--sun);
+  color: var(--ink);
+}
+.forest .btn:hover,
+.band .btn:hover,
+.sec.forest .btn:hover {
+  background: #fff;
+  border-color: #fff;
+}
+.forest .btn-2,
+.band .btn-2,
+.forest .btn-ghost,
+.band .btn-ghost {
+  background: transparent;
+  border-color: #fff;
+  color: #fff;
+}
+.forest .btn-2:hover,
+.band .btn-2:hover,
+.forest .btn-ghost:hover,
+.band .btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #fff;
+}
+.btn[disabled] {
+  opacity: 0.6;
+  cursor: wait;
+}
+.btn-block {
+  display: flex;
+  width: 100%;
+}
+.link {
+  color: var(--clay);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.22em;
+}
+.link:hover {
+  color: var(--ink);
+}
+.forest .link:hover {
+  color: #fff;
+}
+.arrow::after {
+  content: " →";
+}
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2);
+  align-items: center;
+}
+.price {
+  font: 700 24px/1.1 var(--f-body);
+  color: var(--clay);
+  font-variant-numeric: tabular-nums;
+}
+.price.req {
+  font-weight: 400;
+  font-size: 17px;
+  color: var(--ink-2);
+}
+
+/* hlavička: 84 px, bez blur, bez stínu */
+.top {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+.top .wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--s4);
+  min-height: var(--hh);
+}
+.logo {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  flex: none;
+}
+.logo b {
+  font: 700 26px/1 var(--f-head);
+  letter-spacing: -0.01em;
+}
+.logo b i {
+  display: none;
+}
+.logo span {
+  display: none;
+}
+nav.main {
+  margin-left: auto;
+}
+nav.main > ul {
+  display: flex;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav.main li {
+  position: relative;
+}
+nav.main .has-sub > button,
+nav.main > ul > li > a {
+  white-space: nowrap;
+  font: 600 17px/1 var(--f-body);
+  color: var(--ink);
+  background: none;
+  border: 0;
+  padding: 16px 14px;
+  cursor: pointer;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+}
+nav.main .has-sub > button::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+}
+nav.main li:hover > button,
+nav.main li.open > button,
+nav.main > ul > li > a:hover {
+  border-bottom-color: var(--forest);
+}
+.sub {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  min-width: 280px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--forest);
+  padding: 12px;
+  display: none;
+  z-index: 5;
+}
+.sub.wide {
+  min-width: 560px;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 24px;
+  padding: 20px 24px;
+}
+li.open > .sub {
+  display: block;
+}
+li.open > .sub.wide {
+  display: grid;
+}
+@media (hover: hover) and (min-width: 861px) {
+  nav.main li.has-sub:hover > .sub,
+  nav.main li.has-sub:focus-within > .sub {
+    display: block;
+    animation: subin 0.18s ease-out;
+  }
+  nav.main li.has-sub:hover > .sub.wide,
+  nav.main li.has-sub:focus-within > .sub.wide {
+    display: grid;
+  }
+  nav.main li.has-sub:hover > button {
+    border-bottom-color: var(--forest);
+  }
+  nav.main li.has-sub > .sub::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -24px;
+    height: 24px;
+  }
+}
+@keyframes subin {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.sub h4 {
+  font: 700 16px/1 var(--f-body);
+  color: var(--ink-2);
+  margin: 0 10px 8px;
+}
+.sub a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+}
+.sub a small {
+  display: none;
+}
+.sub a:hover {
+  background: var(--stone);
+}
+.top .tel {
+  font: 700 21px/1 var(--f-body);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.top .btn {
+  min-height: 48px;
+  padding: 0 var(--s3);
+  font-size: 17px;
+}
+.burger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  border: 2px solid var(--ink);
+  background: transparent;
+  min-height: 48px;
+  padding: 0 20px;
+  font: 600 17px var(--f-body);
+  color: var(--ink);
+  cursor: pointer;
+  border-radius: 2px;
+}
+.drawer {
+  margin: 0 0 0 auto;
+  height: 100dvh;
+  max-height: none;
+  width: min(440px, 100%);
+  border: 0;
+  padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+}
+.drawer::backdrop {
+  background: rgba(20, 28, 24, 0.6);
+}
+.drawer-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px var(--edge);
+  border-bottom: 1px solid var(--line);
+}
+.drawer .close {
+  background: none;
+  border: 0;
+  font: 600 18px var(--f-body);
+  color: inherit;
+  cursor: pointer;
+  padding: 12px;
+}
+.drawer nav {
+  padding: 4px var(--edge);
+}
+.drawer details {
+  border-bottom: 1px solid var(--line);
+}
+.drawer summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 18px 0;
+  font: 600 24px var(--f-head);
+  display: flex;
+  justify-content: space-between;
+}
+.drawer summary::after {
+  content: "+";
+}
+.drawer details[open] summary::after {
+  content: "–";
+}
+.drawer .drawer-links {
+  display: grid;
+  padding-bottom: 12px;
+}
+.drawer .drawer-links a {
+  padding: 12px 0;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 19px;
+}
+.drawer .drawer-links a small {
+  display: none;
+}
+.drawer .drawer-links b {
+  color: var(--ink-2);
+  font: 700 16px var(--f-body);
+  margin-top: 10px;
+}
+.drawer h3.dh {
+  padding: 20px var(--edge) 6px;
+}
+.drawer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 var(--edge) 40px;
+  display: grid;
+  gap: 12px;
+  font-weight: 600;
+  font-size: 19px;
+}
+@media (max-width: 1180px) {
+  .top .tel {
+    display: none;
+  }
+  .top .wrap {
+    gap: var(--s2);
+  }
+  nav.main .has-sub > button,
+  nav.main > ul > li > a {
+    padding: 16px 10px;
+  }
+}
+@media (max-width: 860px) {
+  nav.main {
+    display: none;
+  }
+  .burger {
+    display: inline-flex;
+  }
+  .top .btn {
+    display: none;
+  }
+}
+
+.crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  font-size: 17px;
+  color: var(--ink-2);
+  padding-top: var(--s3);
+}
+.crumbs a {
+  text-decoration: none;
+}
+.crumbs a:hover {
+  text-decoration: underline;
+}
+.crumbs [aria-current] {
+  color: var(--ink);
+}
+
+/* fotky: rámy z tabulky; popisek pod fotkou */
+.ph {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  background: var(--stone);
+  aspect-ratio: 4/3;
+}
+.ph img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ph.r32 {
+  aspect-ratio: 3/2;
+}
+.ph.r45 {
+  aspect-ratio: 4/5;
+}
+.ph.r11 {
+  aspect-ratio: 1/1;
+}
+.ph.r54 {
+  aspect-ratio: 5/4;
+}
+.ph.r76 {
+  aspect-ratio: 7/6;
+}
+.ph.cut img,
+.ph img.cut,
+.ph img.small {
+  object-fit: contain;
+  padding: 8%;
+}
+.ph.cut {
+  border-bottom: 0;
+}
+.cap {
+  font-size: 17px;
+  line-height: 1.45;
+  color: var(--ink-2);
+  margin-top: 10px;
+}
+figure {
+  margin: 0;
+}
+
+/* mřížka modelů a karta */
+.models {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s5) var(--s4);
+}
+@media (max-width: 1023px) {
+  .models {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .models {
+    grid-template-columns: 1fr;
+    gap: var(--s5) 0;
+  }
+}
+.model {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+.model:hover h3 {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+}
+.model h3 {
+  font-size: 24px;
+}
+.model p {
+  color: var(--ink-2);
+  font-size: 17px;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.model .meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--s2);
+}
+.model .ph .flags {
+  position: absolute;
+  left: 0;
+  top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+}
+.flag {
+  background: var(--forest);
+  color: #fff;
+  font: 600 16px/1 var(--f-body);
+  padding: 8px 12px;
+}
+.flags {
+  position: absolute;
+  left: 0;
+  top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+  z-index: 1;
+}
+.block-title {
+  font-size: clamp(26px, 2.6vw, 32px);
+  margin: var(--s6) 0 var(--s3);
+}
+.block-title:first-child {
+  margin-top: 0;
+}
+
+/* ceník jako řádky */
+.pricelist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--ink);
+}
+.pricelist li {
+  border-bottom: 1px solid var(--line);
+}
+.pricelist a {
+  display: grid;
+  grid-template-columns: 140px 1fr auto;
+  gap: var(--s3);
+  align-items: center;
+  padding: var(--s2) 0;
+  text-decoration: none;
+  min-height: 112px;
+}
+.pricelist .ph {
+  width: 140px;
+  aspect-ratio: 4/3;
+}
+.pricelist h3 {
+  font-size: 24px;
+}
+.pricelist a:hover h3 {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+}
+.pricelist p {
+  color: var(--ink-2);
+  font-size: 17px;
+  line-height: 1.45;
+  margin-top: 4px;
+}
+.pricelist .price {
+  font-size: 24px;
+  white-space: nowrap;
+}
+@media (max-width: 640px) {
+  .pricelist a {
+    grid-template-columns: 96px 1fr;
+    gap: var(--s2);
+    min-height: 0;
+  }
+  .pricelist .price {
+    grid-column: 2;
+  }
+  .pricelist .ph {
+    width: 96px;
+  }
+}
+
+/* definiční seznam / tabulka parametrů */
+.spec {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.35fr) 1fr;
+  margin: 0;
+  border-top: 1px solid var(--ink);
+}
+.spec dt,
+.spec dd {
+  margin: 0;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+.spec dt {
+  font-weight: 700;
+  padding-right: var(--s3);
+}
+.spec dd {
+  color: var(--ink);
+}
+.hours {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px var(--s4);
+  margin: 0;
+}
+.hours dt {
+  font-weight: 700;
+}
+.hours dd {
+  margin: 0;
+}
+@media (max-width: 640px) {
+  .spec {
+    grid-template-columns: 1fr;
+  }
+  .spec dt {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+/* formulář */
+.form-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: var(--s7);
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: var(--s5);
+  }
+}
+.contact-big {
+  display: block;
+  font: 600 clamp(32px, 4vw, 40px)/1.1 var(--f-head);
+  margin: var(--s3) 0 var(--s1);
+  text-decoration: none;
+  color: var(--sun);
+}
+.contact-list {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px var(--s3);
+  margin: var(--s3) 0 0;
+}
+.contact-list dt {
+  color: #c4d2ca;
+}
+.contact-list dd {
+  margin: 0;
+}
+.contact-list a {
+  color: #fff;
+}
+form.inq {
+  background: var(--white);
+  color: var(--ink);
+  padding: var(--s5);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s3);
+}
+form.inq .full {
+  grid-column: 1/-1;
+}
+@media (max-width: 640px) {
+  form.inq {
+    grid-template-columns: 1fr;
+    padding: var(--s3);
+  }
+}
+form.inq label {
+  display: block;
+  font: 600 17px/1.3 var(--f-body);
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+form.inq label small {
+  font-weight: 400;
+  color: var(--ink-2);
+}
+form.inq input,
+form.inq textarea {
+  width: 100%;
+  font: 400 19px var(--f-body);
+  padding: 0 16px;
+  border: 2px solid var(--ink-2);
+  background: var(--white);
+  color: var(--ink);
+  min-height: 56px;
+  border-radius: 2px;
+}
+form.inq textarea {
+  min-height: 150px;
+  padding: 14px 16px;
+  resize: vertical;
+}
+form.inq input:focus,
+form.inq textarea:focus {
+  border-color: var(--forest);
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+form.inq .btn {
+  background: var(--forest);
+  border-color: var(--forest);
+  color: #fff;
+}
+form.inq .note {
+  font-size: 16px;
+  color: var(--ink-2);
+  margin-top: 12px;
+}
+form.inq .note a {
+  color: var(--clay);
+}
+.err {
+  color: var(--err);
+  font-size: 17px;
+  margin-top: 6px;
+  font-weight: 600;
+}
+.ok-msg {
+  background: #e3eee6;
+  color: #173326;
+  padding: 16px 18px;
+  font-size: 18px;
+}
+.err-msg {
+  background: #f6e2dc;
+  color: #7a2418;
+  padding: 16px 18px;
+  font-size: 18px;
+}
+
+/* časté dotazy */
+.faq {
+  display: grid;
+  max-width: 860px;
+}
+.faq details {
+  border-top: 1px solid var(--ink);
+}
+.faq details:last-child {
+  border-bottom: 1px solid var(--ink);
+}
+.faq summary {
+  cursor: pointer;
+  list-style: none;
+  padding: var(--s3) 56px var(--s3) 0;
+  font: 500 22px/1.3 var(--f-head);
+  position: relative;
+  min-height: 60px;
+}
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+.faq summary::after {
+  content: "+";
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font: 400 32px/1 var(--f-body);
+  color: var(--clay);
+}
+.faq details[open] summary::after {
+  content: "–";
+}
+.faq details p {
+  padding: 0 56px var(--s3) 0;
+  color: var(--ink-2);
+  max-width: 64ch;
+}
+.faq-group {
+  margin-top: var(--s6);
+}
+.faq-group h2 {
+  margin-bottom: var(--s3);
+}
+
+/* pás s výzvou */
+.band {
+  background: var(--forest);
+  color: #fff;
+}
+.band p,
+.band .lead {
+  color: #e4ece7;
+}
+.cta-band .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s4) var(--s6);
+  justify-content: space-between;
+  align-items: center;
+  padding-block: var(--s6);
+}
+.cta-band h2 {
+  font-size: clamp(28px, 3vw, 36px);
+  color: #fff;
+}
+
+/* recenze, texty z původního webu */
+.prose {
+  max-width: 64ch;
+}
+.prose p {
+  margin: 0 0 1em;
+}
+.prose h3 {
+  margin: 1.6em 0 0.5em;
+}
+.prose h2 {
+  margin: 1.6em 0 0.5em;
+}
+.prose ul,
+.prose ol {
+  padding-left: 1.2em;
+  margin: 0 0 1em;
+}
+.prose li {
+  margin-bottom: 0.4em;
+}
+.prose a,
+.entry a:not([data-lb]) {
+  color: var(--clay);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.entries {
+  display: grid;
+  gap: var(--s5);
+}
+.entry {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: var(--s5);
+  align-items: start;
+  padding-bottom: var(--s5);
+  border-bottom: 1px solid var(--line);
+}
+.entry.noimg {
+  grid-template-columns: 1fr;
+}
+.entry h3 {
+  margin-bottom: 12px;
+  font-size: 26px;
+}
+.thumbs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+}
+.thumbs a {
+  display: block;
+  background: var(--stone);
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+.thumbs img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.thumbs img.cut {
+  object-fit: contain;
+  padding: 8%;
+}
+.thumbs:has(a:only-child) {
+  grid-template-columns: 1fr;
+}
+.thumbs:has(a:only-child) a {
+  aspect-ratio: auto;
+}
+.thumbs:has(a:only-child) img {
+  height: auto;
+  max-height: 480px;
+  object-fit: contain;
+}
+.price-tag {
+  display: inline-block;
+  color: var(--clay);
+  font: 700 24px var(--f-body);
+  margin: 0 0 8px;
+}
+@media (max-width: 760px) {
+  .entry {
+    grid-template-columns: 1fr;
+  }
+}
+.gal-grid {
+  columns: 3 240px;
+  column-gap: var(--s2);
+}
+.gal-grid figure {
+  margin: 0 0 var(--s2);
+  break-inside: avoid;
+}
+.gal-grid a {
+  display: block;
+  background: var(--stone);
+}
+.gal-grid img {
+  width: 100%;
+  height: auto;
+}
+.gal-grid figcaption {
+  padding: 8px 2px;
+  font-size: 16px;
+  color: var(--ink-2);
+}
+.assemble {
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+.as-stage {
+  display: block;
+  background: var(--stone);
+  padding: var(--s3);
+  margin-inline: auto;
+  width: 100%;
+}
+.as-stage img {
+  margin: 0 auto;
+  width: auto;
+  max-width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+}
+.as-kota {
+  display: none;
+}
+.as-layers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  font-size: 16px;
+}
+.as-lbl {
+  font-weight: 700;
+  margin-right: 4px;
+}
+.as-layers span:not(.as-lbl) {
+  background: var(--stone);
+  padding: 4px 12px;
+}
+.entry.mat .as-col {
+  display: grid;
+  gap: 12px;
+}
+.reviews {
+  columns: 2 340px;
+  column-gap: var(--s4);
+}
+.review {
+  margin: 0 0 var(--s4);
+  break-inside: avoid;
+  background: var(--stone);
+  padding: var(--s4);
+}
+.review figcaption {
+  display: flex;
+  gap: var(--s2);
+  font-size: 16px;
+  color: var(--ink-2);
+  margin-bottom: 10px;
+}
+.review blockquote {
+  margin: 0;
+}
+.review blockquote p + p {
+  margin-top: 0.7em;
+}
+.feature-review {
+  margin-bottom: var(--s4);
+}
+.feature-review .review {
+  background: var(--forest);
+  color: #fff;
+}
+.feature-review .review figcaption {
+  color: #c4d2ca;
+}
+.feature-review .ok {
+  color: var(--sun);
+}
+.feature-review blockquote {
+  font: 500 26px/1.4 var(--f-head);
+}
+.ok {
+  color: #1e6b45;
+  font-weight: 600;
+}
+.badge {
+  display: inline-block;
+  background: var(--stone);
+  color: var(--ink-2);
+  font: 600 16px var(--f-body);
+  padding: 6px 12px;
+  margin-bottom: 10px;
+}
+.album-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  list-style: none;
+  margin: 0 0 10px;
+  padding: 0 0 12px;
+  border-bottom: 1px solid var(--line);
+}
+.album-index a {
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  gap: 8px;
+  padding: 8px 0;
+}
+.album-index a:hover {
+  text-decoration: underline;
+}
+.album {
+  padding-top: var(--s6);
+}
+.album header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--s2);
+  margin-bottom: var(--s3);
+}
+.album h2 {
+  font-size: 32px;
+}
+.album header p {
+  color: var(--ink-2);
+  font-size: 17px;
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 28px;
+  margin: 0 0 var(--s5);
+  border-bottom: 1px solid var(--line);
+}
+.chips a {
+  padding: 14px 0;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 17px;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1px;
+  color: var(--ink-2);
+}
+.chips a:hover {
+  color: var(--ink);
+  border-bottom-color: var(--forest);
+}
+.chips a[aria-current] {
+  color: var(--ink);
+  border-bottom-color: var(--forest);
+}
+
+/* obecné stránky */
+.page-intro {
+  padding-block: var(--s2) var(--s6);
+  text-align: center;
+}
+.page-intro .crumbs {
+  justify-content: center;
+}
+.page-intro h1 {
+  margin: var(--s4) auto var(--s3);
+  max-width: 1000px;
+}
+.page-intro .lead {
+  margin-inline: auto;
+}
+.text-page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: var(--s7);
+  align-items: start;
+  padding-bottom: var(--s7);
+}
+@media (max-width: 900px) {
+  .text-page {
+    grid-template-columns: 1fr;
+    gap: var(--s5);
+  }
+}
+.side-card {
+  background: var(--stone);
+  padding: var(--s4);
+  display: grid;
+  gap: var(--s2);
+  position: sticky;
+  top: calc(var(--hh) + 24px);
+  font-size: 18px;
+}
+.side-card h2 {
+  font-size: 26px;
+}
+.contact-cols {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: var(--s7);
+  padding-bottom: var(--s7);
+}
+@media (max-width: 900px) {
+  .contact-cols {
+    grid-template-columns: 1fr;
+    gap: var(--s5);
+  }
+}
+.photo-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s3);
+  padding-bottom: var(--s7);
+}
+.photo-pair img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+footer.band {
+  background: var(--forest-2);
+  color: var(--paper);
+}
+footer .top-row {
+  padding-block: var(--s7) var(--s5);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--s6);
+  align-items: end;
+}
+@media (max-width: 860px) {
+  footer .top-row {
+    grid-template-columns: 1fr;
+    gap: var(--s4);
+    padding-block: var(--s6) var(--s4);
+  }
+}
+footer .big-tel {
+  display: block;
+  font: 600 clamp(30px, 4vw, 40px)/1.1 var(--f-head);
+  color: var(--sun);
+  text-decoration: none;
+}
+footer address {
+  font-style: normal;
+  display: grid;
+  gap: 6px;
+  font-size: 18px;
+  color: var(--paper);
+}
+footer address a {
+  color: var(--paper);
+}
+footer .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s5);
+  padding-block: var(--s5);
+  border-top: 1px solid rgba(247, 244, 238, 0.25);
+}
+@media (max-width: 760px) {
+  footer .grid {
+    grid-template-columns: 1fr;
+  }
+}
+footer h4 {
+  font: 700 18px var(--f-body);
+  color: var(--sun);
+  margin-bottom: 14px;
+}
+footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+  font-size: 18px;
+}
+footer a {
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+footer .logo b {
+  color: var(--paper);
+}
+footer .legal {
+  border-top: 1px solid rgba(247, 244, 238, 0.25);
+  padding-block: var(--s3) var(--s4);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px var(--s4);
+  justify-content: space-between;
+  font-size: 16px;
+  color: #d5ddd8;
+}
+.mbar {
+  display: none;
+}
+@media (max-width: 720px) {
+  footer .legal {
+    padding-bottom: 110px;
+  }
+  .mbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 40;
+    padding: 10px var(--edge) calc(10px + env(safe-area-inset-bottom));
+    background: var(--paper);
+    border-top: 1px solid var(--line);
+  }
+  .mbar .btn {
+    padding: 0 8px;
+    font-size: 17px;
+    white-space: nowrap;
+  }
+}
+
+.lb {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: rgba(15, 20, 17, 0.96);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  color: #fff;
+}
+.lb[hidden] {
+  display: none;
+}
+.lb-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 18px;
+  font-size: 17px;
+}
+.lb .close {
+  background: none;
+  border: 0;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 8px 14px;
+}
+.lb-stage {
+  display: grid;
+  place-items: center;
+  min-height: 0;
+  padding: 0 64px;
+}
+.lb-stage img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.lb-cap {
+  text-align: center;
+  padding: 12px 18px 18px;
+  font-size: 18px;
+  color: #ddd;
+}
+.lb .prev,
+.lb .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.16);
+  border: 0;
+  color: #fff;
+  font-size: 34px;
+  width: 52px;
+  height: 64px;
+  cursor: pointer;
+}
+.lb .prev {
+  left: 8px;
+}
+.lb .next {
+  right: 8px;
+}
+.lb [hidden] {
+  display: none;
+}
+.missing {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s6);
+  align-items: center;
+  padding-block: var(--s7);
+}
+@media (max-width: 800px) {
+  .missing {
+    grid-template-columns: 1fr;
+  }
+}
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+/* hlavičky stránek (kategorie, rozcestníky, informační stránky): vycentrované, střední velikost */
+.chead h1,
+.hub-head h1,
+.page-intro h1 {
+  font-size: clamp(34px, 4.2vw, 54px);
+  line-height: 1.1;
+}
+.chead .lead,
+.hub-head .lead,
+.page-intro .lead {
+  font-size: clamp(19px, 1.6vw, 22px);
+  line-height: 1.5;
+  max-width: 56ch;
+  margin-inline: auto;
+  color: var(--ink-2);
+}
+.chead .crumbs,
+.hub-head .crumbs {
+  justify-content: center;
+}
+@media (max-width: 767px) {
+  .chead h1,
+  .hub-head h1,
+  .page-intro h1 {
+    font-size: 32px;
+  }
+}
+
+/* Kubiš – effects.css
+ * Vlastní implementace efektů (inspirace 21st.dev). Bez závislostí.
+ * Barvy a písma se berou z proměnných webu (--ink, --oak, --paper...) s pevnou zálohou.
+ * Pravidlo: stavy "skryto / před animací" jsou VŽDY pod .fx-js (třídu přidá až JS),
+ * takže bez JS je veškerý obsah viditelný. Na konci je blok prefers-reduced-motion.
+ */
+:root {
+  --fx-ink: var(--ink, #2a1c11);
+  --fx-pale: #b4a48b; /* "nevyplněné" slovo u efektu fill */
+  --fx-paper: var(--paper, #efe6d6);
+  --fx-cream: var(--cream, #f8f3ea);
+  --fx-oak: var(--oak, #c99a5f);
+  --fx-oak-d: var(--oak-d, #9a6a31);
+  --fx-line: var(--line, #d9ccb6);
+  --fx-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --fx-radius: 6px;
+}
+[data-fx] :focus-visible,
+[data-fx]:focus-visible {
+  outline: 3px solid var(--focus, #1a5fd0);
+  outline-offset: 3px;
+}
+
+/* ---- společné velké tlačítko (min. 48 px cíl pro klepnutí) ---- */
+.fx-btn {
+  inline-size: 48px;
+  block-size: 48px;
+  border-radius: 2px;
+  border: 2px solid var(--fx-ink);
+  background: var(--fx-cream);
+  color: var(--fx-ink);
+  font: 700 28px/1 var(--f-body, system-ui);
+  display: inline-grid;
+  place-items: center;
+  cursor: pointer;
+  padding: 0 0 4px;
+}
+.fx-btn:hover:not(:disabled) {
+  background: var(--fx-ink);
+  color: var(--fx-cream);
+}
+.fx-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+/* 1) reveal ------------------------------------------------------ */
+.fx-js [data-fx~="reveal"] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s var(--fx-ease);
+  transition-delay: var(--fx-d, 0s);
+}
+.fx-js [data-fx~="reveal"].is-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* 2) headline: slovo po slově zespodu ---------------------------- */
+.fx-w {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding-bottom: 0.14em;
+  margin-bottom: -0.14em;
+}
+.fx-w > span {
+  display: inline-block;
+}
+.fx-js .fx-split .fx-w > span {
+  transform: translateY(110%);
+  transition: transform 0.75s var(--fx-ease);
+}
+.fx-js .fx-split.is-in .fx-w > span {
+  transform: none;
+}
+
+/* 3) fill: text se vyplňuje inkoustem podle scrollu -------------- */
+.fx-fill-on .fx-f {
+  color: var(--fx-pale);
+  transition: color 0.35s ease;
+}
+.fx-fill-on .fx-f.is-lit {
+  color: var(--fx-ink);
+}
+
+/* 4) mark: zvýrazňovač pod slovem -------------------------------- */
+[data-fx~="mark"] {
+  background: linear-gradient(transparent 64%, rgba(201, 154, 95, 0.5) 64%) no-repeat 0 0 / 100%
+    100%;
+  color: inherit;
+  padding: 0 0.08em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.fx-js [data-fx~="mark"] {
+  background-size: 0% 100%;
+  transition: background-size 0.9s 0.25s var(--fx-ease);
+}
+.fx-js [data-fx~="mark"].is-in {
+  background-size: 100% 100%;
+}
+
+/* 5) count: tabulární číslice, aby číslo neposkakovalo ----------- */
+[data-fx~="count"] {
+  font-variant-numeric: tabular-nums;
+}
+
+/* 6) parallax ---------------------------------------------------- */
+[data-fx~="parallax"] {
+  overflow: hidden;
+  position: relative;
+}
+[data-fx~="parallax"] > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.fx-parallax-on > img {
+  will-change: transform;
+}
+
+/* 7) lift: karta se jemně zvedne, fotka se pomalu přiblíží (jen CSS) */
+[data-fx~="lift"] {
+  transition:
+    transform 0.35s var(--fx-ease),
+    box-shadow 0.35s ease;
+  overflow: hidden;
+}
+[data-fx~="lift"] img {
+  transition: transform 0.8s var(--fx-ease);
+}
+@media (hover: hover) {
+  [data-fx~="lift"]:hover,
+  [data-fx~="lift"]:focus-within {
+    transform: none;
+  }
+  [data-fx~="lift"]:hover img,
+  [data-fx~="lift"]:focus-within img {
+    transform: scale(1.04);
+  }
+}
+
+/* 8) scroller: vodorovná galerie (nativní scroll i bez JS) ------- */
+[data-fx~="scroller"] {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  padding-bottom: 12px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--fx-oak-d) var(--fx-paper);
+}
+[data-fx~="scroller"] > * {
+  flex: 0 0 min(78%, 360px);
+  scroll-snap-align: start;
+}
+[data-fx~="scroller"] img {
+  display: block;
+  width: 100%;
+  height: auto;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+.fx-scroller-on {
+  cursor: grab;
+}
+.fx-scroller-on.is-drag {
+  cursor: grabbing;
+  scroll-snap-type: none;
+  user-select: none;
+}
+.fx-nav {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+.fx-nav[hidden] {
+  display: none;
+}
+
+/* 9) compare: před / po ------------------------------------------ */
+[data-fx~="compare"] {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+} /* fallback bez JS: fotky vedle sebe */
+[data-fx~="compare"] img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.fx-compare-on {
+  position: relative;
+  display: block;
+  aspect-ratio: var(--fx-ratio, 4 / 3);
+  overflow: hidden;
+  --fx-pos: 50%;
+  border-radius: var(--fx-radius);
+}
+.fx-compare-on img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.fx-compare-on img:nth-of-type(2) {
+  clip-path: inset(0 0 0 var(--fx-pos));
+}
+.fx-range {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: ew-resize;
+  touch-action: pan-y;
+}
+.fx-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--fx-pos);
+  width: 3px;
+  margin-left: -1.5px;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(42, 28, 17, 0.35);
+  pointer-events: none;
+}
+.fx-knob {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 52px;
+  height: 52px;
+  margin: -26px 0 0 -26px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--fx-ink);
+  display: grid;
+  place-items: center;
+  font: 700 22px/1 var(--f-body, system-ui);
+  border: 2px solid var(--fx-ink);
+}
+.fx-range:focus-visible ~ .fx-line .fx-knob {
+  outline: 3px solid var(--focus, #1a5fd0);
+  outline-offset: 3px;
+}
+.fx-tag {
+  position: absolute;
+  top: 12px;
+  padding: 4px 12px;
+  background: rgba(42, 28, 17, 0.85);
+  color: #fff;
+  font: 700 15px/1.4 var(--f-body, system-ui);
+  border-radius: 3px;
+  pointer-events: none;
+}
+.fx-tag-l {
+  left: 12px;
+}
+.fx-tag-r {
+  right: 12px;
+}
+
+/* 10) zoom: lupa na detail dřeva --------------------------------- */
+[data-fx~="zoom"] {
+  overflow: hidden;
+  position: relative;
+}
+[data-fx~="zoom"] img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.fx-zoom-on {
+  cursor: zoom-in;
+}
+.fx-zoom-on img {
+  transition: transform 0.25s ease-out;
+  will-change: transform;
+}
+.fx-zoom-on.is-zoomed {
+  cursor: zoom-out;
+  touch-action: none;
+}
+.fx-zoom-on::after {
+  content: "Přiblížit";
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  padding: 4px 12px;
+  background: rgba(42, 28, 17, 0.85);
+  color: #fff;
+  font: 700 14px/1.4 var(--f-body, system-ui);
+  border-radius: 3px;
+  pointer-events: none;
+}
+.fx-zoom-on.is-zoomed::after {
+  content: "Zavřít";
+}
+
+/* 11) thumbs: velká fotka + náhledy ------------------------------ */
+.fx-thumbs-strip {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.fx-thumbs-strip a {
+  display: block;
+  width: 84px;
+  border: 3px solid transparent;
+  border-radius: 4px;
+  opacity: 0.8;
+}
+.fx-thumbs-strip img {
+  display: block;
+  width: 100%;
+  height: 64px;
+  object-fit: cover;
+}
+.fx-thumbs-strip a[aria-current="true"] {
+  border-color: var(--fx-oak-d);
+  opacity: 1;
+}
+.fx-thumbs-main {
+  margin: 0;
+}
+.fx-thumbs-main img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: opacity 0.18s ease;
+}
+.fx-thumbs-main img.is-out {
+  opacity: 0;
+}
+.fx-thumbs-main figcaption {
+  margin-top: 8px;
+  font-size: 1rem;
+  color: var(--muted, #6a5846);
+  min-height: 1.5em;
+}
+
+/* 12) panels: obrázkový akordeon pro kategorie ------------------- */
+[data-fx~="panels"] {
+  display: flex;
+  gap: 8px;
+  height: clamp(320px, 52vw, 460px);
+}
+[data-fx~="panels"] > * {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: var(--fx-radius);
+  color: #fff;
+  text-decoration: none;
+  transition: flex-grow 0.55s var(--fx-ease);
+}
+[data-fx~="panels"] > * > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+[data-fx~="panels"] > * > span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 36px 16px 14px;
+  font: 700 1.2rem/1.25 var(--f-head, Georgia, serif);
+  background: linear-gradient(transparent, rgba(30, 18, 8, 0.88));
+}
+[data-fx~="panels"] > *:hover {
+  flex-grow: 3.4;
+} /* bez JS: hover */
+.fx-js [data-fx~="panels"] > .is-active {
+  flex-grow: 3.4;
+}
+.fx-js [data-fx~="panels"]:hover > *:not(:hover):not(.is-active) {
+  flex-grow: 1;
+}
+@media (hover: none), (max-width: 700px) {
+  /* dotyk / telefon: pod sebou, bez rozbalování */
+  [data-fx~="panels"] {
+    flex-direction: column;
+    height: auto;
+  }
+  [data-fx~="panels"] > * {
+    flex: none;
+    height: 180px;
+  }
+  [data-fx~="panels"] > *:hover,
+  .fx-js [data-fx~="panels"] > .is-active {
+    flex-grow: 0;
+  }
+}
+
+/* 13) accordion: nativní <details>, plynulé rozbalení ------------ */
+[data-fx~="accordion"] summary::-webkit-details-marker {
+  display: none;
+}
+[data-fx~="accordion"] details[open]:not(.is-closing) > summary::after {
+  content: "\2212";
+}
+.fx-acc-body {
+  overflow: hidden;
+}
+
+/* 14) quotes: reference po jedné --------------------------------- */
+.fx-qlist {
+  display: grid;
+}
+.fx-qlist > figure {
+  grid-area: 1 / 1;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.4s ease,
+    visibility 0s 0.4s;
+}
+.fx-qlist > figure.is-on {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.4s ease;
+}
+.fx-qctrl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 14px;
+}
+.fx-qcount {
+  font: 700 1rem var(--f-body, system-ui);
+  min-width: 3.5em;
+  text-align: center;
+}
+
+/* 15) header: lepkavá hlavička ----------------------------------- */
+[data-fx~="header"] {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--fx-cream);
+  transition:
+    transform 0.3s var(--fx-ease),
+    box-shadow 0.3s ease;
+}
+[data-fx~="header"].is-stuck {
+  box-shadow: 0 2px 14px rgba(42, 28, 17, 0.14);
+}
+[data-fx~="header"].is-hidden {
+  transform: translateY(-100%);
+}
+
+/* 16) progress: ukazatel čtení ----------------------------------- */
+[data-fx~="progress"] {
+  display: none;
+}
+.fx-js [data-fx~="progress"] {
+  display: block;
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 4px;
+  z-index: 60;
+  background: var(--fx-oak-d);
+  transform-origin: 0 50%;
+  transform: scaleX(var(--fx-p, 0));
+  pointer-events: none;
+}
+
+/* ---- tisk: vždy vše viditelné ---- */
+@media print {
+  .fx-js [data-fx~="reveal"],
+  .fx-js .fx-split .fx-w > span {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  [data-fx~="progress"],
+  .fx-nav {
+    display: none !important;
+  }
+}
+
+/* ---- prefers-reduced-motion: žádný pohyb, vše v cílovém stavu ---- */
+@media (prefers-reduced-motion: reduce) {
+  .fx-js [data-fx~="reveal"],
+  .fx-js [data-fx~="reveal"].is-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .fx-js .fx-split .fx-w > span {
+    transform: none;
+    transition: none;
+  }
+  .fx-fill-on .fx-f {
+    color: var(--fx-ink);
+    transition: none;
+  }
+  .fx-js [data-fx~="mark"] {
+    background-size: 100% 100%;
+    transition: none;
+  }
+  .fx-parallax-on > img {
+    transform: none !important;
+  }
+  [data-fx~="lift"],
+  [data-fx~="lift"] img {
+    transition: none;
+  }
+  [data-fx~="lift"]:hover,
+  [data-fx~="lift"]:focus-within,
+  [data-fx~="lift"]:hover img,
+  [data-fx~="lift"]:focus-within img {
+    transform: none;
+  }
+  .fx-zoom-on img,
+  .fx-thumbs-main img,
+  [data-fx~="panels"] > *,
+  [data-fx~="accordion"] summary::after,
+  .fx-qlist > figure,
+  .fx-qlist > figure.is-on,
+  [data-fx~="header"] {
+    transition: none;
+  }
+  [data-fx~="scroller"] {
+    scroll-behavior: auto;
+  }
+  [data-fx~="header"].is-hidden {
+    transform: none;
+  }
+  .fx-js [data-fx~="progress"] {
+    transition: none;
+  }
+}
+
+/* Web jako domácnost: místnosti se stěnou a lištou, cedulky na dveře, rámy na obrazy, tlačítka jako cedulky.
+   Pomocné třídy pro stránky:
+   .room            sekce = místnost (stěna + podlahová lišta dole); barva: .wall-sage .wall-butter .wall-clay .wall-sky .wall-stone .wall-paper
+   .plate           mosazná cedulka na dveře s názvem místnosti (<span class="plate">Ložnice</span>)
+   .frame           fotka v dřevěném rámu s paspartou (<figure class="frame"><img></figure>)
+   .btn             tlačítko = cedulka se čtyřmi šroubky; .btn-2 = papírová cedulka s dírkou na provázek
+   .doormat         rohožka (velké tlačítko "Pojďte dál") */
+
+:root {
+  --sage: #dce5da;
+  --butter: #f2e8c6;
+  --clay-wall: #ebd8c7;
+  --sky: #dce4e8;
+  --brass: #c9a24a;
+  --brass-d: #8a6a22;
+  --wood: #7b5230;
+  --wood-l: #d8c3a0;
+  --wood-d: #b79e76;
+}
+
+/* ---------- místnost: stěna a podlahová lišta ---------- */
+.room {
+  position: relative;
+  padding-bottom: calc(var(--s7) + 26px);
+}
+
+.room::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 26px;
+  background: linear-gradient(var(--wood-l) 0 72%, var(--wood-d) 72% 100%);
+  border-top: 1px solid rgba(0, 0, 0, 0.14);
+}
+
+.wall-sage {
+  background: var(--sage);
+}
+.wall-butter {
+  background: var(--butter);
+}
+.wall-clay {
+  background: var(--clay-wall);
+}
+.wall-sky {
+  background: var(--sky);
+}
+.wall-stone {
+  background: var(--stone);
+}
+.wall-paper {
+  background: var(--paper);
+}
+
+/* ---------- cedulka na dveře ---------- */
+.plate {
+  position: relative;
+  display: inline-block;
+  padding: 10px 34px;
+  background: linear-gradient(#e2c273, var(--brass));
+  color: #2a2008;
+  border: 2px solid var(--brass-d);
+  border-radius: 4px;
+  font: 700 17px/1 var(--f-body);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.plate::before,
+.plate::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  margin-top: -4px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #f6e6b8, var(--brass-d) 75%);
+}
+.plate::before {
+  left: 12px;
+}
+.plate::after {
+  right: 12px;
+}
+
+/* ---------- rám na obraz ---------- */
+.frame {
+  margin: 0;
+  padding: 14px;
+  background: #fffdf8;
+  border: 12px solid var(--wood);
+  outline: 1px solid rgba(0, 0, 0, 0.28);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.18);
+}
+
+.frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.frame figcaption {
+  margin-top: 12px;
+  font-size: 17px;
+  color: var(--ink-2);
+}
+
+/* ---------- tlačítka jako cedulky ---------- */
+.btn {
+  position: relative;
+  padding: 0 calc(var(--s4) + 14px);
+  border: 0;
+  border-radius: 6px;
+  background: var(--forest);
+  color: #fff;
+  box-shadow:
+    inset 0 0 0 2px rgba(255, 255, 255, 0.2),
+    inset 0 -4px 0 rgba(0, 0, 0, 0.28);
+}
+
+.btn::before,
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  margin-top: -4px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #f6e6b8, var(--brass-d) 75%);
+}
+.btn::before {
+  left: 14px;
+}
+.btn::after {
+  right: 14px;
+}
+
+.btn:hover {
+  background: var(--forest-2);
+  box-shadow:
+    inset 0 0 0 2px rgba(255, 255, 255, 0.28),
+    inset 0 -4px 0 rgba(0, 0, 0, 0.35);
+}
+
+.btn:active {
+  transform: translateY(2px);
+  box-shadow:
+    inset 0 0 0 2px rgba(255, 255, 255, 0.2),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.28);
+}
+
+/* papírová cedulka s dírkou na provázek */
+.btn-2,
+.btn-ghost {
+  background: #fffdf8;
+  color: var(--ink);
+  border: 0;
+  box-shadow:
+    inset 0 0 0 2px var(--ink),
+    inset 0 -4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.btn-2::before,
+.btn-ghost::before {
+  width: 10px;
+  height: 10px;
+  margin-top: -5px;
+  background: var(--paper);
+  box-shadow: inset 0 0 0 2px var(--ink);
+}
+.btn-2::after,
+.btn-ghost::after {
+  display: none;
+}
+
+.btn-2:hover,
+.btn-ghost:hover {
+  background: var(--stone);
+}
+
+/* na tmavé ploše: cedulka z mosazi */
+.forest .btn,
+.band .btn,
+.sec.forest .btn {
+  background: linear-gradient(#e8cb84, var(--brass));
+  color: #2a2008;
+  box-shadow:
+    inset 0 0 0 2px var(--brass-d),
+    inset 0 -4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.forest .btn:hover,
+.band .btn:hover,
+.sec.forest .btn:hover {
+  background: #f1dc9f;
+}
+
+.forest .btn-2,
+.band .btn-2,
+.forest .btn-ghost,
+.band .btn-ghost {
+  background: transparent;
+  color: #fff;
+  box-shadow: inset 0 0 0 2px #fff;
+}
+
+.forest .btn-2::before,
+.band .btn-2::before,
+.forest .btn-ghost::before,
+.band .btn-ghost::before {
+  background: var(--forest);
+  box-shadow: inset 0 0 0 2px #fff;
+}
+
+.forest .btn-2:hover,
+.band .btn-2:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+/* ---------- rohožka ---------- */
+.doormat {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 72px;
+  padding: 0 var(--s6);
+  background: repeating-linear-gradient(90deg, #8c6a43 0 6px, #7a5a38 6px 12px);
+  color: #fff;
+  border: 4px solid #5e4529;
+  border-radius: 4px;
+  font: 600 22px/1 var(--f-head);
+  text-decoration: none;
+}
+
+.doormat:hover {
+  background: repeating-linear-gradient(90deg, #7a5a38 0 6px, #6a4d30 6px 12px);
+}
+
+/* dolní lišta na mobilu: díra na provázek nesmí zasahovat do textu */
+.mbar .btn-2 {
+  padding-left: 32px;
+}
+
+/* Úvodní stránka a rozcestníky: procházka domem po místnostech (.room z rooms.css).
+   Předpona .h- a .hub-; nic nepřepisuje base.css ani rooms.css. */
+.t3 {
+  font: 500 clamp(23px, 2vw, 26px)/1.2 var(--f-head);
+  letter-spacing: -0.005em;
+  margin: 0;
+  text-wrap: balance;
+}
+.t3 a {
+  text-decoration: none;
+}
+.t3 a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+}
+.room {
+  padding-top: var(--s5);
+  padding-bottom: calc(var(--s5) + 26px);
+}
+.h-split {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--s4);
+  align-items: center;
+}
+.rtx > .plate {
+  margin-bottom: var(--s3);
+}
+.rtx h2 {
+  margin-bottom: var(--s2);
+}
+.rtx p {
+  max-width: 52ch;
+}
+.rtx .more,
+.rtx .ctas {
+  margin-top: var(--s3);
+}
+.room .price {
+  font-weight: 700;
+}
+.room .link {
+  color: #7d3a14;
+}
+.room .link:hover {
+  color: var(--ink);
+}
+
+/* vchod: jen velký text a rohožka */
+.h-entry {
+  padding-block: var(--s6) calc(var(--s6) + 26px);
+}
+.h-entry-in {
+  display: grid;
+  gap: var(--s4);
+  justify-items: center;
+  text-align: center;
+  max-width: 1040px;
+}
+.h-entry h1 {
+  font-size: clamp(44px, 6.4vw, 84px);
+  line-height: 1.04;
+}
+.h-entry .lead {
+  font-size: clamp(22px, 2.3vw, 30px);
+  line-height: 1.4;
+  max-width: 40ch;
+  color: var(--ink);
+}
+.h-entry .ctas {
+  justify-content: center;
+  gap: var(--s3);
+  margin-top: var(--s2);
+}
+.h-entry .btn {
+  min-height: 72px;
+  font-size: 20px;
+}
+
+/* ložnice: text vlevo, velký rám vpravo, pod ním police */
+.h-loz .rtx {
+  grid-column: 1 / span 5;
+}
+.h-loz .rfr {
+  grid-column: 6 / span 7;
+}
+.h-rows {
+  list-style: none;
+  margin: var(--s3) 0 0;
+  padding: 0;
+  border-top: 2px solid var(--ink);
+}
+.h-rows li {
+  border-bottom: 1px solid rgba(29, 36, 32, 0.3);
+}
+.h-rows a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s2);
+  min-height: 52px;
+  padding: 6px 0;
+  text-decoration: none;
+}
+.h-rows .nm {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 var(--s2);
+}
+.h-rows h3 {
+  font-size: clamp(20px, 1.7vw, 23px);
+}
+.h-rows a:hover h3 {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+}
+.h-rows .dt {
+  color: var(--ink-2);
+  font-size: 17px;
+}
+.h-rows .price {
+  font-size: 21px;
+  white-space: nowrap;
+  flex: none;
+  color: #7d3a14;
+}
+.h-shelf {
+  margin-top: var(--s5);
+  align-items: end;
+}
+.h-shelf .stx {
+  grid-column: 1 / span 4;
+  align-self: center;
+}
+.h-shelf .stx p {
+  margin-top: var(--s2);
+}
+.shelf {
+  grid-column: 5 / span 8;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--s4);
+  align-items: end;
+  padding: 0 var(--s3);
+  border-bottom: 14px solid var(--wood);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+}
+.shelf-it {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-bottom: var(--s2);
+  color: var(--ink);
+  text-decoration: none;
+}
+.shelf-it .ph {
+  background: transparent;
+  margin-bottom: 8px;
+}
+.shelf-it b {
+  font: 600 19px/1.3 var(--f-body);
+}
+.shelf-it span:not(.ph) {
+  font-size: 17px;
+  color: var(--ink-2);
+}
+.shelf-it .price {
+  font-size: 22px;
+  color: #7d3a14;
+}
+.shelf-it:hover b {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+}
+
+/* dětský pokoj: shluk dvou rámů vlevo, text vpravo */
+.h-det .cluster {
+  grid-column: 1 / span 7;
+}
+.h-det .rtx {
+  grid-column: 8 / span 5;
+}
+.cluster .a {
+  width: 74%;
+}
+.cluster .b {
+  width: 46%;
+  margin: calc(-1 * var(--s6)) 0 0 auto;
+  position: relative;
+}
+.tilt {
+  transform: rotate(1.4deg);
+}
+.tags {
+  list-style: none;
+  margin: var(--s3) 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2);
+}
+.tags a {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 56px;
+  padding: 8px 18px 8px 36px;
+  background: #fffdf8;
+  color: var(--ink);
+  text-decoration: none;
+  box-shadow: inset 0 0 0 2px var(--ink);
+  clip-path: polygon(14px 0, 100% 0, 100% 100%, 14px 100%, 0 50%);
+}
+.tags a::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  width: 9px;
+  height: 9px;
+  margin-top: -4px;
+  border-radius: 50%;
+  background: var(--butter);
+  box-shadow: inset 0 0 0 2px var(--ink);
+}
+.tags a span {
+  font-size: 17px;
+  line-height: 1.25;
+}
+.tags a b {
+  font-size: 19px;
+  color: #7d3a14;
+}
+.tags a:hover {
+  background: var(--stone);
+}
+
+/* jídelna: jídelní lístek a rám vpravo */
+.h-jid .rtx {
+  grid-column: 1 / span 6;
+}
+.h-jid .rfr {
+  grid-column: 8 / span 5;
+}
+.menu {
+  margin-top: var(--s3);
+  padding: var(--s3) var(--s4);
+  background: #fffdf8;
+  border: 2px solid var(--ink);
+  outline: 1px solid var(--ink);
+  outline-offset: 4px;
+  max-width: 480px;
+}
+.menu h3 {
+  text-align: center;
+  font-style: italic;
+  margin-bottom: var(--s1);
+}
+.stand {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.stand a {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 8px 0;
+  color: var(--ink);
+  text-decoration: none;
+}
+.stand .nm {
+  font-size: 19px;
+}
+.stand .dots {
+  flex: 1;
+  min-width: 16px;
+  border-bottom: 2px dotted var(--ink-2);
+  transform: translateY(-4px);
+}
+.stand .price {
+  font-size: 21px;
+  white-space: nowrap;
+  color: #7d3a14;
+}
+.stand a:hover .nm {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+}
+
+/* obývák a pracovna: dva portréty vlevo (druhý níž), text vpravo */
+.h-obv .figs {
+  grid-column: 1 / span 6;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s4);
+  align-items: start;
+}
+.h-obv .figs .off {
+  margin-top: var(--s6);
+}
+.h-obv .rtx {
+  grid-column: 8 / span 5;
+}
+.h-obv .stand {
+  margin-top: var(--s3);
+  border-top: 2px solid var(--ink);
+}
+.h-obv .stand li {
+  border-bottom: 1px solid rgba(29, 36, 32, 0.3);
+}
+
+/* dílna: postup, co platí, recenze, prodejna, dotazy */
+.h-rules .c0 {
+  grid-column: 1 / -1;
+}
+.h-rules {
+  align-items: start;
+}
+.h-rules .c1 {
+  grid-column: 1 / span 5;
+}
+.h-rules .c2 {
+  grid-column: 7 / span 6;
+}
+.h-steps {
+  margin: 0;
+  padding: var(--s3) 0 0 1.5em;
+  display: grid;
+  gap: var(--s3);
+  border-top: 2px solid var(--ink);
+}
+.h-steps li::marker {
+  font-weight: 700;
+  color: #7d3a14;
+}
+.h-rules .spec dt,
+.h-rules .spec dd {
+  padding: 9px 0;
+}
+.dsub {
+  margin-top: var(--s5);
+  padding-top: var(--s4);
+  border-top: 2px solid var(--ink);
+}
+.h-rev-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: var(--s6);
+  align-items: start;
+}
+.h-rev figure {
+  margin: 0;
+}
+.h-rev blockquote {
+  margin: 0;
+}
+.h-rev .big blockquote p {
+  font: 500 clamp(24px, 2.5vw, 32px)/1.35 var(--f-head);
+  text-wrap: pretty;
+  max-width: 26em;
+}
+.h-rev figcaption {
+  margin-top: var(--s2);
+  font-size: 17px;
+  color: var(--ink-2);
+}
+.h-rev .small-q {
+  display: grid;
+  gap: var(--s3);
+}
+.h-rev .big .link {
+  display: inline-block;
+  margin-top: var(--s3);
+}
+.h-rev .small-q figure {
+  border-top: 1px solid var(--ink);
+  padding-top: var(--s2);
+}
+.h-rev .small-q blockquote p {
+  font-size: 19px;
+}
+.h-shop .rfr {
+  grid-column: 1 / span 5;
+}
+.h-shop .rtx {
+  grid-column: 7 / span 6;
+}
+.h-shop .hours {
+  margin-top: var(--s3);
+}
+.h-tel {
+  display: block;
+  font: 600 clamp(30px, 3.2vw, 38px)/1.1 var(--f-head);
+  color: #7d3a14;
+  text-decoration: none;
+  margin: var(--s2) 0 var(--s3);
+}
+.h-tel:hover {
+  color: var(--ink);
+}
+.h-faq {
+  align-items: start;
+}
+.h-faq .head {
+  grid-column: 1 / span 4;
+}
+.h-faq .head p {
+  margin-top: var(--s2);
+}
+.h-faq .faq {
+  grid-column: 5 / span 8;
+  max-width: none;
+}
+.faq[data-fx~="accordion"] summary {
+  display: block;
+  font: 500 22px/1.3 var(--f-head);
+  padding: var(--s2) 56px var(--s2) 0;
+  min-height: 56px;
+}
+.faq[data-fx~="accordion"] details {
+  border-top: 1px solid var(--ink);
+  border-bottom: 0;
+}
+.faq[data-fx~="accordion"] details:last-child {
+  border-bottom: 1px solid var(--ink);
+}
+.faq[data-fx~="accordion"] summary::after {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font: 400 32px/1 var(--f-body);
+  color: #7d3a14;
+}
+.faq[data-fx~="accordion"] details[open]:not(.is-closing) > summary::after {
+  content: "–";
+}
+
+/* rozcestníky: hlavička vycentrovaná, h1 nejvýš 54 px, perex 19 až 22 px */
+.hub-head {
+  padding-top: var(--s5);
+  padding-bottom: calc(var(--s5) + 26px);
+}
+.hub-head-grid {
+  display: grid;
+  justify-items: center;
+  gap: var(--s2);
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto;
+  padding-top: var(--s3);
+}
+.hub-head h1 {
+  font-size: clamp(34px, 4.2vw, 54px);
+}
+.hub-head .lead {
+  font-size: clamp(19px, 1.7vw, 22px);
+  color: var(--ink);
+  margin: 0 auto;
+}
+.hub-room h2 {
+  margin-bottom: var(--s4);
+}
+.hub-room .plate {
+  margin-bottom: var(--s3);
+}
+.hub-rows {
+  display: grid;
+  gap: var(--s5);
+}
+.hub-row {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: var(--s5);
+  align-items: center;
+}
+.hub-row.rev .hr-fr {
+  order: 2;
+}
+.hub-row.rev {
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+}
+.hub-tx p {
+  max-width: 52ch;
+  margin-top: var(--s1);
+}
+.hub-tx .hub-from {
+  color: var(--ink);
+}
+.hub-tx .hub-from .price {
+  font-size: 24px;
+  color: #7d3a14;
+}
+.hub-mod {
+  list-style: none;
+  margin: var(--s2) 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px var(--s3);
+  font-size: 18px;
+}
+.hub-mod .mp {
+  font-weight: 700;
+  color: #7d3a14;
+  white-space: nowrap;
+}
+.hub-tx .ctas {
+  margin-top: var(--s3);
+}
+.h-wood .rtx {
+  grid-column: 1 / span 6;
+}
+.h-wood .rfr {
+  grid-column: 8 / span 5;
+}
+.h-wood .rtx p + p {
+  margin-top: var(--s2);
+}
+
+/* tablet */
+@media (max-width: 1023px) {
+  .h-loz .rtx,
+  .h-loz .rfr,
+  .h-shelf .stx,
+  .shelf,
+  .h-det .cluster,
+  .h-det .rtx,
+  .h-jid .rtx,
+  .h-jid .rfr,
+  .h-obv .figs,
+  .h-obv .rtx,
+  .h-rules .c1,
+  .h-rules .c2,
+  .h-shop .rfr,
+  .h-shop .rtx,
+  .h-faq .head,
+  .h-faq .faq,
+  .h-wood .rtx,
+  .h-wood .rfr {
+    grid-column: 1/-1;
+  }
+  .h-rev-grid {
+    grid-template-columns: 1fr;
+    gap: var(--s5);
+  }
+  .h-obv .figs,
+  .h-shop .rfr {
+    max-width: 640px;
+  }
+  .hub-row,
+  .hub-row.rev {
+    grid-template-columns: 1fr;
+    gap: var(--s3);
+  }
+  .hub-row.rev .hr-fr {
+    order: 0;
+  }
+}
+
+/* mobil */
+@media (max-width: 760px) {
+  .room {
+    padding-top: var(--s5);
+  }
+  .h-entry {
+    padding-top: var(--s5);
+  }
+  .h-entry h1 {
+    font-size: 40px;
+  }
+  .h-entry .ctas {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .h-entry .ctas > * {
+    width: 100%;
+  }
+  .h-split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .frame {
+    padding: 8px;
+    border-width: 8px;
+  }
+  .h-shelf {
+    margin-top: var(--s5);
+  }
+  .shelf {
+    display: flex;
+    overflow-x: auto;
+    gap: var(--s3);
+    scroll-snap-type: x mandatory;
+  }
+  .shelf-it {
+    flex: 0 0 70%;
+    scroll-snap-align: start;
+  }
+  .cluster .a {
+    width: 100%;
+  }
+  .cluster .b {
+    width: 66%;
+    margin-top: var(--s2);
+  }
+  .menu {
+    padding: var(--s2) var(--s3);
+  }
+  .h-obv .figs {
+    gap: var(--s2);
+  }
+  .h-obv .figs .off {
+    margin-top: var(--s4);
+  }
+  .tags a {
+    flex: 1 1 100%;
+  }
+  .faq[data-fx~="accordion"] summary {
+    font-size: 20px;
+    padding-right: 48px;
+  }
+  .h-rev .big blockquote p {
+    font-size: 24px;
+  }
+  .hub-head h1 {
+    font-size: 34px;
+  }
+  .hub-tx .ctas .btn {
+    width: 100%;
+  }
+  .hub-mod {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+.h-rules .c0 .plate {
+  margin-bottom: var(--s3);
+}
+
+/* Katalog: hlavička kategorie, lepivá lišta, mřížky, matrace, produkt. Doplňuje base.css (tokeny a komponenty se nepřepisují). */
+
+/* ---------- hlavička kategorie = místnost (stěnu a lištu dává .room + .wall-*) ---------- */
+.chead {
+  padding-bottom: calc(var(--s6) + 26px);
+}
+.chead h1 {
+  font-size: clamp(34px, 4.2vw, 54px);
+  line-height: 1.1;
+}
+.chead .lead {
+  font-size: clamp(19px, 1.6vw, 22px);
+  color: var(--ink);
+}
+.chead-txt .plate {
+  margin-bottom: var(--s1);
+}
+.sec.cat {
+  padding-block: 72px;
+}
+@media (max-width: 767px) {
+  .sec.cat {
+    padding-block: var(--s6);
+  }
+}
+.chead-grid {
+  display: block;
+  margin-top: var(--s4);
+}
+.chead-txt {
+  display: grid;
+  justify-items: center;
+  gap: var(--s3);
+  text-align: center;
+  max-width: 1000px;
+  margin-inline: auto;
+}
+.cfact {
+  font-size: clamp(19px, 1.6vw, 22px);
+  line-height: 1.55;
+  margin: var(--s1) 0 var(--s2);
+  max-width: 56ch;
+}
+.cfact b {
+  font-weight: 700;
+}
+.chead .ctas {
+  justify-content: center;
+  margin-top: var(--s2);
+}
+@media (max-width: 520px) {
+  .chead .ctas {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .chead .ctas .btn {
+    width: 100%;
+  }
+}
+
+/* ---------- lepivá lišta podkategorií ---------- */
+.subnav {
+  position: sticky;
+  top: var(--hh);
+  z-index: 30;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+.subnav .wrap {
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scroll-padding-inline: var(--edge);
+  scrollbar-width: none;
+}
+.subnav .wrap::-webkit-scrollbar {
+  display: none;
+}
+.subnav ul {
+  display: flex;
+  gap: 0 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: max-content;
+  min-width: 100%;
+}
+.subnav a {
+  display: flex;
+  align-items: center;
+  min-height: 56px;
+  white-space: nowrap;
+  text-decoration: none;
+  font: 600 17px/1 var(--f-body);
+  color: var(--ink-2);
+  border-bottom: 3px solid transparent;
+  scroll-snap-align: start;
+}
+.subnav a:hover {
+  color: var(--ink);
+  border-bottom-color: var(--line);
+}
+.subnav a[aria-current] {
+  color: var(--ink);
+  border-bottom-color: var(--forest);
+}
+@media (max-width: 767px) {
+  .subnav ul {
+    gap: 0 22px;
+  }
+}
+
+/* ---------- mřížka modelů (doplňky k base.css) ---------- */
+.model p {
+  display: block;
+  overflow: visible;
+  -webkit-line-clamp: unset;
+}
+.model .meta {
+  margin-top: auto;
+}
+.model .tag {
+  font: 600 16px/1.2 var(--f-body);
+  color: var(--forest);
+}
+.model[data-fx~="lift"]:hover,
+.model[data-fx~="lift"]:focus-within {
+  box-shadow: none;
+}
+.noph {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  padding: var(--s2);
+  text-align: center;
+  color: var(--ink-2);
+  font-size: 17px;
+}
+.block-title {
+  margin: var(--s6) 0 var(--s3);
+}
+.block-title:first-child {
+  margin-top: 0;
+}
+.more {
+  margin-top: var(--s5);
+}
+.more > summary {
+  list-style: none;
+  cursor: pointer;
+  display: inline-flex;
+  margin-bottom: var(--s4);
+}
+.more > summary::-webkit-details-marker {
+  display: none;
+}
+.more .w-open {
+  display: none;
+}
+.more[open] > summary .w-closed {
+  display: none;
+}
+.more[open] > summary .w-open {
+  display: inline;
+}
+
+/* ---------- vystřižené karty: matrace, rošty, toppery ---------- */
+.kgrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--s5) var(--s3);
+  align-items: start;
+}
+@media (min-width: 1101px) {
+  .kgrid.c5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+  .kgrid.c3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .kgrid.c2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .kgrid.c1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+@media (max-width: 1100px) {
+  .kgrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1200px) {
+  .kgrid.dense {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+@media (max-width: 720px) {
+  .kgrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--s4) var(--s2);
+  }
+}
+.kcard {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.kcard .ph {
+  margin-bottom: 6px;
+}
+.ph.cut {
+  display: grid;
+  place-items: center;
+}
+.ph.cut img,
+.kcard .ph img {
+  width: auto;
+  height: auto;
+  max-width: 90%;
+  max-height: 90%;
+  padding: 0;
+  margin: auto;
+  object-fit: contain;
+}
+.kcard h3 {
+  font-size: 22px;
+  line-height: 1.2;
+}
+.kcard h3 a {
+  text-decoration: none;
+  color: inherit;
+}
+.kcard h3 a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+}
+.kcard .ksub {
+  color: var(--ink-2);
+  font-size: 17px;
+  line-height: 1.4;
+}
+.kcard .mm {
+  font-size: 17px;
+  line-height: 1.4;
+}
+.kcard .price {
+  margin-top: 4px;
+}
+.kcard details {
+  border-top: 1px solid var(--line);
+  margin-top: 8px;
+}
+.kcard summary {
+  list-style: none;
+  cursor: pointer;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font: 600 17px/1.2 var(--f-body);
+  color: var(--clay);
+}
+.kcard summary::-webkit-details-marker {
+  display: none;
+}
+.kcard summary::after {
+  content: "+";
+  font: 400 28px/1 var(--f-body);
+}
+.kcard details[open] summary::after {
+  content: "–";
+}
+.mdet {
+  font-size: 17px;
+  line-height: 1.5;
+  padding-bottom: var(--s2);
+}
+.mdet p {
+  margin: 0 0 0.8em;
+}
+.mdet ul {
+  padding-left: 1.1em;
+  margin: 0 0 0.8em;
+}
+.mdet li {
+  margin-bottom: 0.3em;
+}
+@media (max-width: 720px) {
+  .kcard h3 {
+    font-size: 20px;
+  }
+  .kcard .price {
+    font-size: 22px;
+  }
+}
+
+/* filtry matrací: čisté CSS přes :target, bez JS */
+.mk {
+  display: block;
+  height: 0;
+  scroll-margin-top: calc(var(--hh) + 84px);
+}
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 12px;
+  margin: var(--s3) 0 var(--s5);
+}
+.filters a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 18px;
+  border: 2px solid var(--ink);
+  border-radius: 2px;
+  text-decoration: none;
+  font: 600 17px/1 var(--f-body);
+  color: var(--ink);
+}
+.filters a:hover {
+  background: var(--stone);
+}
+.filters a[href="#f-all"] {
+  background: var(--forest);
+  border-color: var(--forest);
+  color: #fff;
+}
+.mk:target ~ .filters a[href="#f-all"] {
+  background: transparent;
+  border-color: var(--ink);
+  color: var(--ink);
+}
+#f-all:target ~ .filters a[href="#f-all"],
+#f-senior:target ~ .filters a[href="#f-senior"],
+#f-antidekubitni:target ~ .filters a[href="#f-antidekubitni"],
+#f-alergici:target ~ .filters a[href="#f-alergici"],
+#f-vysokozatezove:target ~ .filters a[href="#f-vysokozatezove"],
+#f-detske:target ~ .filters a[href="#f-detske"],
+#f-gelove:target ~ .filters a[href="#f-gelove"],
+#f-tastickove:target ~ .filters a[href="#f-tastickove"] {
+  background: var(--forest);
+  border-color: var(--forest);
+  color: #fff;
+}
+#f-senior:target ~ .kgrid .kcard:not([data-t~="senior"]),
+#f-antidekubitni:target ~ .kgrid .kcard:not([data-t~="antidekubitni"]),
+#f-alergici:target ~ .kgrid .kcard:not([data-t~="alergici"]),
+#f-vysokozatezove:target ~ .kgrid .kcard:not([data-t~="vysokozatezove"]),
+#f-detske:target ~ .kgrid .kcard:not([data-t~="detske"]),
+#f-gelove:target ~ .kgrid .kcard:not([data-t~="gelove"]),
+#f-tastickove:target ~ .kgrid .kcard:not([data-t~="tastickove"]) {
+  display: none;
+}
+.split2 {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--s7);
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .split2 {
+    grid-template-columns: 1fr;
+    gap: var(--s5);
+  }
+}
+
+/* ---------- jak vybrat, podrobnosti, galerie ---------- */
+.guide2 {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: var(--s7);
+  align-items: start;
+}
+.guide2.nofig {
+  grid-template-columns: 1fr;
+}
+.guide2 h2 {
+  margin-bottom: var(--s4);
+}
+.guide2 .cols {
+  columns: 2 300px;
+  column-gap: var(--s5);
+}
+.guide2 .cols > div {
+  break-inside: avoid;
+  margin-bottom: var(--s4);
+}
+.guide2 h3 {
+  margin-bottom: 8px;
+}
+.guide2 p {
+  max-width: 64ch;
+}
+@media (max-width: 900px) {
+  .guide2 {
+    grid-template-columns: 1fr;
+    gap: var(--s5);
+  }
+}
+.details .detail-block + .block-title {
+  margin-top: var(--s7);
+}
+.details .detail-block .entries {
+  gap: var(--s4);
+}
+.details .entry h3,
+.details .prose h3 {
+  font-size: 24px;
+}
+.gal-s {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+  gap: 8px;
+}
+.gal-s + .more,
+.gal-s + .prose {
+  margin-top: var(--s4);
+}
+.gal-s a {
+  display: block;
+  aspect-ratio: 4/3;
+  background: var(--stone);
+  overflow: hidden;
+}
+.gal-s img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.gal-s img.cut {
+  object-fit: contain;
+  padding: 8%;
+}
+.more .gal-s {
+  margin-top: 0;
+}
+.vlist {
+  list-style: none;
+  margin: 0 0 var(--s4);
+  padding: 0;
+  border-top: 1px solid var(--ink);
+}
+.vlist li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--s3);
+  align-items: center;
+  padding: var(--s2) 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 19px;
+}
+.vlist .price {
+  white-space: nowrap;
+}
+@media (max-width: 640px) {
+  .vlist li {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- produkt ---------- */
+.sec.prodsec {
+  padding-top: 0;
+}
+.prodwrap {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  grid-template-areas: "gal panel" "desc panel";
+  gap: var(--s5) var(--s6);
+  margin-top: var(--s4);
+  align-items: start;
+}
+.p-gal {
+  grid-area: gal;
+  min-width: 0;
+}
+.p-desc {
+  grid-area: desc;
+  min-width: 0;
+}
+.p-panel {
+  grid-area: panel;
+  align-self: stretch;
+  min-width: 0;
+}
+.panel {
+  position: sticky;
+  top: calc(var(--hh) + 24px);
+}
+.panel h1 {
+  font-size: clamp(30px, 3.4vw, 40px);
+}
+.price-big {
+  font: 700 clamp(34px, 4vw, 40px)/1.1 var(--f-body);
+  color: var(--clay);
+  margin-top: var(--s3);
+  font-variant-numeric: tabular-nums;
+}
+.price-big.req {
+  font-size: 28px;
+  color: var(--ink-2);
+  font-weight: 600;
+}
+.panel .note {
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--ink-2);
+  margin-top: 8px;
+}
+.spec.sm {
+  margin: var(--s4) 0;
+  grid-template-columns: minmax(110px, 0.42fr) 1fr;
+  font-size: 18px;
+}
+.spec.sm dt,
+.spec.sm dd {
+  padding: 10px 0;
+}
+.panel .ctas {
+  display: grid;
+  gap: 12px;
+}
+.desc {
+  max-width: 64ch;
+}
+.desc h3 {
+  margin: 1.5em 0 0.4em;
+}
+.desc > h3:first-child {
+  margin-top: 0;
+}
+.desc p {
+  margin: 0 0 1em;
+}
+.bul {
+  padding-left: 1.2em;
+  margin: 0 0 1em;
+}
+.bul li {
+  margin-bottom: 0.4em;
+}
+@media (max-width: 900px) {
+  .prodwrap {
+    grid-template-columns: 1fr;
+    grid-template-areas: "gal" "panel" "desc";
+    gap: var(--s4);
+  }
+  .panel {
+    position: static;
+  }
+}
+.gal .fx-thumbs-main,
+.gal figure {
+  margin: 0;
+  aspect-ratio: 4/3;
+  background: var(--stone);
+  overflow: hidden;
+  position: relative;
+}
+.gal .fx-thumbs-main a {
+  display: block;
+  height: 100%;
+  cursor: zoom-in;
+}
+.gal .fx-thumbs-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.gal .fx-thumbs-main.is-cut img {
+  object-fit: contain;
+  padding: 8%;
+}
+.gal .fx-thumbs-main figcaption {
+  display: none;
+}
+.gal .fx-thumbs-strip {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.gal .fx-thumbs-strip li {
+  margin: 0;
+}
+.gal .fx-thumbs-strip a {
+  display: block;
+  width: auto;
+  aspect-ratio: 4/3;
+  border: 0;
+  border-radius: 0;
+  opacity: 1;
+  background: var(--stone);
+  overflow: hidden;
+}
+.gal .fx-thumbs-strip img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.gal .fx-thumbs-strip a[data-cut] img {
+  object-fit: contain;
+  padding: 8%;
+}
+.gal .fx-thumbs-strip a[aria-current="true"] {
+  outline: 3px solid var(--forest);
+  outline-offset: -3px;
+}
+.gal-lb {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+.ph.noimg {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: var(--s4);
+  color: var(--ink-2);
+  font-size: 19px;
+  aspect-ratio: 4/3;
+}
+.sec-head h2 {
+  margin: 0;
+}
+
+/* hustší mřížka u dlouhých seznamů (nad 16 kusů): 4 sloupce na širokém displeji */
+@media (min-width: 1200px) {
+  .models.dense {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+.models.dense .model h3 {
+  font-size: 22px;
+}
+.reco {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  columns: 2 340px;
+  column-gap: var(--s6);
+}
+.reco li {
+  break-inside: avoid;
+  margin: 0 0 var(--s4);
+}
+.reco h3 {
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+/* mobil: karty modelů jako kompaktní řádky (fotka vlevo), aby seznam nebyl nekonečný */
+@media (max-width: 640px) {
+  .models,
+  .models.dense {
+    gap: var(--s4) 0;
+  }
+  .model {
+    display: grid;
+    grid-template-columns: 120px minmax(0, 1fr);
+    grid-template-areas: "ph h" "ph p" "ph m";
+    column-gap: var(--s2);
+    row-gap: 6px;
+    align-content: start;
+  }
+  .model .ph {
+    grid-area: ph;
+    align-self: start;
+  }
+  .model h3,
+  .models.dense .model h3 {
+    grid-area: h;
+    font-size: 20px;
+  }
+  .model p {
+    grid-area: p;
+  }
+  .model .meta {
+    grid-area: m;
+    margin-top: 0;
+    align-self: end;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+  }
+}
+
+/* okno s detailem matrace: velká fotka vlevo, popis vpravo */
+.mdlg-open {
+  display: none;
+  margin-top: var(--s2);
+  width: 100%;
+}
+
+.fx-js .mdlg-open {
+  display: inline-flex;
+}
+
+.fx-js .mfallback {
+  display: none;
+}
+
+.mdlg {
+  width: min(1200px, calc(100vw - 2 * var(--s3)));
+  max-height: calc(100dvh - 2 * var(--s3));
+  margin: auto;
+  padding: 0;
+  border: 0;
+  background: var(--paper);
+  color: var(--ink);
+  overflow: auto;
+}
+
+.mdlg::backdrop {
+  background: rgba(20, 28, 24, 0.65);
+}
+
+.mdlg-close {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: block;
+  margin: 0 0 0 auto;
+  min-height: 56px;
+  padding: 0 var(--s3);
+  border: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 600 18px var(--f-body);
+  cursor: pointer;
+}
+
+.mdlg-close:hover {
+  text-decoration: underline;
+}
+
+.mdlg-in {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  gap: var(--s5);
+  padding: 0 var(--s5) var(--s5);
+  align-items: start;
+}
+
+.mdlg-ph {
+  position: sticky;
+  top: 56px;
+  display: grid;
+  place-items: center;
+  min-height: min(620px, calc(100dvh - 160px));
+  background: var(--stone);
+  padding: var(--s3);
+}
+
+.mdlg-ph img {
+  width: 100%;
+  max-width: none;
+  height: auto;
+}
+
+.mdlg-txt {
+  display: grid;
+  gap: var(--s2);
+  align-content: start;
+}
+
+.mdlg-txt h2 {
+  font-size: clamp(28px, 3vw, 36px);
+}
+
+.mdlg-txt h3 {
+  font-size: 22px;
+  margin-top: var(--s2);
+}
+
+.mdlg-txt .mprice {
+  font-size: 32px;
+}
+
+.mdlg-txt p {
+  max-width: 60ch;
+}
+
+.mchips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mchips li {
+  background: var(--stone);
+  padding: 6px 14px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.mspec {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+.mspec li {
+  margin-bottom: 6px;
+}
+
+@media (max-width: 800px) {
+  .mdlg {
+    width: 100vw;
+    max-height: 100dvh;
+  }
+
+  .mdlg-in {
+    grid-template-columns: 1fr;
+    gap: var(--s3);
+    padding: 0 var(--s3) var(--s4);
+  }
+
+  .mdlg-ph {
+    position: static;
+    min-height: 0;
+  }
+}
+
+.mph {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  cursor: zoom-in;
+}
+
+/* ---------- věci v místnosti: fotky v rámu, cenovka ---------- */
+.model .ph,
+.kcard .ph {
+  padding: 6px;
+  background: #fffdf8;
+  border: 8px solid var(--wood);
+  outline: 1px solid rgba(0, 0, 0, 0.28);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.18);
+}
+.kcard .ph img,
+.model .ph.cut img {
+  max-width: 94%;
+  max-height: 94%;
+}
+.model .price,
+.kcard .price {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 4px 12px;
+  background: #fffdf8;
+  border: 2px solid var(--brass-d);
+  border-radius: 2px 14px 14px 2px;
+}
+.model .price.req,
+.kcard .price.req {
+  font-size: 17px;
+}
+.model .meta {
+  align-items: center;
+  flex-wrap: wrap;
+}
+.model:hover .ph,
+.model:focus-visible .ph {
+  border-color: var(--brass-d);
+}
+@media (max-width: 640px) {
+  .model .ph,
+  .kcard .ph {
+    border-width: 5px;
+    padding: 4px;
+  }
+}
+
+/* okno matrace: cedulková tlačítka a rám kolem fotky */
+.mdlg-close.btn {
+  position: sticky;
+  top: 8px;
+  z-index: 2;
+  display: flex;
+  margin: 8px 12px 0 auto;
+  min-height: 52px;
+  padding-inline: 34px;
+  width: max-content;
+  font: 600 18px var(--f-body);
+}
+.mdlg-ph.frame {
+  padding: 14px;
+  background: #fffdf8;
+  min-height: 0;
+  aspect-ratio: 4/3;
+}
+.mdlg-ph.frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+@media (max-width: 800px) {
+  .mdlg-ph.frame {
+    border-width: 8px;
+    padding: 8px;
+  }
+}
+
+/* produkt: galerie v rámu, panel jako štítek na kusu nábytku */
+.gal .fx-thumbs-main {
+  padding: 12px;
+  background: #fffdf8;
+  border: 10px solid var(--wood);
+  outline: 1px solid rgba(0, 0, 0, 0.28);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.18);
+}
+.gal .fx-thumbs-main.is-cut {
+  background: #fffdf8;
+}
+.gal .fx-thumbs-strip {
+  margin-top: var(--s2);
+}
+.panel {
+  padding: var(--s6) var(--s4) var(--s4);
+  background: #fffdf8;
+  border: 3px solid var(--ink);
+  border-radius: 6px;
+}
+.panel::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  margin-left: -9px;
+  border-radius: 50%;
+  background: var(--sage);
+  box-shadow: inset 0 0 0 3px var(--ink);
+}
+.prodsec.room {
+  padding-bottom: calc(var(--s6) + 26px);
+}
+.prodsec .p-panel .ctas {
+  display: grid;
+}
+
+/* Informační stránky: kontakt, texty, recenze, novinky, galerie, poptávka, 404, dotazy, poradna.
+   Navazuje na base.css (tokeny, tlačítka, .spec, .faq, .review, .side-card). Žádné stíny, přechody ani blur; text min. 16 px. */
+.i-top0 {
+  padding-top: 0;
+}
+.i-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.i-fig {
+  margin: 0;
+}
+.i-fig .ph {
+  width: 100%;
+}
+
+/* tabulky */
+.i-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 19px;
+  text-align: left;
+}
+.i-table caption {
+  text-align: left;
+  font: 600 26px/1.2 var(--f-head);
+  padding: 0 0 var(--s2);
+}
+.i-table th,
+.i-table td {
+  padding: 16px var(--s3) 16px 0;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+  font-weight: 400;
+}
+.i-table tbody th {
+  font-weight: 700;
+  width: 30%;
+}
+.i-table thead th {
+  font: 700 17px/1.3 var(--f-body);
+  color: var(--ink-2);
+  border-bottom: 2px solid var(--ink);
+  padding-top: 0;
+}
+.i-table tbody:first-child tr:first-child > *,
+.i-table caption + tbody tr:first-child > * {
+  border-top: 2px solid var(--ink);
+}
+.i-table td.v {
+  font-weight: 700;
+  color: var(--clay);
+  white-space: nowrap;
+}
+.i-hours {
+  max-width: 420px;
+}
+.i-hours.i-wide {
+  max-width: none;
+  margin-bottom: var(--s3);
+}
+.i-hours td:first-of-type {
+  font-weight: 600;
+}
+.i-prices {
+  margin-bottom: var(--s6);
+}
+.i-prices tbody th {
+  width: 28%;
+}
+@media (max-width: 700px) {
+  .i-prices thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+  .i-prices tr {
+    display: block;
+    border-bottom: 1px solid var(--line);
+    padding: var(--s2) 0;
+  }
+  .i-prices th,
+  .i-prices td {
+    display: block;
+    width: auto !important;
+    padding: 2px 0;
+    border: 0 !important;
+  }
+  .i-prices tbody th {
+    font: 600 22px/1.25 var(--f-head);
+  }
+  .i-prices td.v {
+    font-size: 22px;
+  }
+  .i-hours.i-wide tr {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0 var(--s3);
+  }
+  .i-hours.i-wide td:last-child {
+    grid-column: 2;
+    padding-top: 0;
+  }
+}
+
+/* kontakt */
+.c-cols {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: var(--s7);
+  align-items: start;
+}
+@media (max-width: 1023px) {
+  .c-cols {
+    gap: var(--s5);
+  }
+}
+@media (max-width: 900px) {
+  .c-cols {
+    grid-template-columns: 1fr;
+  }
+}
+.c-block {
+  padding: var(--s3) 0;
+  border-top: 1px solid var(--ink);
+}
+.c-block:first-child {
+  border-top: 2px solid var(--ink);
+}
+.c-label {
+  font: 700 17px/1.3 var(--f-body);
+  color: var(--ink-2);
+  margin: 0 0 6px;
+  letter-spacing: 0;
+}
+.c-tel {
+  display: block;
+  font: 600 clamp(32px, 4vw, 40px)/1.1 var(--f-head);
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.c-tel:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.15em;
+  color: var(--clay);
+}
+.c-mail {
+  display: block;
+  font: 600 clamp(20px, 2.4vw, 26px)/1.2 var(--f-body);
+  color: var(--clay);
+  overflow-wrap: anywhere;
+}
+.c-mail:hover {
+  color: var(--ink);
+}
+.c-block address {
+  font-style: normal;
+  margin-bottom: var(--s3);
+}
+.c-block .small {
+  margin-top: 12px;
+}
+.i-formpanel {
+  background: var(--stone);
+  padding: var(--s5);
+}
+.i-formpanel h2 {
+  margin-bottom: var(--s2);
+}
+.i-formpanel .lead {
+  margin-bottom: var(--s4);
+}
+.i-formpanel form.inq {
+  padding: 0;
+  background: transparent;
+}
+.i-formpanel h2 + form.inq {
+  margin-top: var(--s3);
+}
+@media (max-width: 640px) {
+  .i-formpanel {
+    padding: var(--s3) var(--s2);
+  }
+}
+.i-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--s7);
+  align-items: center;
+}
+.i-split h2 {
+  margin-bottom: var(--s3);
+}
+.i-split p {
+  margin-bottom: var(--s3);
+}
+@media (max-width: 900px) {
+  .i-split {
+    grid-template-columns: 1fr;
+    gap: var(--s5);
+  }
+}
+.i-pair {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: var(--s5);
+  align-items: end;
+}
+@media (max-width: 760px) {
+  .i-pair {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* textové stránky */
+.i-text {
+  padding-top: var(--s2);
+}
+.i-main {
+  min-width: 0;
+}
+.i-main > .i-fig {
+  margin-bottom: var(--s5);
+  max-width: 760px;
+}
+.i-prose {
+  max-width: 64ch;
+}
+.i-prose h2 {
+  font-size: clamp(26px, 2.6vw, 32px);
+  margin: var(--s6) 0 var(--s2);
+}
+.i-prose h2:first-child {
+  margin-top: 0;
+}
+.i-prose h3 {
+  font-size: 24px;
+  margin: var(--s5) 0 var(--s1);
+}
+.i-prose p {
+  margin: 0 0 1em;
+}
+.i-prose ul,
+.i-prose ol {
+  padding-left: 1.2em;
+  margin: 0 0 1em;
+}
+.i-prose li {
+  margin-bottom: 0.45em;
+}
+.i-prose a:not(.btn) {
+  color: var(--clay);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+}
+.i-prose a:not(.btn):hover {
+  color: var(--ink);
+}
+.i-prose h2[id],
+.i-main h2[id] {
+  scroll-margin-top: calc(var(--hh) + 16px);
+}
+.i-lead {
+  font-size: clamp(20px, 1.8vw, 22px);
+  line-height: 1.5;
+}
+.i-sign {
+  margin-top: var(--s4) !important;
+  font-family: var(--f-head);
+  font-size: 22px;
+}
+.i-kostce {
+  max-width: 760px;
+  margin-top: var(--s6);
+}
+.i-main > .i-kostce:first-of-type {
+  margin-top: var(--s4);
+}
+.i-toc ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 2px;
+}
+.i-toc h2 {
+  margin-bottom: 8px;
+}
+.i-toc a {
+  display: block;
+  padding: 8px 0;
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid var(--line);
+}
+.i-toc a:hover {
+  text-decoration: underline;
+}
+.side-card .i-toc {
+  margin-bottom: var(--s2);
+  padding-bottom: var(--s3);
+  border-bottom: 2px solid var(--ink);
+}
+.side-card table {
+  font-size: 18px;
+}
+.side-card .i-hours caption {
+  font-size: 20px;
+}
+.side-card .i-hours th,
+.side-card .i-hours td {
+  padding: 8px 12px 8px 0;
+  border-color: var(--line);
+}
+.side-card .btn {
+  width: 100%;
+}
+
+/* číslovaný postup a poznámky */
+.i-steps {
+  list-style: none;
+  counter-reset: st;
+  margin: var(--s3) 0 0;
+  padding: 0;
+  max-width: 760px;
+}
+.i-kostce + .i-prose h2:first-child {
+  margin-top: var(--s6);
+}
+.i-steps > li {
+  counter-increment: st;
+  position: relative;
+  padding: var(--s3) 0 var(--s3) 56px;
+  border-top: 1px solid var(--line);
+}
+.i-steps > li:first-child {
+  border-top: 2px solid var(--ink);
+}
+.i-steps > li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+.i-steps > li::before {
+  content: counter(st) ".";
+  position: absolute;
+  left: 0;
+  top: var(--s3);
+  font: 600 30px/1.1 var(--f-head);
+  color: var(--clay);
+  width: 44px;
+}
+.i-note {
+  background: var(--stone);
+  padding: var(--s3);
+  margin: var(--s4) 0;
+  border-left: 4px solid var(--forest);
+}
+.i-prose .i-note {
+  margin: var(--s5) 0 0;
+}
+.i-doc {
+  margin: var(--s3) 0 0;
+  background: var(--stone);
+}
+.i-steps .i-doc {
+  background: var(--stone);
+}
+.i-doc h3 {
+  margin: 0 0 var(--s2);
+  font-size: 22px;
+}
+.i-doc h4 {
+  font: 700 17px/1.3 var(--f-body);
+  color: var(--ink-2);
+  margin: 0 0 8px;
+}
+.i-doc ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.i-doc-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s4);
+}
+@media (max-width: 640px) {
+  .i-doc-cols {
+    grid-template-columns: 1fr;
+  }
+  .i-steps > li {
+    padding-left: 44px;
+  }
+  .i-steps > li::before {
+    width: 36px;
+  }
+}
+.i-prose ol li::marker {
+  font-weight: 700;
+  color: var(--clay);
+}
+
+/* recenze */
+.i-jumpbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 28px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 0;
+}
+.i-jumpbar a {
+  padding: 14px 0;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--ink-2);
+  border-bottom: 3px solid transparent;
+}
+.i-jumpbar a:hover {
+  color: var(--ink);
+  border-bottom-color: var(--forest);
+}
+.i-big {
+  margin: 0;
+  max-width: 980px;
+}
+.i-big blockquote {
+  margin: 0;
+}
+.i-big blockquote p + p {
+  margin-top: var(--s3);
+  font-size: 20px;
+  line-height: 1.55;
+  color: var(--ink-2);
+  max-width: 62ch;
+}
+.i-big .i-big-q {
+  font: 500 clamp(24px, 3vw, 34px)/1.35 var(--f-head);
+  color: var(--ink);
+  text-wrap: pretty;
+}
+.i-big figcaption {
+  margin-top: var(--s3);
+  font-size: 18px;
+  color: var(--ink-2);
+  padding-top: var(--s2);
+  border-top: 2px solid var(--ink);
+  display: inline-block;
+}
+.reviews .review {
+  background: var(--stone);
+}
+.reviews .review blockquote {
+  font-size: 19px;
+}
+.review time {
+  font-weight: 600;
+  color: var(--ink);
+}
+.sec.paper .reviews {
+  columns: 2 360px;
+}
+@media (max-width: 760px) {
+  .sec.paper .reviews {
+    columns: 1;
+  }
+}
+
+/* alba a scrollery */
+.i-scroll {
+  display: flex;
+  gap: var(--s2);
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  padding-bottom: 12px;
+}
+.i-scroll > .ph {
+  flex: 0 0 min(78%, 380px);
+  scroll-snap-align: start;
+}
+.i-scroll .ph img,
+.i-grid .ph img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.i-scroll .ph.cut img,
+.i-grid .ph.cut img {
+  object-fit: contain;
+  padding: 8%;
+}
+.i-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+@media (max-width: 1023px) {
+  .i-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .i-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+}
+.i-grid .ph,
+.i-scroll .ph {
+  display: block;
+}
+.i-more {
+  margin-top: 12px;
+}
+.i-more > .i-grid {
+  margin-top: 12px;
+}
+.i-more summary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  padding: 0 var(--s4);
+  border: 2px solid var(--ink);
+  font: 600 18px/1 var(--f-body);
+  cursor: pointer;
+  list-style: none;
+  border-radius: 2px;
+  background: transparent;
+}
+.i-more summary::-webkit-details-marker {
+  display: none;
+}
+.i-more summary:hover {
+  background: var(--paper);
+}
+.i-more .c {
+  display: none;
+}
+.i-more[open] .o {
+  display: none;
+}
+.i-more[open] .c {
+  display: inline;
+}
+.i-albums {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s5) var(--s4);
+}
+@media (max-width: 900px) {
+  .i-albums {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 520px) {
+  .i-albums {
+    grid-template-columns: 1fr;
+    gap: var(--s4) 0;
+  }
+}
+.i-albums a {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-decoration: none;
+}
+.i-albums h3 {
+  font-size: 24px;
+}
+.i-albums a:hover h3 {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+}
+.album-sec {
+  scroll-margin-top: var(--hh);
+}
+.album-sec .sec-head {
+  margin-bottom: var(--s4);
+}
+.i-album-note {
+  margin: calc(-1 * var(--s2)) 0 var(--s3);
+}
+
+/* novinky */
+.i-newslist .entry {
+  border-bottom: 1px solid var(--line);
+}
+.i-news {
+  display: block;
+}
+.i-news .prose h3:first-child {
+  margin-top: 0;
+}
+.i-news .prose {
+  max-width: 64ch;
+}
+
+/* poptávka, 404 */
+.i-404 {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: var(--s7);
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .i-404 {
+    grid-template-columns: 1fr;
+    gap: var(--s5);
+  }
+}
+.i-404 h1 {
+  margin-bottom: var(--s3);
+}
+.i-jump {
+  list-style: none;
+  margin: var(--s5) 0 0;
+  padding: 0;
+  border-top: 2px solid var(--ink);
+}
+.i-jump a {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 4px var(--s3);
+  min-height: 64px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+}
+.i-jump span {
+  font: 500 24px/1.2 var(--f-head);
+}
+.i-jump small {
+  font-size: 17px;
+  color: var(--ink-2);
+}
+.i-jump a:hover span {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+}
+
+/* časté dotazy */
+.i-topics {
+  position: sticky;
+  top: var(--hh);
+  z-index: 30;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+.i-topics .wrap {
+  display: flex;
+  gap: 4px 28px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+.i-topics a {
+  flex: none;
+  padding: 16px 0;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--ink-2);
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+}
+.i-topics a:hover {
+  color: var(--ink);
+  border-bottom-color: var(--forest);
+}
+.faq-sec {
+  scroll-margin-top: calc(var(--hh) + 56px);
+}
+.sec.faq-sec {
+  padding-block: var(--s6);
+}
+.i-faqrow {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+  gap: var(--s6);
+  align-items: start;
+}
+.i-faqh {
+  position: sticky;
+  top: calc(var(--hh) + 72px);
+}
+@media (max-width: 900px) {
+  .i-faqrow {
+    grid-template-columns: 1fr;
+    gap: var(--s3);
+  }
+  .i-faqh {
+    position: static;
+  }
+}
+.faq[data-fx~="accordion"] summary {
+  font: 500 22px/1.3 var(--f-head);
+  padding: var(--s3) 56px var(--s3) 0;
+  display: block;
+  min-height: 60px;
+  color: var(--ink);
+}
+.faq[data-fx~="accordion"] summary:hover {
+  color: var(--clay);
+}
+.faq[data-fx~="accordion"] details {
+  border-bottom: 0;
+  border-top: 1px solid var(--ink);
+}
+.faq[data-fx~="accordion"] details:last-child {
+  border-bottom: 1px solid var(--ink);
+}
+.faq[data-fx~="accordion"] summary::after {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font: 400 32px/1 var(--f-body);
+  color: var(--clay);
+}
+.faq[data-fx~="accordion"] .fx-acc-body {
+  padding: 0 56px var(--s3) 0;
+}
+.faq[data-fx~="accordion"] .fx-acc-body p,
+.faq[data-fx~="accordion"] details > p {
+  padding: 0;
+}
+.faq-sec .faq {
+  max-width: none;
+}
+
+/* poradna */
+.i-rows {
+  display: grid;
+  gap: var(--s7);
+}
+.i-row {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: var(--s6);
+  align-items: center;
+}
+.i-row.rev {
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+}
+.i-row.rev > .ph {
+  order: 2;
+}
+.i-row h2 {
+  font-size: clamp(28px, 3vw, 36px);
+  margin-bottom: var(--s2);
+}
+.i-row h2 a {
+  text-decoration: none;
+}
+.i-row h2 a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.15em;
+}
+.i-row p {
+  margin-bottom: var(--s2);
+  max-width: 56ch;
+}
+@media (max-width: 860px) {
+  .i-row,
+  .i-row.rev {
+    grid-template-columns: 1fr;
+    gap: var(--s3);
+  }
+  .i-row.rev > .ph {
+    order: 0;
+  }
+  .i-rows {
+    gap: var(--s6);
+  }
+}
+.i-article .i-prose {
+  max-width: 64ch;
+}
+.i-article .i-prose h2 {
+  font-size: clamp(26px, 2.6vw, 32px);
+}
+.i-related {
+  margin-top: var(--s5) !important;
+  padding-top: var(--s3);
+  border-top: 2px solid var(--ink);
+}
+.i-more-art {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--s5);
+}
+.i-more-art a {
+  display: block;
+  text-decoration: none;
+  border-top: 2px solid var(--ink);
+  padding-top: var(--s2);
+}
+.i-more-art h3 {
+  margin-bottom: 8px;
+}
+.i-more-art a:hover h3 {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+}
+.i-more-art p {
+  color: var(--ink-2);
+  font-size: 19px;
+}
+@media (max-width: 700px) {
+  .i-more-art {
+    grid-template-columns: 1fr;
+    gap: var(--s4);
+  }
+}
+
+/* štítek „nepovinné“ ve formuláři: min. 16 px */
+form.inq label small {
+  font-size: 16px;
+}
+
+/* novinky na mobilu: sloupec nesmí růst podle obrázku */
+@media (max-width: 760px) {
+  .entry {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .entry > * {
+    min-width: 0;
+  }
+  .entry img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+.entry h3,
+.entry .prose,
+.entry .prose a {
+  overflow-wrap: anywhere;
+}
+
+/* ===== domácnost: hlavička místnosti ===== */
+.i-head {
+  padding-block: 0 calc(var(--s6) + 26px);
+  text-align: center;
+}
+.i-head .crumbs {
+  justify-content: center;
+  margin-bottom: var(--s4);
+}
+.i-head .plate {
+  margin-bottom: var(--s3);
+}
+.i-head h1 {
+  font-size: clamp(34px, 4vw, 54px);
+  margin: 0 auto var(--s2);
+  max-width: 900px;
+}
+.i-head .lead {
+  font-size: clamp(19px, 1.7vw, 22px);
+  color: var(--ink-2);
+  margin-inline: auto;
+  max-width: 62ch;
+}
+.i-head .lead a {
+  color: var(--clay);
+  text-decoration: underline;
+}
+.i-head .i-jumpbar {
+  justify-content: center;
+  border: 0;
+  margin-top: var(--s3);
+}
+.i-body {
+  padding-top: var(--s6);
+}
+.i-body .text-page {
+  padding-bottom: 0;
+}
+.i-body .side-card {
+  background: var(--butter);
+  border: 2px solid var(--wood-d);
+}
+.room .i-table td.v {
+  color: var(--clay);
+}
+.i-faqbox {
+  max-width: 900px;
+}
+.i-faqbox h2 {
+  margin-bottom: var(--s4);
+  text-align: center;
+}
+.i-faq-more {
+  margin-top: var(--s4);
+  text-align: center;
+}
+
+/* rámy: mírný náklon jen na desktopu */
+@media (min-width: 901px) {
+  .i-tilt-l {
+    transform: rotate(-0.8deg);
+  }
+  .i-tilt-r {
+    transform: rotate(0.8deg);
+  }
+}
+.i-main > .frame {
+  max-width: 760px;
+  margin-bottom: var(--s5);
+}
+.i-split .frame,
+.i-pair .frame {
+  background: #fffdf8;
+}
+.frame .ph {
+  background: #fffdf8;
+}
+
+/* kontakt */
+.i-phones {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s4);
+  margin-bottom: var(--s5);
+}
+.i-phone {
+  background: #fffdf8;
+  border: 3px solid var(--wood);
+  padding: var(--s4) var(--s3);
+  text-align: center;
+}
+.i-phone .c-label {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.i-phone .c-tel {
+  font-size: clamp(32px, 4vw, 46px);
+}
+@media (max-width: 700px) {
+  .i-phones {
+    grid-template-columns: 1fr;
+    gap: var(--s2);
+  }
+}
+
+.i-formpanel {
+  background: #fffdf8;
+  border: 3px solid var(--wood);
+}
+.i-split .doormat {
+  margin-top: var(--s2);
+}
+
+/* recenze jako lístky na nástěnce */
+.i-big {
+  background: #fffdf8;
+  border: 2px solid var(--wood-d);
+  padding: var(--s5);
+  position: relative;
+  margin-inline: auto;
+}
+.i-big::before,
+.reviews.i-notes .review::before {
+  content: "";
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  margin-left: -9px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #f6e6b8, var(--brass-d) 75%);
+}
+.reviews.i-notes .review {
+  position: relative;
+  background: #fffdf8;
+  border: 2px solid var(--wood-d);
+  padding: var(--s4) var(--s3) var(--s3);
+  margin-bottom: var(--s5);
+}
+@media (min-width: 901px) {
+  .reviews.i-notes .review:nth-child(3n + 1) {
+    transform: rotate(-0.7deg);
+  }
+  .reviews.i-notes .review:nth-child(3n + 2) {
+    transform: rotate(0.6deg);
+  }
+}
+@media (max-width: 520px) {
+  .i-big {
+    padding: var(--s4) var(--s3);
+  }
+}
+
+/* galerie */
+.i-albums a.frame {
+  padding: 8px;
+  border-width: 8px;
+  background: #fffdf8;
+}
+.i-albums a.frame h3,
+.i-albums a.frame .small {
+  padding: 0 4px;
+}
+.i-grid .ph,
+.i-scroll .ph {
+  border: 5px solid var(--wood);
+  background: #fffdf8;
+}
+
+/* FAQ */
+.i-topics {
+  background: var(--stone);
+}
+.faq-sec .faq details {
+  border-color: var(--ink);
+}
+
+/* poradna: police s knihami */
+.i-shelf {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s6) var(--s5);
+}
+.i-book {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+  background: #fffdf8;
+  border-left: 18px solid var(--forest);
+  border-bottom: 14px solid var(--wood);
+  padding: var(--s3);
+}
+.i-spine-1 {
+  border-left-color: var(--clay);
+}
+.i-spine-2 {
+  border-left-color: var(--brass-d);
+}
+.i-spine-3 {
+  border-left-color: #35597a;
+}
+.i-book h2 {
+  font-size: clamp(24px, 2.4vw, 30px);
+  margin-bottom: var(--s1);
+}
+.i-book h2 a {
+  text-decoration: none;
+}
+.i-book h2 a:hover {
+  text-decoration: underline;
+}
+.i-book p {
+  margin: 0 0 var(--s1);
+}
+@media (max-width: 760px) {
+  .i-shelf {
+    grid-template-columns: 1fr;
+    gap: var(--s5);
+  }
+}
+.i-more-art a {
+  background: #fffdf8;
+  padding: var(--s3);
+  border: 2px solid var(--wood-d);
+}
+.i-404 .plate {
+  margin-bottom: var(--s3);
+}
+
+.i-404 h1 {
+  font-size: clamp(34px, 4vw, 54px);
+}

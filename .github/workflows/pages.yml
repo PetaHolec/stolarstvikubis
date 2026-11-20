@@ -1,0 +1,36 @@
+name: GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      # Stránka 404 používá cesty od kořene domény (kvůli Apache). Na GitHub Pages běží web
+      # v podsložce /<repozitář>/, proto jim při nasazení doplníme její název.
+      - name: Upravit cesty ve stránce 404
+        run: |
+          REPO="${{ github.event.repository.name }}"
+          sed -i -E "s#(src|href|action)=\"/([^/\"])#\1=\"/${REPO}/\2#g; s#(src|href|action)=\"/\"#\1=\"/${REPO}/\"#g" web/404.html
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: web
+      - id: deployment
+        uses: actions/deploy-pages@v4
